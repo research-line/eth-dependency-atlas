@@ -1,0 +1,512 @@
+{
+ "meta": {
+  "query_filter": "cites:W1985572324%7CW1995725694%7CW1576180980%7CW3044099633%7CW2294619171%7CW2021372200,title_and_abstract.search:exponential%20time%20hypothesis",
+  "frame_total": 536,
+  "frame_with_abstract_ge30_words": 360,
+  "seed": 20261106,
+  "sample_size": 50,
+  "date": "2026-11-06"
+ },
+ "sample": [
+  {
+   "pilot_id": "P01",
+   "openalex_id": "W1533624370",
+   "doi": "https://doi.org/10.1145/2876505",
+   "title": "Tight Lower Bound for the Channel Assignment Problem",
+   "year": 2016,
+   "type": "article",
+   "venue": "ACM Transactions on Algorithms",
+   "cited_by_count": 3
+  },
+  {
+   "pilot_id": "P02",
+   "openalex_id": "W1589219240",
+   "doi": "https://doi.org/10.1007/s00453-017-0401-6",
+   "title": "A Polynomial Kernel for Trivially Perfect Editing",
+   "year": 2017,
+   "type": "article",
+   "venue": "Algorithmica",
+   "cited_by_count": 18
+  },
+  {
+   "pilot_id": "P03",
+   "openalex_id": "W1764956874",
+   "doi": "https://doi.org/10.1109/focs.2015.15",
+   "title": "Quadratic Conditional Lower Bounds for String Problems and Dynamic Time Warping",
+   "year": 2015,
+   "type": "conference-paper",
+   "venue": "Annual Symposium on Foundations of Computer Science",
+   "cited_by_count": 166
+  },
+  {
+   "pilot_id": "P04",
+   "openalex_id": "W1842876744",
+   "doi": "https://doi.org/10.48550/arxiv.1406.3700",
+   "title": "The Parameterized Complexity of k-Biclique",
+   "year": 2014,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 35
+  },
+  {
+   "pilot_id": "P05",
+   "openalex_id": "W1917184511",
+   "doi": "https://doi.org/10.48550/arxiv.1207.3622",
+   "title": "Approximating the diameter of a graph",
+   "year": 2012,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 4
+  },
+  {
+   "pilot_id": "P06",
+   "openalex_id": "W2059273723",
+   "doi": "https://doi.org/10.1109/focs.2011.23",
+   "title": "Solving Connectivity Problems Parameterized by Treewidth in Single Exponential Time",
+   "year": 2011,
+   "type": "conference-paper",
+   "venue": "Annual Symposium on Foundations of Computer Science",
+   "cited_by_count": 251
+  },
+  {
+   "pilot_id": "P07",
+   "openalex_id": "W2069561762",
+   "doi": "https://doi.org/10.1007/s00224-012-9412-5",
+   "title": "Partition Into Triangles on Bounded Degree Graphs",
+   "year": 2012,
+   "type": "article",
+   "venue": "Theory of Computing Systems",
+   "cited_by_count": 34
+  },
+  {
+   "pilot_id": "P08",
+   "openalex_id": "W2155761045",
+   "doi": "https://doi.org/10.4230/lipics.stacs.2011.649",
+   "title": "On the computational complexity of Ham-Sandwich cuts, Helly sets, and related problems",
+   "year": 2011,
+   "type": "article",
+   "venue": "Dépôt institutionnel de l'Université libre de Bruxelles (Université Libre de Bruxelles)",
+   "cited_by_count": 12
+  },
+  {
+   "pilot_id": "P09",
+   "openalex_id": "W2274955499",
+   "doi": "https://doi.org/10.48550/arxiv.1507.08792",
+   "title": "A cubic vertex kernel for Diamond-free Edge Deletion and more",
+   "year": 2015,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 0
+  },
+  {
+   "pilot_id": "P10",
+   "openalex_id": "W2277785367",
+   "doi": null,
+   "title": "Parameterized Graph Modification Algorithms",
+   "year": 2015,
+   "type": "dissertation",
+   "venue": "NORA - Norwegian Open Research Archives",
+   "cited_by_count": 4
+  },
+  {
+   "pilot_id": "P11",
+   "openalex_id": "W2280590529",
+   "doi": "https://doi.org/10.1137/140952636",
+   "title": "Bounding the Running Time of Algorithms for Scheduling and Packing Problems",
+   "year": 2016,
+   "type": "article",
+   "venue": "SIAM Journal on Discrete Mathematics",
+   "cited_by_count": 28
+  },
+  {
+   "pilot_id": "P12",
+   "openalex_id": "W2282655154",
+   "doi": "https://doi.org/10.1007/s00453-016-0116-0",
+   "title": "Approximating Vector Scheduling: Almost Matching Upper and Lower Bounds",
+   "year": 2016,
+   "type": "article",
+   "venue": "Algorithmica",
+   "cited_by_count": 20
+  },
+  {
+   "pilot_id": "P13",
+   "openalex_id": "W2430369560",
+   "doi": "https://doi.org/10.1109/focs.2016.35",
+   "title": "Settling the Complexity of Computing Approximate Two-Player Nash Equilibria",
+   "year": 2016,
+   "type": "conference-paper",
+   "venue": "Annual Symposium on Foundations of Computer Science",
+   "cited_by_count": 116
+  },
+  {
+   "pilot_id": "P14",
+   "openalex_id": "W2469815617",
+   "doi": "https://doi.org/10.1137/1.9781611974782.55",
+   "title": "Minimum Fill-In: Inapproximability and Almost Tight Lower Bounds",
+   "year": 2017,
+   "type": "conference-paper",
+   "venue": "ACM-SIAM Symposium on Discrete Algorithms (SODA)",
+   "cited_by_count": 6
+  },
+  {
+   "pilot_id": "P15",
+   "openalex_id": "W2486127132",
+   "doi": "https://doi.org/10.1145/3414845",
+   "title": "Fine-grained Complexity Analysis of Two Classic TSP Variants",
+   "year": 2020,
+   "type": "article",
+   "venue": "ACM Transactions on Algorithms",
+   "cited_by_count": 16
+  },
+  {
+   "pilot_id": "P16",
+   "openalex_id": "W2491675908",
+   "doi": "https://doi.org/10.1007/s10472-016-9521-y",
+   "title": "Refining complexity analyses in planning by exploiting the exponential time hypothesis",
+   "year": 2016,
+   "type": "article",
+   "venue": "Annals of Mathematics and Artificial Intelligence",
+   "cited_by_count": 4
+  },
+  {
+   "pilot_id": "P17",
+   "openalex_id": "W2511210321",
+   "doi": null,
+   "title": "The Curse of Medium Dimension for Geometric Problems in Almost Every Norm.",
+   "year": 2016,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 5
+  },
+  {
+   "pilot_id": "P18",
+   "openalex_id": "W2586499659",
+   "doi": "https://doi.org/10.3390/a10010024",
+   "title": "Problems on Finite Automata and the Exponential Time Hypothesis",
+   "year": 2017,
+   "type": "article",
+   "venue": "Algorithms",
+   "cited_by_count": 31
+  },
+  {
+   "pilot_id": "P19",
+   "openalex_id": "W2610086104",
+   "doi": "https://doi.org/10.1007/s00454-018-00054-x",
+   "title": "Finding, Hitting and Packing Cycles in Subexponential Time on Unit Disk Graphs",
+   "year": 2019,
+   "type": "article",
+   "venue": "Discrete & Computational Geometry",
+   "cited_by_count": 20
+  },
+  {
+   "pilot_id": "P20",
+   "openalex_id": "W2733367155",
+   "doi": "https://doi.org/10.1109/focs.2018.00052",
+   "title": "On Subexponential Parameterized Algorithms for Steiner Tree and Directed Subset TSP on Planar Graphs",
+   "year": 2018,
+   "type": "conference-paper",
+   "venue": "Annual Symposium on Foundations of Computer Science",
+   "cited_by_count": 28
+  },
+  {
+   "pilot_id": "P21",
+   "openalex_id": "W2775084241",
+   "doi": "https://doi.org/10.1145/3188745.3188896",
+   "title": "On the Parameterized Complexity of Approximating Dominating Set",
+   "year": 2017,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 18
+  },
+  {
+   "pilot_id": "P22",
+   "openalex_id": "W2884311720",
+   "doi": "https://doi.org/10.1137/1.9781611975482.4",
+   "title": "Fast Modular Subset Sum using Linear Sketching",
+   "year": 2019,
+   "type": "conference-paper",
+   "venue": "Society for Industrial and Applied Mathematics eBooks",
+   "cited_by_count": 10
+  },
+  {
+   "pilot_id": "P23",
+   "openalex_id": "W2950359588",
+   "doi": "https://doi.org/10.48550/arxiv.1410.0245",
+   "title": "On the Computational Complexity of MapReduce",
+   "year": 2014,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 1
+  },
+  {
+   "pilot_id": "P24",
+   "openalex_id": "W2951680343",
+   "doi": "https://doi.org/10.1145/3241304",
+   "title": "Hardness of Approximation Between P and NP",
+   "year": 2019,
+   "type": "book",
+   "venue": null,
+   "cited_by_count": 5
+  },
+  {
+   "pilot_id": "P25",
+   "openalex_id": "W2970007412",
+   "doi": "https://doi.org/10.48550/arxiv.1908.11335",
+   "title": "Nearly Tight Bounds for Robust Proper Learning of Halfspaces with a Margin",
+   "year": 2019,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 3
+  },
+  {
+   "pilot_id": "P26",
+   "openalex_id": "W2977337227",
+   "doi": null,
+   "title": "TE-ETH: Lower Bounds for QBFs of Bounded Treewidth.",
+   "year": 2019,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 5
+  },
+  {
+   "pilot_id": "P27",
+   "openalex_id": "W2984733936",
+   "doi": "https://doi.org/10.1287/ijoc.2020.1045",
+   "title": "Parameterized Algorithms for Power-Efficiently Connecting Wireless Sensor Networks: Theory and Experiments",
+   "year": 2021,
+   "type": "article",
+   "venue": "INFORMS journal on computing",
+   "cited_by_count": 2
+  },
+  {
+   "pilot_id": "P28",
+   "openalex_id": "W3011278347",
+   "doi": "https://doi.org/10.1016/j.jcss.2022.01.005",
+   "title": "Scheduling lower bounds via AND subset sum",
+   "year": 2022,
+   "type": "article",
+   "venue": "Journal of Computer and System Sciences",
+   "cited_by_count": 6
+  },
+  {
+   "pilot_id": "P29",
+   "openalex_id": "W3022115507",
+   "doi": "https://doi.org/10.4230/lipics.itcs.2019.17",
+   "title": "On Closest Pair in Euclidean Metric: Monochromatic is as Hard as Bichromatic",
+   "year": 2019,
+   "type": "article",
+   "venue": "DROPS (Schloss Dagstuhl – Leibniz Center for Informatics)",
+   "cited_by_count": 14
+  },
+  {
+   "pilot_id": "P30",
+   "openalex_id": "W3037901726",
+   "doi": "https://doi.org/10.1609/aaai.v34i09.7125",
+   "title": "Results on a Super Strong Exponential Time Hypothesis",
+   "year": 2020,
+   "type": "conference-paper",
+   "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+   "cited_by_count": 0
+  },
+  {
+   "pilot_id": "P31",
+   "openalex_id": "W3039755702",
+   "doi": "https://doi.org/10.48550/arxiv.1910.01047",
+   "title": "Lower Bounds for QBFs of Bounded Treewidth",
+   "year": 2019,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 1
+  },
+  {
+   "pilot_id": "P32",
+   "openalex_id": "W3042708252",
+   "doi": "https://doi.org/10.24963/kr.2020/29",
+   "title": "Fine-Grained Complexity of Temporal Problems",
+   "year": 2020,
+   "type": "conference-paper",
+   "venue": "Principles of Knowledge Representation and Reasoning",
+   "cited_by_count": 6
+  },
+  {
+   "pilot_id": "P33",
+   "openalex_id": "W3042980074",
+   "doi": "https://doi.org/10.1007/s00453-022-01004-z",
+   "title": "Component Order Connectivity in Directed Graphs",
+   "year": 2022,
+   "type": "article",
+   "venue": "Algorithmica",
+   "cited_by_count": 2
+  },
+  {
+   "pilot_id": "P34",
+   "openalex_id": "W3048730251",
+   "doi": "https://doi.org/10.1038/s41377-021-00608-4",
+   "title": "Quantum verification of NP problems with single photons and linear optics",
+   "year": 2021,
+   "type": "article",
+   "venue": "Light Science & Applications",
+   "cited_by_count": 13
+  },
+  {
+   "pilot_id": "P35",
+   "openalex_id": "W3094679608",
+   "doi": "https://doi.org/10.1016/j.procs.2021.11.022",
+   "title": "Consequences of APSP, triangle detection, and 3SUM hardness for separation between determinism and non-determinism",
+   "year": 2021,
+   "type": "conference-paper",
+   "venue": "Procedia Computer Science",
+   "cited_by_count": 0
+  },
+  {
+   "pilot_id": "P36",
+   "openalex_id": "W3122423875",
+   "doi": "https://doi.org/10.1137/21m1395089",
+   "title": "A Tight Lower Bound for Edge-Disjoint Paths on Planar DAGs",
+   "year": 2023,
+   "type": "article",
+   "venue": "SIAM Journal on Discrete Mathematics",
+   "cited_by_count": 5
+  },
+  {
+   "pilot_id": "P37",
+   "openalex_id": "W3127071357",
+   "doi": "https://doi.org/10.1109/focs46700.2020.00047",
+   "title": "Constant Depth Formula and Partial Function Versions of MCSP are Hard",
+   "year": 2020,
+   "type": "conference-paper",
+   "venue": "Annual Symposium on Foundations of Computer Science",
+   "cited_by_count": 11
+  },
+  {
+   "pilot_id": "P38",
+   "openalex_id": "W3129594461",
+   "doi": "https://doi.org/10.1137/21m142188x",
+   "title": "Twin-Width III: Max Independent Set, Min Dominating Set, and Coloring",
+   "year": 2024,
+   "type": "article",
+   "venue": "SIAM Journal on Computing",
+   "cited_by_count": 27
+  },
+  {
+   "pilot_id": "P39",
+   "openalex_id": "W3173851153",
+   "doi": "https://doi.org/10.1145/3452021.3458814",
+   "title": "Modern Lower Bound Techniques in Database Theory and Constraint Satisfaction",
+   "year": 2021,
+   "type": "conference-paper",
+   "venue": "ACM SIGACT-SIGMOD-SIGART Symposium on Principles of Database Systems (PODS)",
+   "cited_by_count": 1
+  },
+  {
+   "pilot_id": "P40",
+   "openalex_id": "W3174842734",
+   "doi": "https://doi.org/10.1137/18m1226737",
+   "title": "Toward Tight Approximation Bounds for Graph Diameter and Eccentricities",
+   "year": 2021,
+   "type": "article",
+   "venue": "SIAM Journal on Computing",
+   "cited_by_count": 7
+  },
+  {
+   "pilot_id": "P41",
+   "openalex_id": "W3185396325",
+   "doi": "https://doi.org/10.4230/lipics.icalp.2021.40",
+   "title": "Current Algorithms for Detecting Subgraphs of Bounded Treewidth Are Probably Optimal",
+   "year": 2021,
+   "type": "preprint",
+   "venue": "arXiv (Cornell University)",
+   "cited_by_count": 6
+  },
+  {
+   "pilot_id": "P42",
+   "openalex_id": "W4283805619",
+   "doi": "https://doi.org/10.1609/aaai.v36i4.20288",
+   "title": "Faster Algorithms for Weak Backdoors",
+   "year": 2022,
+   "type": "conference-paper",
+   "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+   "cited_by_count": 3
+  },
+  {
+   "pilot_id": "P43",
+   "openalex_id": "W4399522433",
+   "doi": "https://doi.org/10.1145/3618260.3649771",
+   "title": "Parameterized Inapproximability Hypothesis under Exponential Time Hypothesis",
+   "year": 2024,
+   "type": "conference-paper",
+   "venue": "ACM Symposium on Theory of Computing (STOC)",
+   "cited_by_count": 6
+  },
+  {
+   "pilot_id": "P44",
+   "openalex_id": "W4399795336",
+   "doi": "https://doi.org/10.1145/3717823.3718117",
+   "title": "Treewidth Inapproximability and Tight ETH Lower Bound",
+   "year": 2025,
+   "type": "conference-paper",
+   "venue": "ACM Symposium on Theory of Computing (STOC)",
+   "cited_by_count": 2
+  },
+  {
+   "pilot_id": "P45",
+   "openalex_id": "W4401752668",
+   "doi": "https://doi.org/10.1109/ismvl60454.2024.00034",
+   "title": "On NP-Complete Search Problems on Finite Algebras",
+   "year": 2024,
+   "type": "conference-paper",
+   "venue": "IEEE International Symposium on Multiple-Valued Logic (ISMVL)",
+   "cited_by_count": 0
+  },
+  {
+   "pilot_id": "P46",
+   "openalex_id": "W4403404988",
+   "doi": "https://doi.org/10.1360/ssi-2024-0145",
+   "title": "Fine-grained hardness of the unique shortest vector problem in lattices",
+   "year": 2024,
+   "type": "article",
+   "venue": "Scientia Sinica Informationis",
+   "cited_by_count": 1
+  },
+  {
+   "pilot_id": "P47",
+   "openalex_id": "W4404848990",
+   "doi": "https://doi.org/10.1109/focs61266.2024.00088",
+   "title": "The Orthogonal Vectors Conjecture and Non-Uniform Circuit Lower Bounds",
+   "year": 2024,
+   "type": "conference-paper",
+   "venue": "Annual Symposium on Foundations of Computer Science",
+   "cited_by_count": 2
+  },
+  {
+   "pilot_id": "P48",
+   "openalex_id": "W4406927686",
+   "doi": "https://doi.org/10.1007/s00453-025-01293-0",
+   "title": "Tight Bounds for Chordal/Interval Vertex Deletion Parameterized by Treewidth",
+   "year": 2025,
+   "type": "article",
+   "venue": "Algorithmica",
+   "cited_by_count": 0
+  },
+  {
+   "pilot_id": "P49",
+   "openalex_id": "W4411319981",
+   "doi": "https://doi.org/10.1145/3717823.3718130",
+   "title": "Almost Optimal Time Lower Bound for Approximating Parameterized Clique, CSP, and More, under ETH",
+   "year": 2025,
+   "type": "conference-paper",
+   "venue": "ACM Symposium on Theory of Computing (STOC)",
+   "cited_by_count": 4
+  },
+  {
+   "pilot_id": "P50",
+   "openalex_id": "W613077347",
+   "doi": null,
+   "title": "Graph and Hypergraph Decompositions for Exact Algorithms",
+   "year": 2014,
+   "type": "dissertation",
+   "venue": "Työväentutkimus Vuosikirja",
+   "cited_by_count": 3
+  }
+ ]
+}

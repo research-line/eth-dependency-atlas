@@ -1,0 +1,10 @@
+id;result;bound;source
+ALG-01;exact #k-SAT, fixed k, deterministic, polynomial space;"(n+m)^{O_k(1)}·2^{O_k(n·loglog n/√log n)}; for m ≤ Dn: 2^{O(n/√log n)}";OAI-ETH Thm. thm:main
+ALG-02;exact #k-CNF, one machine for all k;2^{O(min{k²n·loglog n/√log n, km/√log m})};ANT-ETH Thm. 1 / MainResults.lean
+ALG-03;counting independent sets and proper q-colourings (v vertices);2^{o(v)};OAI-ETH Cor. cor:graph-counting
+ALG-04;counting perfect matchings;2^{o(v+e)};OAI-ETH Cor. cor:graph-counting
+ALG-05;Independent Set, Clique, Vertex Cover, Dominating Set on n-vertex graphs;O(2^{εn}) for every ε > 0;"ANT-ETH §1 (Cor. 7 for Dominating Set; others via [IPZ01, FG04])"
+ALG-06;Max-k-SAT, additive ε·m approximation;2^{O_{k,ε}(n(loglog n)²/√log n)};OAI-ETH Cor. cor:max-sat-approximation
+ALG-07;3SUM on n integers of polynomial size;O(n^1.9992);AVW
+ALG-08;APSP, polynomially bounded integer weights;O(n^2.9995);AVW
+ALG-09;circuit lower bound (consequence, not an algorithm);some L in E^NP needs > c·n·√log n gates infinitely often;"OAI-ETH Cor. cor:quantitative-circuits; ANT-ETH §7 (no linear-size circuits)"

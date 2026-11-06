@@ -1,0 +1,171 @@
+{
+  "classifier": "Claude Sonnet 5.5",
+  "papers": [
+    {"pilot_id": "P01", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "there is no 2 o ( n log n ) (times a polynomial in the bit size) time algorithm solving C hannel A ssignment unless the exponential time hypothesis fails", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "Shape 2^(o(n log n)) is not of the form 2^(o(N)); Channel Assignment is not in the refuted-algorithm list and no reduction to fixed-width k-SAT is stated, so it is only unsupported.", "fix_type": "weaken", "fix_candidate": "Weaker bound under a successor hypothesis (e.g. 3-SAT needs 2^(n/polylog n)).", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P02", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "unless the exponential time hypothesis fails. In this manner we complete the picture of the parameterized and kernelization complexity", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "2^(o(k)) bound for Trivially Perfect Editing in the parameter k; problem not in the list and no reduction to fixed-width k-SAT with O(N) variables stated, so only unsupported.", "fix_type": "weaken", "fix_candidate": "Weaker lower bound under a successor hypothesis.", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P03", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "these measures do not have strongly sub quadratic time algorithms", "hypothesis": ["SETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "n^(2-eps) lower bound for Levenshtein/edit distance and DTW under SETH; only the LCS bound is a listed OVC rescue and the abstract names reduction from satisfiability, not from Orthogonal Vectors.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "showing that conditional lower bounds based on the Strong Exponential Time Hypothesis also apply to string problems that are not necessarily similarity measures", "hypothesis": ["SETH"], "result_type": "fine_grained_reduction", "class": "UNGESTUETZT-RETTBAR", "class_reason": "Longest palindromic/tandem subsequence bounds are via reductions from LCS, whose SETH bound also follows from OVC (known rescue).", "fix_type": "rebase", "fix_candidate": "Base the LCS hardness, hence the reductions, on OVC.", "rescue_hypothesis": "OVC"}
+    ], "confidence": "medium"},
+    {"pilot_id": "P04", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "unless the ETH(Exponential Time Hypothesis) fails", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "f(k)*n^(o(k)) bound for k-biclique; shape n^(o(k)) is only unsupported by the refutation.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "unless 3-SAT with $m$ clauses can be solved in", "hypothesis": ["rETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "n^(o(sqrt k)) bound relies on randomized ETH; shape is not 2^(o(N)) for the problem itself, so unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P05", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "and the strong exponential time hypothesis of [Impagliazzo, Paturi, Zane JCSS'01] is false", "hypothesis": ["SETH"], "result_type": "hardness_of_approx", "class": "UNGESTUETZT-RETTBAR", "class_reason": "Graph-diameter approximation lower bound under SETH is a listed rescue via CNF-SAT-H (unbounded-width CNF-SAT, as stated in the abstract).", "fix_type": "rebase", "fix_candidate": "Replace SETH by CNF-SAT-H.", "rescue_hypothesis": "CNF-SAT-H"}
+    ], "confidence": "high"},
+    {"pilot_id": "P06", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "in several cases we are able to show that improving those constants would cause the Strong Exponential Time Hypothesis to fail", "hypothesis": ["SETH"], "result_type": "lower_bound", "class": "UNKLAR_ABSTRACT", "class_reason": "Which problems carry the SETH-tight constants is not stated; only Independent Set/Dominating Set treewidth bounds are known rescues via CNF-SAT-H.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "assuming the Exponential Time Hypothesis, the aforementioned gap cannot be breached", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "tw^tw-type (2^(o(tw log tw))) bound for Cycle Packing; unsupported shape, no rescue in list.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P07", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "there is no subexponential-time algorithm for this problem on graphs of maximum degree four unless the Exponential-Time Hypothesis fails", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "FALSCH", "class_reason": "2^(o(n)) bound; on max-degree-4 graphs the problem encodes into fixed-width SAT with O(n) variables (one variable per triangle), so new k-CNF counting algorithm gives subexponential algorithm (transfer rule). Based on a standard encoding not stated in the abstract.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P08", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "cannot be solved in time n^{o(d)} (where n is the size of the input), unless the Exponential-Time Hypothesis (ETH) is false", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "n^(o(d)) shape is only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "high"},
+    {"pilot_id": "P09", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "unless Exponential Time Hypothesis fails", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "2^(o(|G|)) and 2^(o(k)) bounds for edge deletion; no listed problem and no stated reduction to fixed-width k-SAT with O(N) variables (edge-subset search needs more variables), so only unsupported.", "fix_type": "weaken", "fix_candidate": "Weaker bound under successor hypothesis.", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P10", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "Editing towards trivially perfect graphs and cographs is not possible in subexponential time unless the exponential time hypothesis fails", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "Subexponential bound for edge editing problems; no listed problem or stated SAT reduction, so only unsupported.", "fix_type": "weaken", "fix_candidate": "Weaker bound under successor hypothesis.", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P11", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "To prove lower bounds, we investigate implications of the exponential time hypothesis on such algorithms.", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "2^(o(n))*||I||^(O(n)) bounds and 2^(o(1/eps)) approximation-scheme bounds; encoding length blows up so not a direct k-SAT reduction, only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P12", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "unless the Exponential Time Hypothesis fails. (2) No", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "exp(o(floor(1/eps)^(d/3))) bound; unusual shape, only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "unless NP has subexponential time algorithms", "hypothesis": ["other-not-refuted"], "result_type": "lower_bound", "class": "UNBERUEHRT", "class_reason": "Relies on NP not in subexponential time, which is not a listed refuted hypothesis.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P13", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "assuming the Exponential Time Hypothesis for PPAD", "hypothesis": ["other-not-refuted"], "result_type": "lower_bound", "class": "UNBERUEHRT", "class_reason": "ETH for PPAD is a different hypothesis not on the refuted list.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P14", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "assuming P≠NP", "hypothesis": ["other-not-refuted"], "result_type": "hardness_of_approx", "class": "UNBERUEHRT", "class_reason": "No PTAS under P≠NP, not refuted.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "assuming the Exponential Time Hypothesis", "hypothesis": ["ETH"], "result_type": "hardness_of_approx", "class": "UNGESTUETZT-OFFEN", "class_reason": "Subexponential-time approximation scheme bound of unusual shape (exponent n^(1+delta), k^(1/2-delta)); only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P15", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "exists if and only if A LL -P AIRS S HORTEST P ATHS in weighted digraphs has such an algorithm", "hypothesis": ["APSP"], "result_type": "fine_grained_reduction", "class": "UNBERUEHRT", "class_reason": "The subcubic equivalence of 3-OPT and APSP remains a true theorem; only the consequence 'no truly subcubic algorithm' would be affected and is not asserted. ETH/SETH statements are cited prior work.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P16", "evidence_level": "fulltext_needed", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "we provide, for instance, almost matching upper and lower bounds onthe time complexity of propositional planning", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNKLAR_ABSTRACT", "class_reason": "The abstract does not state the bound shapes or reductions, so no decision is possible.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "low"},
+    {"pilot_id": "P17", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "under the Strong Exponential-Time Hypothesis (SETH)", "hypothesis": ["SETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "No subquadratic bounds for geometric Diameter/Closest Pair/EMST in medium dimension; not a listed rescue (those cover graph diameter approximation, Frechet), reduction stated from SAT.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P18", "evidence_level": "fulltext_needed", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "We study several classical decision problems on finite automata under the (Strong) Exponential Time Hypothesis.", "hypothesis": ["ETH", "SETH"], "result_type": "lower_bound", "class": "UNKLAR_ABSTRACT", "class_reason": "The abstract does not state concrete bounds.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "low"},
+    {"pilot_id": "P19", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "assuming the exponential time hypothesis", "hypothesis": ["ETH"], "result_type": "algorithm_or_tightness", "class": "UNGESTUETZT-OFFEN", "class_reason": "Optimality of 2^(O(sqrt k log k)) algorithms (2^(o(sqrt k)) bound) is only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P20", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "Assuming the Exponential-Time Hypothesis, Steiner Tree on undirected planar graphs cannot be solved in time 2^o(k)", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "2^(o(k)) in the number of terminals; no listed problem or stated SAT reduction, only unsupported. Kernel corollary inherits this.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P21", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "there is no $F(k)$-FPT-approximation algorithm for $k$-DomSet", "hypothesis": ["other-not-refuted"], "result_type": "hardness_of_approx", "class": "UNBERUEHRT", "class_reason": "Relies on W[1] != FPT, not refuted.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "Assuming the Exponential Time Hypothesis (ETH)", "hypothesis": ["ETH"], "result_type": "hardness_of_approx", "class": "UNGESTUETZT-OFFEN", "class_reason": "T(k)*n^(o(k)) bound, only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "Assuming the Strong Exponential Time Hypothesis (SETH)", "hypothesis": ["SETH"], "result_type": "hardness_of_approx", "class": "UNGESTUETZT-OFFEN", "class_reason": "n^(k-eps) bound for approximating k-DomSet; not a listed rescue.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "Assuming the $k$-Sum Hypothesis", "hypothesis": ["3SUM"], "result_type": "hardness_of_approx", "class": "UNGESTUETZT-OFFEN", "class_reason": "k-Sum hypothesis generalizes the refuted 3SUM hypothesis; n^(ceil(k/2)-eps) bound is unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P22", "evidence_level": "abstract", "has_own_conditional_result": "no", "claims": [
+      {"quote": "", "hypothesis": ["none"], "result_type": "algorithm_or_tightness", "class": "UNBERUEHRT", "class_reason": "The paper's own result is an unconditional algorithm; SETH appears only as context for a cited lower bound.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "high"},
+    {"pilot_id": "P23", "evidence_level": "fulltext_needed", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "conditioned on a variant of the Exponential Time Hypothesis", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNKLAR_ABSTRACT", "class_reason": "The exact ETH variant is not stated.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "low"},
+    {"pilot_id": "P24", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "there is no polynomial-time algorithm for finding an approximate Nash equilibrium in two-player games", "hypothesis": ["other-not-refuted"], "result_type": "hardness_of_approx", "class": "UNBERUEHRT", "class_reason": "Based on ETH for PPAD, not on the refuted list.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P25", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "assuming the Exponential Time Hypothesis", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "Runtime lower bound 2^((1/gamma)^(2-o(1))) for proper learning; unusual shape, only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P26", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "under ETH there cannot be an algorithm that solves QSAT of quantifier depth i in runtime significantly better than i-fold exponential in the treewidth", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "Treewidth-parameterized tower bound; only unsupported, rescue list covers only Independent Set/Dominating Set.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P27", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "under the exponential time hypothesis, there are no exact algorithms running in 2o(n) time", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "2^(o(n)) bound for min-power connectivity; no listed problem or stated reduction to fixed-width k-SAT with O(n) variables, so treated as unsupported.", "fix_type": "weaken", "fix_candidate": "Weaker bound under successor hypothesis.", "rescue_hypothesis": ""}
+    ], "confidence": "low"},
+    {"pilot_id": "P28", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "assuming the ∀∃ Strong Exponential Time Hypothesis (∀∃-SETH)", "hypothesis": ["other-not-refuted"], "result_type": "lower_bound", "class": "UNBERUEHRT", "class_reason": "forall-exists SETH is not on the refuted list; treated as standing (relation to SETH not given).", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "low"},
+    {"pilot_id": "P29", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "under the Strong Exponential Time Hypothesis (SETH)", "hypothesis": ["SETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "n^(2-eps) bounds for Euclidean Closest Pair; not a listed rescue.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P30", "evidence_level": "abstract", "has_own_conditional_result": "no", "claims": [
+      {"quote": "Thus, refuting Super Strong ETH in the unique solution case would refute Super Strong ETH in general", "hypothesis": ["other-not-refuted"], "result_type": "algorithm_or_tightness", "class": "UNBERUEHRT", "class_reason": "Results are algorithms and an unconditional reduction between Unique k-SAT and k-SAT; they do not rely on a refuted hypothesis.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P31", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "under ETH there cannot be an algorithm that solves QSAT of quantifier depth i in runtime significantly better than i-fold exponential in the treewidth", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "Treewidth-parameterized tower bound; only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P32", "evidence_level": "fulltext_needed", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "prove, assuming the Exponential-Time Hypothesis, that their worst-case time complexity is close to optimal", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNKLAR_ABSTRACT", "class_reason": "Bound shapes and problems are not specified in the abstract.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "low"},
+    {"pilot_id": "P33", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "unless the Exponential Time Hypothesis (ETH) fails", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "2^(o(k)) and 2^(o(n-l)) bounds for DCOC on semicomplete digraphs; no listed problem or stated SAT reduction, only unsupported.", "fix_type": "weaken", "fix_candidate": "Weaker bound under successor hypothesis.", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P34", "evidence_level": "abstract", "has_own_conditional_result": "no", "claims": [
+      {"quote": "", "hypothesis": ["none"], "result_type": "other", "class": "UNBERUEHRT", "class_reason": "ETH is only mentioned as motivating context for an experimental quantum protocol.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "high"},
+    {"pilot_id": "P35", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "If the APSP problem does not admit a truly subcubic algorithm already when the edge weights are of moderate size", "hypothesis": ["APSP"], "result_type": "fine_grained_reduction", "class": "UNGESTUETZT-OFFEN", "class_reason": "Implication from the (refuted) APSP hypothesis to NDTIME/DTIME inclusions; the hypothesis now fails so the separation is no longer supported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "Similarly, we show that if the triangle detection problem (DT) in a graph on N vertices does not admit", "hypothesis": ["other-not-refuted"], "result_type": "fine_grained_reduction", "class": "UNBERUEHRT", "class_reason": "Triangle detection hypothesis is not on the refuted list.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "Next, we show that if 3SUM for N integers", "hypothesis": ["3SUM"], "result_type": "fine_grained_reduction", "class": "UNGESTUETZT-OFFEN", "class_reason": "Relies on the refuted 3SUM hypothesis.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "we observe that the Exponential Time Hypothesis (ETH) implies", "hypothesis": ["ETH", "SETH"], "result_type": "fine_grained_reduction", "class": "UNGESTUETZT-OFFEN", "class_reason": "ETH/SETH-based separation of nondeterministic from deterministic time relies on refuted hypotheses.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P36", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "we show that Edge-Disjoint Paths is W[1]-hard parameterized by the number", "hypothesis": ["other-not-refuted"], "result_type": "lower_bound", "class": "UNBERUEHRT", "class_reason": "W[1]-hardness relies on W[1] != FPT, not refuted.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "under the exponential time hypothesis (ETH), we show that there is no", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "f(k)*n^(o(k))-type bound, only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P37", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "is N P-hard under quasipolynomial-time randomized reductions", "hypothesis": ["none"], "result_type": "lower_bound", "class": "UNBERUEHRT", "class_reason": "NP-hardness under randomized reductions, no refuted hypothesis.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "is not in P under the Exponential Time Hypothesis (ETH)", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "Hardness of partial-function MCSP derived from ETH; derivation no longer supported and no rescue given.", "fix_type": "weaken", "fix_candidate": "Weaker hardness under a successor hypothesis.", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P38", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "Up to logarithmic factors in the exponent, all these running times are optimal unless the exponential time hypothesis fails", "hypothesis": ["ETH"], "result_type": "algorithm_or_tightness", "class": "UNGESTUETZT-OFFEN", "class_reason": "Optimality of twin-width-parameterized running times; only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "even diameter does not admit a truly subquadratic algorithm on bounded twin-width graphs unless the strong exponential time hypothesis fails", "hypothesis": ["SETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-RETTBAR", "class_reason": "Graph-diameter SETH bounds also follow from CNF-SAT-H (known rescue), assuming the bounded twin-width variant uses the same reduction.", "fix_type": "rebase", "fix_candidate": "Base on CNF-SAT-H.", "rescue_hypothesis": "CNF-SAT-H"}
+    ], "confidence": "low"},
+    {"pilot_id": "P39", "evidence_level": "abstract", "has_own_conditional_result": "no", "claims": [
+      {"quote": "", "hypothesis": ["none"], "result_type": "other", "class": "UNBERUEHRT", "class_reason": "Tutorial overview; ETH mentioned only as an example assumption.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P40", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "we conditionally rule out such a possibility by showing that unless SETH fails", "hypothesis": ["SETH"], "result_type": "hardness_of_approx", "class": "UNGESTUETZT-RETTBAR", "class_reason": "Graph diameter approximation SETH bounds follow from CNF-SAT-H (listed rescue); eccentricity bounds use the same technique.", "fix_type": "rebase", "fix_candidate": "Replace SETH by CNF-SAT-H.", "rescue_hypothesis": "CNF-SAT-H"}
+    ], "confidence": "medium"},
+    {"pilot_id": "P41", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "under the Strong Exponential Time Hypothesis (SETH), a standard assumption from fine-grained complexity theory", "hypothesis": ["SETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "n^(t+1-eps) bound for Subgraph Isomorphism; not a listed rescue.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "Under the more recent 3-uniform Hyperclique hypothesis", "hypothesis": ["other-not-refuted"], "result_type": "lower_bound", "class": "UNBERUEHRT", "class_reason": "Hyperclique hypothesis is not on the refuted list.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P42", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "and also prove a lower bound of 2^o(k) assuming the Exponential Time Hypothesis", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "2^(o(k)) bound in the backdoor size k; no stated reduction to fixed-width k-SAT with O(N) variables, only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P43", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "In this work, we prove PIH under the Exponential Time Hypothesis (ETH)", "hypothesis": ["ETH"], "result_type": "other", "class": "UNGESTUETZT-OFFEN", "class_reason": "PIH is derived from the refuted ETH; PIH itself is not refuted but its proof is unsupported and no rescue is given.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P44", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "we show that 1.00005-approximating Treewidth is NP-hard", "hypothesis": ["none"], "result_type": "hardness_of_approx", "class": "UNBERUEHRT", "class_reason": "NP-hardness, no refuted hypothesis.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""},
+      {"quote": "and solving Treewidth exactly requires 2 Ω (n) time, unless the ETH fails", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "2^(Omega(n)) bound for Treewidth; problem not in the list and no stated reduction to fixed-width k-SAT with O(n) variables, so only unsupported.", "fix_type": "weaken", "fix_candidate": "Weaker bound 2^(n/polylog n) under a successor hypothesis.", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P45", "evidence_level": "fulltext_needed", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "Our results imply that under the exponential time hypothesis, no two-element algebra of tame congruence theory type 3 has a sub-exponential algorithm to solve a single polynomial equation", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNKLAR_ABSTRACT", "class_reason": "The complexity measure (clauses vs. input size) and whether the problem reduces to fixed-width SAT are not clear from the abstract.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "low"},
+    {"pilot_id": "P46", "evidence_level": "fulltext_needed", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "assuming the GapSETH (gap strong exponential time hypothesis)", "hypothesis": ["other-not-refuted"], "result_type": "lower_bound", "class": "UNKLAR_ABSTRACT", "class_reason": "GapSETH is not on the refuted list; whether it is covered by the Gap-ETH refutation needs full text.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "low"},
+    {"pilot_id": "P47", "evidence_level": "abstract", "has_own_conditional_result": "no", "claims": [
+      {"quote": "", "hypothesis": ["none"], "result_type": "lower_bound", "class": "UNBERUEHRT", "class_reason": "Win-win circuit lower bounds are unconditional; OVC (not refuted) and SETH appear only as context for possible refutation.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P48", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "cannot be improved assuming Exponential Time Hypothesis", "hypothesis": ["ETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "2^(o(tw log tw)) bound, only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "high"},
+    {"pilot_id": "P49", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "prove (under ETH) that approximating sparse parameterized CSPs within a constant factor requires", "hypothesis": ["ETH"], "result_type": "hardness_of_approx", "class": "UNGESTUETZT-OFFEN", "class_reason": "n^(k^(1-o(1))) bound for parameterized approximation; only unsupported.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"},
+    {"pilot_id": "P50", "evidence_level": "abstract", "has_own_conditional_result": "yes", "claims": [
+      {"quote": "there are linear forms that are easy to compute over semirings with idempotent addition, but difficult to compute over rings, unless the strong exponential time hypothesis fails", "hypothesis": ["SETH"], "result_type": "lower_bound", "class": "UNGESTUETZT-OFFEN", "class_reason": "Separation conditional on SETH; no listed or stated rescue.", "fix_type": "none", "fix_candidate": "", "rescue_hypothesis": ""}
+    ], "confidence": "medium"}
+  ]
+}

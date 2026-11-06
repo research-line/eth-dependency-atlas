@@ -1,0 +1,35 @@
+name: Correction
+description: Report a wrong, incomplete or missing entry
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry id
+      description: e.g. COL-0005, RES-0003, ATL-P-012 (leave empty for a new entry)
+  - type: input
+    id: work
+    attributes:
+      label: Work (DOI / arXiv / citation)
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Exact statement (theorem number / page)
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of correction
+      options: [wrong class, missing rescue, new collision, size-measure detail, full-text detail, other]
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason / reference / encoding argument
+    validations:
+      required: true

@@ -1,0 +1,222 @@
+{
+ "rulings": {
+  "P07": {
+   "class": "FALSCH",
+   "reason": "Grad ≤ 4: jeder Knoten liegt in ≤ 6 Dreiecken; Variablen je Dreieck (O(n)), Bedingung genau-eins je Knoten als CNF der Breite ≤ 6 → 2^{o(n)} nach OAI-ETH/ANT-ETH. Die bedingte Untergrenze ist widerlegt.",
+   "evidence": "abstract",
+   "A": "FALSCH",
+   "G": "UNKLAR_ABSTRACT"
+  },
+  "P09": {
+   "class": "UNGESTUETZT-OFFEN",
+   "reason": "2^{o(k)}·poly-Schranke nur ungestützt. FALSCH-Kandidat: 2^{o(|G|)}-Schranke, falls |G| = n+m. Variablen je Kante, Diamant-Freiheit je 4-Menge (Breite ≤ 6), Budget ≤ k per O(m)-Zählschaltung + Tseitin. Definition von |G| im Volltext prüfen.",
+   "evidence": "fulltext_needed",
+   "A": "UNGESTUETZT-OFFEN",
+   "G": "UNKLAR_ABSTRACT"
+  },
+  "P10": {
+   "class": "UNGESTUETZT-OFFEN",
+   "reason": "Dissertation; die ETH-Schranken für Editierprobleme sind überwiegend parametrisiert (2^{o(k)}). Einzelne 2^{o(n)}-Aussagen wären FALSCH-Kandidaten → Volltext.",
+   "evidence": "fulltext_needed",
+   "A": "UNGESTUETZT-OFFEN",
+   "G": "UNKLAR_ABSTRACT"
+  },
+  "P27": {
+   "class": "UNGESTUETZT-OFFEN",
+   "reason": "2^{o(n)} für gewichtete Min-Power-Konnektivität: keine O(n)-Variablen-Kodierung fester Breite ersichtlich (Kantenwahl ~m Variablen, Konnektivität braucht Hilfsvariablen).",
+   "evidence": "abstract",
+   "A": "UNGESTUETZT-OFFEN",
+   "G": "UNKLAR_ABSTRACT"
+  },
+  "P39": {
+   "class": "UNBERUEHRT",
+   "reason": "Tutorial ohne eigene bedingte Sätze; als Saatquelle für weitere Einträge vormerken.",
+   "evidence": "abstract",
+   "A": "UNKLAR_ABSTRACT",
+   "G": "UNBERUEHRT"
+  },
+  "P45": {
+   "class": "FALSCH",
+   "reason": "POLSAT über einer 2-elementigen Algebra mit fester Signatur: Tseitin über die Termgatter ergibt O(N) Variablen und Klauseln der Breite ≤ Stelligkeit+1 → 2^{o(N)}. Annahme: „sub-exponential“ bezieht sich auf die Eingabegröße (die Reduktion misst linear in der Größe).",
+   "evidence": "abstract",
+   "A": "FALSCH",
+   "G": "UNGESTUETZT-OFFEN"
+  },
+  "P50": {
+   "class": "UNGESTUETZT-OFFEN",
+   "reason": "SETH-bedingte Trennung (Ringe vs. idempotente Halbringe); keine Rettung genannt; Details im Volltext.",
+   "evidence": "fulltext_needed",
+   "A": "UNGESTUETZT-OFFEN",
+   "G": "UNKLAR_ABSTRACT"
+  }
+ },
+ "final": {
+  "P01": "UNGESTUETZT-OFFEN",
+  "P02": "UNGESTUETZT-OFFEN",
+  "P03": "UNGESTUETZT-OFFEN",
+  "P04": "UNGESTUETZT-OFFEN",
+  "P05": "UNGESTUETZT-RETTBAR",
+  "P06": "UNGESTUETZT-OFFEN",
+  "P07": "FALSCH",
+  "P08": "UNGESTUETZT-OFFEN",
+  "P09": "UNGESTUETZT-OFFEN",
+  "P10": "UNGESTUETZT-OFFEN",
+  "P11": "UNGESTUETZT-OFFEN",
+  "P12": "UNGESTUETZT-OFFEN",
+  "P13": "UNBERUEHRT",
+  "P14": "UNGESTUETZT-OFFEN",
+  "P15": "UNBERUEHRT",
+  "P16": "UNKLAR_ABSTRACT",
+  "P17": "UNGESTUETZT-OFFEN",
+  "P18": "UNKLAR_ABSTRACT",
+  "P19": "UNGESTUETZT-OFFEN",
+  "P20": "UNGESTUETZT-OFFEN",
+  "P21": "UNGESTUETZT-OFFEN",
+  "P22": "UNBERUEHRT",
+  "P23": "UNKLAR_ABSTRACT",
+  "P24": "UNBERUEHRT",
+  "P25": "UNGESTUETZT-OFFEN",
+  "P26": "UNGESTUETZT-OFFEN",
+  "P27": "UNGESTUETZT-OFFEN",
+  "P28": "UNBERUEHRT",
+  "P29": "UNGESTUETZT-OFFEN",
+  "P30": "UNBERUEHRT",
+  "P31": "UNGESTUETZT-OFFEN",
+  "P32": "UNKLAR_ABSTRACT",
+  "P33": "UNGESTUETZT-OFFEN",
+  "P34": "UNBERUEHRT",
+  "P35": "UNGESTUETZT-OFFEN",
+  "P36": "UNGESTUETZT-OFFEN",
+  "P37": "UNGESTUETZT-OFFEN",
+  "P38": "UNGESTUETZT-OFFEN",
+  "P39": "UNBERUEHRT",
+  "P40": "UNGESTUETZT-OFFEN",
+  "P41": "UNGESTUETZT-RETTBAR",
+  "P42": "UNGESTUETZT-OFFEN",
+  "P43": "UNGESTUETZT-OFFEN",
+  "P44": "UNGESTUETZT-OFFEN",
+  "P45": "FALSCH",
+  "P46": "UNGESTUETZT-OFFEN",
+  "P47": "UNBERUEHRT",
+  "P48": "UNGESTUETZT-OFFEN",
+  "P49": "UNGESTUETZT-OFFEN",
+  "P50": "UNGESTUETZT-OFFEN"
+ },
+ "how": {
+  "P01": "Übereinstimmung A=G",
+  "P02": "Übereinstimmung A=G",
+  "P03": "Übereinstimmung A=G",
+  "P04": "Übereinstimmung A=G",
+  "P05": "Übereinstimmung A=G",
+  "P06": "Übereinstimmung A=G",
+  "P07": "Schiedsspruch",
+  "P08": "Übereinstimmung A=G",
+  "P09": "Schiedsspruch",
+  "P10": "Schiedsspruch",
+  "P11": "Übereinstimmung A=G",
+  "P12": "Übereinstimmung A=G",
+  "P13": "Übereinstimmung A=G",
+  "P14": "Übereinstimmung A=G",
+  "P15": "Übereinstimmung A=G",
+  "P16": "Übereinstimmung A=G",
+  "P17": "Übereinstimmung A=G",
+  "P18": "Übereinstimmung A=G",
+  "P19": "Übereinstimmung A=G",
+  "P20": "Übereinstimmung A=G",
+  "P21": "Übereinstimmung A=G",
+  "P22": "Übereinstimmung A=G",
+  "P23": "Übereinstimmung A=G",
+  "P24": "Übereinstimmung A=G",
+  "P25": "Übereinstimmung A=G",
+  "P26": "Übereinstimmung A=G",
+  "P27": "Schiedsspruch",
+  "P28": "Übereinstimmung A=G",
+  "P29": "Übereinstimmung A=G",
+  "P30": "Übereinstimmung A=G",
+  "P31": "Übereinstimmung A=G",
+  "P32": "Übereinstimmung A=G",
+  "P33": "Übereinstimmung A=G",
+  "P34": "Übereinstimmung A=G",
+  "P35": "Übereinstimmung A=G",
+  "P36": "Übereinstimmung A=G",
+  "P37": "Übereinstimmung A=G",
+  "P38": "Übereinstimmung A=G",
+  "P39": "Schiedsspruch",
+  "P40": "Übereinstimmung A=G",
+  "P41": "Übereinstimmung A=G",
+  "P42": "Übereinstimmung A=G",
+  "P43": "Übereinstimmung A=G",
+  "P44": "Übereinstimmung A=G",
+  "P45": "Schiedsspruch",
+  "P46": "Übereinstimmung A=G",
+  "P47": "Übereinstimmung A=G",
+  "P48": "Übereinstimmung A=G",
+  "P49": "Übereinstimmung A=G",
+  "P50": "Schiedsspruch"
+ },
+ "metrics": {
+  "n": 50,
+  "dist": {
+   "UNGESTUETZT-OFFEN": 33,
+   "UNGESTUETZT-RETTBAR": 2,
+   "FALSCH": 2,
+   "UNBERUEHRT": 9,
+   "UNKLAR_ABSTRACT": 4
+  },
+  "affected": 37,
+  "affected_pct": 74.0,
+  "affected_ci95": [
+   60.4,
+   84.1
+  ],
+  "falsch_ci95": [
+   1.1,
+   13.5
+  ],
+  "fulltext_needed_final": 10,
+  "pair_A_G": {
+   "n": 50,
+   "exact": 0.86,
+   "kappa": 0.748,
+   "coarse": 0.88,
+   "disagreements": {
+    "P07": [
+     "FALSCH",
+     "UNKLAR_ABSTRACT"
+    ],
+    "P09": [
+     "UNGESTUETZT-OFFEN",
+     "UNKLAR_ABSTRACT"
+    ],
+    "P10": [
+     "UNGESTUETZT-OFFEN",
+     "UNKLAR_ABSTRACT"
+    ],
+    "P27": [
+     "UNGESTUETZT-OFFEN",
+     "UNKLAR_ABSTRACT"
+    ],
+    "P39": [
+     "UNKLAR_ABSTRACT",
+     "UNBERUEHRT"
+    ],
+    "P45": [
+     "FALSCH",
+     "UNGESTUETZT-OFFEN"
+    ],
+    "P50": [
+     "UNGESTUETZT-OFFEN",
+     "UNKLAR_ABSTRACT"
+    ]
+   }
+  },
+  "rettbar_papers": [
+   "P05",
+   "P41"
+  ],
+  "falsch_papers": [
+   "P07",
+   "P45"
+  ]
+ }
+}

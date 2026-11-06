@@ -1,0 +1,8 @@
+rescue_id;target;doi_or_id;original_hypothesis;rescue_hypothesis;status;evidence
+RES-0001;Longest Common Subsequence lower bound [BK15];;SETH;OVC;source-stated;OAI-ETH §1.1
+RES-0002;Regular-expression matching lower bound [BI16];;SETH;OVC;source-stated;OAI-ETH §1.1
+RES-0003;Fréchet distance lower bound [Bri14];;SETH;CNF-SAT-H;source-stated;OAI-ETH §1.1
+RES-0004;Graph-diameter approximation lower bound [RV13];;SETH;CNF-SAT-H;source-stated;OAI-ETH §1.1
+RES-0005;Treewidth dependence of Independent Set / Dominating Set [LMS18];;SETH;CNF-SAT-H;source-stated;OAI-ETH §1.1
+RES-0006;Approximating the diameter of a graph;https://doi.org/10.48550/arxiv.1207.3622;SETH;CNF-SAT-H;abstract-level, both classifiers agree;pilot P05 (likely the line of [RV13])
+RES-0007;Current Algorithms for Detecting Subgraphs of Bounded Treewidth Are Probably Optimal;https://doi.org/10.4230/lipics.icalp.2021.40;SETH;3-uniform Hyperclique hypothesis (named in abstract);abstract-level, both classifiers agree;pilot P41

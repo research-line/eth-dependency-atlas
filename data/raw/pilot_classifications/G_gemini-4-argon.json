@@ -1,0 +1,1411 @@
+{
+  "classifier": "Gemini 4 Argon (Medium)",
+  "papers": [
+    {
+      "pilot_id": "P01",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Indeed, we show that in the standard Word RAM model, there is no 2 o ( n log n ) (times a polynomial in the bit size) time algorithm solving C hannel A ssignment unless the exponential time hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound is of shape 2^{o(n log n)} under ETH; per the transfer rule, bounds of shape other than 2^{o(N)} for listed problems do not directly collide with the new algorithms and have no known rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the lower bound under a successor hypothesis such as 3-SAT requiring 2^(n/polylog n) time.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P02",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We complement our study of Trivially Perfect Editing by proving that, contrary to Trivially Perfect Completion, it cannot be solved in time $$2^{o(k)}\\cdot n^{O(1)}$$ unless the exponential time hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This is a parameterized 2^{o(k)} * n^{O(1)} lower bound under ETH for Trivially Perfect Editing, which is not in the A0 list of new algorithms and has no known rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the parameterized lower bound in k under a successor hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P03",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Classic similarity measures of strings are longest common subsequence and Levenshtein distance (i.e., The classic edit distance). A classic similarity measure of curves is dynamic time warping. These measures can be computed by simple O(n2) dynamic programming algorithms, and despite much effort no algorithms with significantly better running time are known. We prove that, even restricted to binary strings or one-dimensional curves, respectively, these measures do not have strongly sub quadratic time algorithms, i.e., No algorithms with running time O(n2 -- ε) for any ε > 0, unless the Strong Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "While Longest Common Subsequence has a known rescue via OVC in A0, this combined claim also covers Levenshtein distance and dynamic time warping, for which no rescue is listed in A0 or stated in the abstract.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to the Orthogonal Vectors Conjecture (OVC) where the gadget framework factors through OV (guaranteed for LCS by A0).",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We generalize the result to edit distance for arbitrary fixed costs of the four operations (deletion in one of the two strings, matching, substitution), by identifying trivial cases that can be solved in constant time, and proving quadratic-time hardness on binary strings for all other cost choices.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The SETH-based quadratic lower bound for general fixed-cost edit distance relies on a refuted hypothesis and is not on the A0 rescue list (nor does the abstract name OVC).",
+          "fix_type": "rebase",
+          "fix_candidate": "Check if the single-gadget reduction framework can be rebased directly to OVC.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Finally, we prove quadratic-time hardness for longest palindromic subsequence and longest tandem subsequence via reductions from longest common subsequence, showing that conditional lower bounds based on the Strong Exponential Time Hypothesis also apply to string problems that are not necessarily similarity measures.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-RETTBAR",
+          "class_reason": "The abstract explicitly states these lower bounds are proven via reductions from longest common subsequence, and A0 states that SETH lower bounds for Longest Common Subsequence follow from OVC.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase the lower bounds to OVC via the existing reduction from Longest Common Subsequence.",
+          "rescue_hypothesis": "OVC"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P04",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We provide an fpt-reduction from $k$-clique to $k$-biclique, thus solving this longstanding open problem.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "The FPT-reduction from k-clique establishes W[1]-hardness of k-biclique, which relies on W[1] != FPT (not refuted per A0).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "One corollary of our reduction is that there is no $f(k)\\cdot n^{o(k)}$ time algorithm to decide whether a graph contains a subgraph isomorphic to $K_{k!,k!}$ unless the ETH(Exponential Time Hypothesis) fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Per the transfer rule, lower bounds of shape f(k)*n^{o(k)} under ETH are unsupported rather than directly false, and no rescue is listed.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the exponent dependence on k under a successor hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We also provide a probabilistic construction with better parameters $t=Θ(s^2)$, which indicates that $k$-biclique has no $f(k)\\cdot n^{o(\\sqrt{k})}$-time algorithm unless 3-SAT with $m$ clauses can be solved in $2^{o(m)}$-time with high probability.",
+          "hypothesis": [
+            "rETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The assumption that 3-SAT with m clauses cannot be solved in 2^{o(m)} time with high probability is randomized ETH (refuted by item 1 in A0), leaving this f(k)*n^{o(sqrt(k))} bound unsupported.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to a lower bound under the successor hypothesis that 3-SAT requires 2^{m / polylog m} time.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P05",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In particular, we show that if there is some constant $\\eps>0$ so that there is an algorithm for undirected unweighted graphs that runs in $O(m^{2-\\eps})$ time and produces an approximation $\\hat{D}$ such that $ (2/3+\\eps) D \\leq \\hat{D} \\leq D$, then SAT for CNF formulas on $n$ variables can be solved in $O^{*}((2-δ)^{n})$ time for some constant $δ>0$, and the strong exponential time hypothesis of [Impagliazzo, Paturi, Zane JCSS'01] is false.",
+          "hypothesis": [
+            "SETH",
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-RETTBAR",
+          "class_reason": "Both A0 ('graph-diameter approximation ... follow from CNF-SAT-H') and the abstract's explicit statement ('SAT for CNF formulas on n variables can be solved in O*((2-delta)^n) time') rescue the SETH bound via CNF-SAT-H.",
+          "fix_type": "rebase",
+          "fix_candidate": "Drop the clause 'and the strong exponential time hypothesis ... is false' and keep the stated CNF-SAT-H condition.",
+          "rescue_hypothesis": "CNF-SAT-H"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P06",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "The constant c in our algorithms is in all cases small, and in several cases we are able to show that improving those constants would cause the Strong Exponential Time Hypothesis to fail.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract says 'in several cases' without specifying which of the connectivity problems get SETH lower bounds or whether the reductions go from unbounded-width CNF-SAT (CNF-SAT-H rescue in A0 only lists Independent Set and Dominating Set for treewidth).",
+          "fix_type": "rebase",
+          "fix_candidate": "Inspect full text to see if the treewidth lower bounds reduce from unbounded-width CNF-SAT (CNF-SAT-H).",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "In contrast to the problems aiming to minimize the number of connected components that we solve using Cut&Count as mentioned above, we show that, assuming the Exponential Time Hypothesis, the aforementioned gap cannot be breached for some problems that aim to maximize the number of connected components like Cycle Packing.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This rules out c^{tw}|V|^{O(1)} (i.e. 2^{o(tw log tw)}) algorithms for Cycle Packing under ETH; per the transfer rule, treewidth lower bounds of this shape are unsupported and have no listed rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the treewidth lower bound under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P07",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We also show that this problem becomes $\\mathcal{NP}$ -complete on graphs of maximum degree four.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "NP-completeness does not rely on any refuted hypothesis.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Moreover, we show that there is no subexponential-time algorithm for this problem on graphs of maximum degree four unless the Exponential-Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The claim rules out 2^{o(n)} time for Partition Into Triangles on degree-4 graphs under ETH, which is not in the A0 algorithm list, and the abstract does not state whether there is a linear-size reduction back to k-SAT or an equivalence with ETH.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the 2^{o(n)} lower bound to 2^{n / polylog n} under a successor hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "P08",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Among others, we show that computing the minimum size of a Caratheodory set and a Helly set and certain decision versions of the hs cut problem are W[1]-hard (and NP-hard) if the dimension is part of the input.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "W[1]-hardness and NP-hardness rely on W[1] != FPT and P != NP, which are not refuted.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Our reductions also imply that the problems we consider cannot be solved in time n^{o(d)} (where n is the size of the input), unless the Exponential-Time Hypothesis (ETH) is false.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Per the transfer rule, parameterized lower bounds of the form n^{o(d)} under ETH are unsupported (not directly false) and no rescue is listed.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the n^{o(d)} lower bound under a successor hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P09",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "To complement our results, we prove that these problems are NP-complete even for $K_4$-free graphs and can be solved neither in subexponential time (i.e., $2^{o(|G|)}$) nor in parameterized subexponential time (i.e., $2^{o(k)}\\cdot |G|^{O(1)}$), unless Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The 2^{o(k)} * |G|^{O(1)} lower bound is unsupported under the transfer rule, while for the 2^{o(|G|)} bound the abstract does not state whether Diamond-free Edge Deletion reduces back to fixed-width k-SAT linearly or is ETH-equivalent.",
+          "fix_type": "weaken",
+          "fix_candidate": "Retain NP-completeness and weaken the subexponential lower bounds to 2^{k / polylog k} and 2^{|G| / polylog |G|} under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "P10",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We complement our results by showing that small alterations in the target graph classes yields much harder problems: Editing towards trivially perfect graphs and cographs is not possible in subexponential time unless the exponential time hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "From the abstract alone it is unclear whether 'subexponential time' here refers solely to parameterized time 2^{o(k)} n^{O(1)} (unsupported) or also to 2^{o(n)} and whether any equivalence to ETH is proven.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the subexponential lower bound under a successor hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Finally, we show that we should not expect the same result for completion problems by proving that such a compression algorithm would imply the collapse of the polynomial hierarchy.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "Kernelization lower bounds conditioned on the non-collapse of the polynomial hierarchy (NP not in coNP/poly) do not depend on any refuted hypothesis.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "P11",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "To prove lower bounds, we investigate implications of the exponential time hypothesis on such algorithms. For exact algorithms we consider the dependence of the running time on the number $n$ of items (for packing) or jobs (for scheduling). We prove a lower bound of $2^{{\\rm o}(n)} \\times \\|{I}\\|^{{{\\rm O}(n)}}$, where $\\|{I}\\|$ denotes the encoding length of the instance, for several of these problems, including SubsetSum, Knapsack, BinPacking, $\\langle{P2}\\|{C_{\\max}}\\rangle,\\ \\text{and}\\ \\langle{P2}\\|{\\sum w_j C_j}\\rangle$.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Wait: the abstract states both a lower bound and an algorithm of the exact same shape $2^{o(n)} \\times \\|I\\|^{O(n)}$ (likely a typo in the abstract's TeX for $2^{\\Omega(n)} \\times \\|I\\|^{O(1)}$); in either case, SubsetSum/Knapsack/BinPacking are not in the A0 list of 2^{o(n)} algorithms and the bound is unsupported under ETH.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the ETH lower bound in n to 2^{n / polylog n} under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We show that there is no polynomial time approximation scheme for MultipleKnapsack (MKS) and 2d-Knapsack with running time $2^{{\\rm o}(1/\\epsilon)} \\times \\|{I}\\|^{{{\\rm O}(n)}}$ and $n^{{\\rm o}(1/\\epsilon)} \\times \\|{I}\\|^{{{\\rm O}(n)}}$, respectively.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "These PTAS running-time lower bounds in 1/epsilon are derived as implications of ETH and have shapes $2^{o(1/\\epsilon)}$ and $n^{o(1/\\epsilon)}$, which are unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the dependence on 1/epsilon under a successor hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P12",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "(1) For any $$\\epsilon <1$$ , there is no $$(1+\\epsilon )$$ -approximation with running time $$\\exp \\left( o(\\lfloor 1/\\epsilon \\rfloor ^{d/3})\\right) $$ unless the Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This double-exponential lower bound in d under ETH is not directly contradicted by the A0 algorithms per the transfer rule, and has no known rescue.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rely on claim (2) of the same paper (which already gives a slightly weaker double-exponential bound under NP not having subexponential-time algorithms) or weaken under a successor hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "(2) No $$(1+\\epsilon )$$ -approximation with running time $$\\exp \\left( \\lfloor 1/\\epsilon \\rfloor ^{o(d)}\\right) $$ exists, unless NP has subexponential time algorithms.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNBERUEHRT",
+          "class_reason": "The hypothesis that NP does not have subexponential time algorithms (for all of NP, including unbounded-width CNF-SAT / general circuits) is not among the refuted hypotheses in A0.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P13",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "More precisely, we prove that there exists a constant ϵ > 0 such that, assuming the Exponential Time Hypothesis for PPAD, computing an ϵ-approximate Nash equilibrium in a two-player n × n game requires time n log 1−o(1) n .",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNBERUEHRT",
+          "class_reason": "The claim relies on the 'Exponential Time Hypothesis for PPAD' (about End-of-the-Line), which is not listed as refuted in A0 ('any hypothesis not listed as refuted' is treated as still standing).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P14",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "For the minimum fill-in problem, we exclude the existence of polynomial time approximation schemes, assuming P≠NP, and the existence of 2O(n1+ δ) -time approximation schemes for any positive δ, assuming the Exponential Time Hypothesis.",
+          "hypothesis": [
+            "ETH",
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The exclusion of PTAS under P != NP is untouched, but the subexponential lower bound under ETH (from Vertex Cover, which now has an O(2^{epsilon n}) algorithm by A0 item 3) is unsupported per the transfer rule.",
+          "fix_type": "restrict",
+          "fix_candidate": "Keep the P != NP inapproximability (no PTAS) and weaken the subexponential running time bound under a successor hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Also implied is a 2O(K1\\2-δ). nO(1) parameterized lower bound.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This parameterized lower bound of shape 2^{Omega(k^{1/2 - delta})} n^{O(1)} under ETH is unsupported per the transfer rule and has no known rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the parameterized lower bound under a successor hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P15",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "For k =3, we prove that an algorithm with a runtime of the form Õ( n 3−ɛ ) exists if and only if A LL -P AIRS S HORTEST P ATHS in weighted digraphs has such an algorithm.",
+          "hypothesis": [
+            "APSP"
+          ],
+          "result_type": "fine_grained_reduction",
+          "class": "UNBERUEHRT",
+          "class_reason": "Per the transfer rule in A0, 'if X is proven subcubic-equivalent to APSP, then \"X has no truly subcubic algorithm\" is now false; the equivalence theorem itself remains true.' Here the abstract states the equivalence theorem ('if and only if') rather than unconditional hardness.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P16",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We address problems like this by presenting results based on the exponential time hypothesis (ETH) , which is a widely accepted hypothesis concerning the time complexity of 3- SAT . By using this approach, we provide, for instance, almost matching upper and lower bounds onthe time complexity of propositional planning.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not state the exact quantitative form of the propositional planning lower bounds or whether propositional planning reduces back to 3-SAT linearly (which could make a 2^{o(N)} bound directly false or unsupported).",
+          "fix_type": "weaken",
+          "fix_candidate": "Inspect full text and weaken the planning lower bounds under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P17",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show a reduction from SAT to these geometric problems in medium dimension, thus showing that these problems have no subquadratic-time algorithm, i.e., no $O(N^{2-\\varepsilon}2^{o(d)})$-time algorithm for any $\\varepsilon>0$, under the Strong Exponential-Time Hypothesis (SETH).",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The abstract states a reduction from SAT and reductions from Bichromatic Closest Pair under SETH, but neither Closest Pair / Diameter / EMST in medium dimension nor Bichromatic Closest Pair is in the A0 rescue list, and OVC is not named in the abstract.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase the reductions from Bichromatic Closest Pair to the Orthogonal Vectors Conjecture (OVC) if the full text's Bichromatic Closest Pair hardness comes from OV.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P18",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We study several classical decision problems on finite automata under the (Strong) Exponential Time Hypothesis.",
+          "hypothesis": [
+            "ETH",
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not state any specific theorems, bounds, or reductions, so the full text is required to classify the claims.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P19",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "The running times of our algorithms are optimal up to the $$\\log {k}$$ factor in the exponent, assuming the exponential time hypothesis.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This states a $2^{o(\\sqrt{k})} \\cdot n^{O(1)}$ lower bound under ETH; per the transfer rule, bounds of shape $2^{o(\\sqrt{k})}$ are only unsupported and have no known rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the lower bound in k under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P20",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Assuming the Exponential-Time Hypothesis, Steiner Tree on undirected planar graphs cannot be solved in time 2^o(k) . n^O(1), even in the unit-weight setting.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This is a parameterized lower bound in the number of terminals k of shape 2^{o(k)} * n^{O(1)} for Planar Steiner Tree under ETH, which is unsupported per the transfer rule and has no known rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the 2^{o(k)} bound to 2^{k / polylog k} under a successor hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "A direct corollary of the combination of our results for Steiner Tree is that this problem does not admit a parameter-preserving polynomial kernel on planar graphs unless ETH fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Because the 2^{o(sqrt(k))}-style kernel exclusion relies on comparing the 2^{O(sqrt(N))} planar algorithm on a poly(k) kernel against the 2^{o(k)} ETH lower bound, it relies on ETH and is unsupported (though a smaller degree kernel bound might still conflict with a 2^{k/polylog k} successor bound).",
+          "fix_type": "rebase",
+          "fix_candidate": "Re-derive exclusion of parameter-preserving polynomial kernels using the weakened 2^{k / polylog k} lower bound under a successor 3-SAT hypothesis (which still contradicts 2^{O(sqrt(k))} if a linear-parameter kernel existed).",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P21",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Assuming $W[1]\\neq FPT$, there is no $F(k)$-FPT-approximation algorithm for $k$-DomSet.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNBERUEHRT",
+          "class_reason": "W[1] != FPT is explicitly listed as NOT refuted in A0.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Assuming the Exponential Time Hypothesis (ETH), there is no $F(k)$-approximation algorithm for $k$-DomSet that runs in $T(k) \\cdot n^{o(k)}$ time.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Per the transfer rule, lower bounds of shape T(k) * n^{o(k)} under ETH are unsupported (not directly false) and no rescue for k-DomSet parameterized by solution size k is listed in A0.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the exponent o(k) under a successor hypothesis or fall back to the W[1] != FPT result.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Assuming the Strong Exponential Time Hypothesis (SETH), for every integer $k \\geq 2$, there is no $F(k)$-approximation algorithm for $k$-DomSet that runs in $T(k) \\cdot n^{k - \\varepsilon}$ time.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This relies on SETH (refuted) for k-DomSet parameterized by solution size k (note A0 rescues treewidth dependence of Dominating Set under CNF-SAT-H, not solution size k, and the abstract does not name OVC or CNF-SAT-H).",
+          "fix_type": "rebase",
+          "fix_candidate": "Check whether the communication-complexity reduction for SETH factors through OVC or CNF-SAT-H.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Assuming the $k$-Sum Hypothesis, for every integer $k \\geq 3$, there is no $F(k)$-approximation algorithm for $k$-DomSet that runs in $T(k) \\cdot n^{\\lceil k/2 \\rceil - \\varepsilon}$ time.",
+          "hypothesis": [
+            "3SUM",
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "For k = 3, the k-Sum Hypothesis is the 3SUM hypothesis, which is refuted in A0; for k >= 4 the k-Sum hypothesis is not listed as refuted.",
+          "fix_type": "restrict",
+          "fix_candidate": "Restrict the statement to k >= 4 under the k-Sum Hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P22",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "In this paper, we present an algorithm running in Õ(m) randomized time, which matches a recent conditional lower bound of [ABHS17] based on the Strong Exponential Time Hypothesis.",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "algorithm_or_tightness",
+          "class": "UNBERUEHRT",
+          "class_reason": "The paper's own result is an unconditional O~(m) randomized algorithm; SETH is only mentioned to note that a prior paper [ABHS17] proved a matching conditional lower bound.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P23",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In addition, we prove that, conditioned on a variant of the Exponential Time Hypothesis, there are strict hierarchies within MRC so that increasing the number of rounds or the amount of time per processor increases the power of MRC.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract only says 'conditioned on a variant of the Exponential Time Hypothesis' without specifying which variant (e.g. fixed-width k-SAT vs CNF-SAT-H) or how it is used.",
+          "fix_type": "rebase",
+          "fix_candidate": "Inspect full text to identify the exact ETH variant and rebase to CNF-SAT-H or a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P24",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In particular, our main result is that under a plausible and natural complexity assumption (\"Exponential Time Hypothesis for PPAD\"), there is no polynomial-time algorithm for finding an approximate Nash equilibrium in two-player games.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNBERUEHRT",
+          "class_reason": "The 'Exponential Time Hypothesis for PPAD' is not listed among the refuted hypotheses in A0 and is therefore treated as still standing.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P25",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "On the negative side, we show that {\\em any} constant factor approximate proper learner has runtime $\\mathrm{poly}(d/ε) \\cdot 2^{(1/γ)^{2-o(1)}}$, assuming the Exponential Time Hypothesis.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This lower bound in the margin parameter gamma under ETH is not directly contradicted by the A0 algorithms per the transfer rule, and has no known rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the exponent of 1/gamma by polylogarithmic factors under a successor hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P26",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "More formally, we establish lower bounds for QSAT and treewidth, namely, that under ETH there cannot be an algorithm that solves QSAT of quantifier depth i in runtime significantly better than i-fold exponential in the treewidth and polynomial in the input size.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This is a parameterized treewidth lower bound (i-fold exponential in treewidth) under ETH; per the transfer rule it is unsupported and not on the A0 rescue list.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the top of the exponential tower in treewidth under a successor hypothesis or rebase to CNF-SAT-H if applicable.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P27",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Strengthening this hardness result, we show that even o(log n)-approximating the difference d between the optimal solution cost and a natural lower bound is NP-hard.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNBERUEHRT",
+          "class_reason": "This inapproximability result relies only on P != NP.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Moreover, we show that under the exponential time hypothesis, there are no exact algorithms running in 2o(n) time or in [Formula: see text] time for any computable function f.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The second formula is missing ('[Formula: see text]') and for the 2^{o(n)} bound on min-power symmetric connectivity the abstract does not state whether the problem reduces back to k-SAT linearly or is ETH-equivalent.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the lower bounds under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We also show that the special case of connecting c network components with minimum additional cost generally cannot be polynomial-time reduced to instances of size cO(1) unless the polynomial-time hierarchy collapses.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "This kernelization lower bound relies on the polynomial hierarchy not collapsing, which is not refuted.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P28",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We prove that this problem cannot be solved in time O˜((N⋅tmax)1−ε), for tmax=maxi⁡ti and any ε>0, assuming the ∀∃ Strong Exponential Time Hypothesis (∀∃-SETH).",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "The claim relies on the quantified hypothesis ∀∃-SETH, which is not listed among the refuted hypotheses in A0 ('any hypothesis not listed as refuted' is treated as still standing).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We then use this result to exclude O˜(n+pmax⋅n1−ε)-time algorithms for several scheduling problems on n jobs with maximum processing time pmax, assuming ∀∃-SETH.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "This claim also relies on ∀∃-SETH, which is not listed as refuted in A0.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "P29",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In this paper, we show that for every p in R_{>= 1} cup {0}, under the Strong Exponential Time Hypothesis (SETH), for every epsilon>0, the following holds: - No algorithm running in time O(n^{2-epsilon}) can solve the Closest Pair problem in d=(log n)^{Omega_{epsilon}(1)} dimensions in the l_p-metric. - There exists delta = delta(epsilon)>0 and c = c(epsilon)>= 1 such that no algorithm running in time O(n^{1.5-epsilon}) can approximate Closest Pair problem to a factor of (1+delta) in d >= c log n dimensions in the l_p-metric.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "These lower bounds rely on SETH (refuted), are not in the A0 list of rescued problems, and the abstract does not mention OVC.",
+          "fix_type": "rebase",
+          "fix_candidate": "Since the first result is shown via computational equivalence with Bichromatic Closest Pair, rebase the exact lower bound to OVC if the Bichromatic Closest Pair bound rests on OVC.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "In particular, our first result is shown by establishing the computational equivalence of the bichromatic Closest Pair problem and the (monochromatic) Closest Pair problem (up to n^{epsilon} factor in the running time) for d=(log n)^{Omega_epsilon(1)} dimensions.",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "fine_grained_reduction",
+          "class": "UNBERUEHRT",
+          "class_reason": "The computational equivalence between Bichromatic Closest Pair and Monochromatic Closest Pair is an unconditional fine-grained reduction.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Additionally, under SETH, we rule out nearly-polynomial factor approximation algorithms running in subquadratic time for the (monochromatic) Maximum Inner Product problem where we are given a set of n points in n^{o(1)}-dimensional Euclidean space and are required to find a pair of distinct points in the set that maximize the inner product.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This inapproximability result for Maximum Inner Product relies on SETH (refuted) and has no rescue listed in A0 or stated in the abstract.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P30",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "Improving prior reductions, we show the time complexities of Unique k-SAT and k-SAT are very tightly related: if Unique k-SAT is in 2n(1−f(k)/k) time for an unbounded f, then k-SAT is in 2n(1−f(k)(1−ɛ)/k) time for every ɛ > 0.",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "fine_grained_reduction",
+          "class": "UNBERUEHRT",
+          "class_reason": "Both results of the paper (an algorithm for random/planted k-SAT and an unconditional reduction between k-SAT and Unique k-SAT) are unconditional and do not rely on ETH or SETH.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P31",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "More formally, we establish lower bounds for QSAT and treewidth, namely, that under ETH there cannot be an algorithm that solves QSAT of quantifier depth i in runtime significantly better than i-fold exponential in the treewidth and polynomial in the input size.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This parameterized lower bound (i-fold exponential in treewidth) for QSAT under ETH is unsupported per the transfer rule and has no known rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the top of the exponential tower in treewidth under a successor hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P32",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We present novel algorithms that exploit structural properties of the solution space and prove, assuming the Exponential-Time Hypothesis, that their worst-case time complexity is close to optimal.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not specify the exact quantitative lower bounds proven under ETH or whether the disjunctive STP problems reduce back to k-SAT linearly.",
+          "fix_type": "weaken",
+          "fix_candidate": "Inspect full text and weaken the ETH lower bounds under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P33",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In particular, we prove that DCOC with parameter k on semicomplete digraphs can be solved in time $$O^*(2^{16k})$$ O ∗ ( 2 16 k ) but not in time $$O^*(2^{o(k)})$$ O ∗ ( 2 o ( k ) ) unless the Exponential Time Hypothesis (ETH) fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This is a parameterized 2^{o(k)} lower bound under ETH for DCOC on semicomplete digraphs; per the transfer rule, it is unsupported and not on the A0 algorithm list.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the 2^{o(k)} lower bound to 2^{k / polylog k} under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We complement the latter by showing that there is no algorithm of time complexity $$O^*(2^{o({n-\\ell })})$$ O ∗ ( 2 o ( n - ℓ ) ) unless ETH fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This parameterized 2^{o(n-ell)} lower bound for DCOC under ETH is not in the A0 algorithm list and is unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the 2^{o(n-ell)} lower bound under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P34",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "According to the well-founded exponential time hypothesis, verifying an SAT instance of size n requires generally the complete solution in an O(n)-bit proof.",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "The paper only mentions ETH as introductory motivation/context for quantum verification of SAT; its own results are experimental/protocol realizations.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P35",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that if the all-pairs shortest paths problem (APSP) for directed graphs with N vertices and integer edge weights within a super-exponential range { −2Nk+o(1),....,2Nk+o(1) }, k≥1 does not admit a truly subcubic algorithm then for any ∈>0, NDTIME([ 1/2 log2 n ], n)⊆DTIME(n1+12+k−∈).",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "Here the weight range is super-exponential in N ({-2^{N^{k+o(1)}}, ..., 2^{N^{k+o(1)}}}), whereas A0 item 4 only refutes APSP for polynomially bounded integer weights (and standard real APSP).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "If the APSP problem does not admit a truly subcubic algorithm already when the edge weights are of moderate size then we obtain an even stronger implication, namely that for any ∈>0, NDTIME([ 1/2 log2 n ], n)⊆DTIME(n1.5−∈).",
+          "hypothesis": [
+            "APSP"
+          ],
+          "result_type": "other",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The premise that APSP with moderate (polynomially bounded) integer edge weights has no truly subcubic algorithm is the standard APSP hypothesis, which is refuted by A0 item 4.",
+          "fix_type": "restrict",
+          "fix_candidate": "Fall back to the weaker implication proved in the preceding sentence for super-exponential edge weights.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Similarly, we show that if the triangle detection problem (DT) in a graph on N vertices does not admit a truly sub-Nω -time algorithm then for any ∈>0, NDTIME([ 1/2 log2 n ], n)⊆DTIME(nw/2−∈), where ω stands for the exponent of fast matrix multiplication.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "Unweighted triangle detection requiring N^{omega - o(1)} time is not listed among the refuted hypotheses in A0.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "For the more general problem of detecting a minimum weight ℓ-clique (MWCℓ) in a graph with edge weights of moderate size, we show that the non-existence of truly sub−Nℓ−time algorithm yields for any ∈>0, NDTIME((ℓ−2)[ 12 log2n ],n)⊆DTIME(n1+ℓ−22−∈).",
+          "hypothesis": [
+            "APSP",
+            "ZeroKClique",
+            "other-not-refuted"
+          ],
+          "result_type": "other",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Min-Weight l-Clique hardness is equivalent to APSP (for l=3) and implies Zero-Weight k-Clique hardness, which are refuted in A0 item 4.",
+          "fix_type": "restrict",
+          "fix_candidate": "Restrict to super-exponential edge weight ranges if the reduction still holds there.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Next, we show that if 3SUM for N integers in { −2Nk+o(1),....2Nk+o(1) } for some k≥0, does not admit a truly subquadratic algorithm then for any ∈>0, NDTIME([ log2n ],n)⊆DTIME(n1+11+k−∈).",
+          "hypothesis": [
+            "3SUM",
+            "other-not-refuted"
+          ],
+          "result_type": "other",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "For k=0 (or polynomial range), the 3SUM hypothesis is refuted by A0 item 4, though for super-exponential integer ranges (k >= 1) A0 item 4 ('3SUM on n integers of polynomial size') does not directly refute the premise.",
+          "fix_type": "restrict",
+          "fix_candidate": "Restrict the 3SUM premise to super-exponential integer ranges (k >= 1).",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Finally, we observe that the Exponential Time Hypothesis (ETH) implies NDTIME([ k log2n ],n)⊆DTIME(n) for some k>0, while the strong ETH (SETH) yields for any ∈>0, NDTIME([ log2n ],n)⊆DTIME(n2−ε).",
+          "hypothesis": [
+            "ETH",
+            "SETH"
+          ],
+          "result_type": "other",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Both ETH and SETH are refuted in A0, and the abstract does not state whether the SETH implication holds under CNF-SAT-H.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase the SETH implication to CNF-SAT-H if the simulation uses arbitraryCNF-SAT.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "P36",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We resolve this gap by showing that Edge-Disjoint Paths is W[1]-hard parameterized by the number [Formula: see text] of terminal pairs, even when the input graph is a planar directed acyclic graph (DAG).",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "W[1]-hardness relies on W[1] != FPT, which is not refuted.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Moreover, under the exponential time hypothesis (ETH), we show that there is no [Formula: see text] algorithm for Edge-Disjoint Paths on planar DAGs, where [Formula: see text] is the number of terminal pairs, [Formula: see text] is the number of vertices, and [Formula: see text] is any computable function.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Even though the formula is masked as '[Formula: see text]', the surrounding text clearly identifies it as a parameterized lower bound of the form f(k)*n^{o(g(k))} in the number of terminal pairs k and vertices n under ETH, which is unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Keep W[1]-hardness and weaken the quantitative exponent in k under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P37",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that determining the minimum size of a depth- d formula computing a given Boolean function is N P-hard under quasipolynomial-time randomized reductions for all constant d ≥ 2.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "NP-hardness under quasipolynomial-time randomized reductions does not depend on any hypothesis refuted in A0.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We show that the version of MCSP where the input is a partial function (represented by a string in {0,1, ?}*) is not in P under the Exponential Time Hypothesis (ETH).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The claim that partial-function MCSP is not in P relies on ETH (refuted); per the transfer rule, 'not in P' does not collide with the 2^{O(n loglog n / sqrt(log n))} algorithm for k-SAT, so it is unsupported rather than false.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to the successor hypothesis that 3-SAT requires 2^{n / polylog n} time (or superpolynomial time), which still suffices to rule out P if the reduction is subexponential.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We show that unless there are subexponential-sized circuits computing SAT, the lower bound statements used to prove the correctness of our reductions cannot be (P/poly)-recognizable.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "The non-existence of subexponential-sized circuits for general SAT (unbounded clause width / circuit SAT) is not refuted by A0 (where even uniform CNF-SAT-H stands, and the new k-SAT algorithm takes 2^{O(n loglog n / sqrt(log n))} time).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P38",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We present [Formula: see text]-time algorithms for [Formula: see text]-independent set, [Formula: see text]-scattered set, [Formula: see text]-clique, and [Formula: see text]-dominating set when an [Formula: see text]-sequence of the graph is given in input. We further show how to solve the weighted version of [Formula: see text]-independent set, subgraph isomorphism, and induced subgraph isomorphism in the slightly worse running time [Formula: see text]. Up to logarithmic factors in the exponent, all these running times are optimal unless the exponential time hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "These are parameterized lower bounds (in k / twin-width) under ETH matching FPT algorithms; per the transfer rule they are unsupported and have no listed rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the parameterized lower bounds under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "In sharp contrast, even diameter does not admit a truly subquadratic algorithm on bounded twin-width graphs unless the strong exponential time hypothesis fails.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This SETH lower bound is for Diameter restricted to bounded twin-width graphs (whereas A0 rescues general graph-diameter approximation under CNF-SAT-H, and it is not clear from the abstract whether bounded twin-width holds for unbounded-width CNF-SAT).",
+          "fix_type": "rebase",
+          "fix_candidate": "Check if the bounded twin-width construction works from Orthogonal Vectors (OVC).",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "P39",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "This is a tutorial overviewing lower bound techniques and does not state any conditional lower bound claims of its own.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P40",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In this work we conditionally rule out such a possibility by showing that unless SETH fails no $O(m^{3/2-{\\varepsilon}})$ time algorithm can achieve an approximation factor better than 5/3.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-RETTBAR",
+          "class_reason": "Per A0 ('Known rescues'), the SETH lower bounds for graph-diameter approximation also follow from CNF-SAT-H.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase the graph-diameter approximation lower bound from SETH to CNF-SAT-H.",
+          "rescue_hypothesis": "CNF-SAT-H"
+        },
+        {
+          "quote": "We show that the runtime of the 5/3 approximation algorithm is also optimal by proving that under SETH, there is no $O(m^{3/2-{\\varepsilon}})$ algorithm that achieves a better than 9/5 approximation. We also show that no near-linear time algorithm can achieve a better than 2 approximation for the eccentricities.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "These lower bounds are for approximating all-vertex eccentricities (and S-T diameter) under SETH; A0 explicitly lists 'graph-diameter approximation' in the rescues, not eccentricities or S-T diameter, and the abstract does not mention OVC or CNF-SAT-H.",
+          "fix_type": "rebase",
+          "fix_candidate": "Check if the S-T diameter and eccentricities reductions also hold under OVC or CNF-SAT-H.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P41",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Specifically, under the Strong Exponential Time Hypothesis (SETH), a standard assumption from fine-grained complexity theory, we prove the following asymptotic statement for large treewidth $t$: For any $\\varepsilon > 0$ there exists $t \\ge 3$ and a pattern graph $H$ of treewidth $t$ such that Subgraph Isomorphism on pattern $H$ has no algorithm running in time $O(n^{t+1-\\varepsilon})$.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-RETTBAR",
+          "class_reason": "This SETH lower bound is superseded/rescued by the stronger theorem stated in the very next sentence of the abstract under the 3-uniform Hyperclique hypothesis (which is not refuted in A0).",
+          "fix_type": "rebase",
+          "fix_candidate": "Replace by the paper's own stronger result under the 3-uniform Hyperclique hypothesis.",
+          "rescue_hypothesis": "3-uniform Hyperclique hypothesis"
+        },
+        {
+          "quote": "Under the more recent 3-uniform Hyperclique hypothesis, we even obtain tight lower bounds for each specific treewidth $t \\ge 3$: For any $t \\ge 3$ there exists a pattern graph $H$ of treewidth $t$ such that for any $\\varepsilon>0$ Subgraph Isomorphism on pattern $H$ has no algorithm running in time $O(n^{t+1-\\varepsilon})$.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "The 3-uniform Hyperclique hypothesis is not listed among the refuted hypotheses in A0 and is therefore treated as still standing.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P42",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We use a reduction to Conflict-Free-d-Hitting-Set to prove an upper bound of O*(2.2738^k), and also prove a lower bound of 2^o(k) assuming the Exponential Time Hypothesis.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This is a parameterized 2^{o(k)} lower bound for WB(3CNF, Null) under ETH; per the transfer rule, parameterized 2^{o(k)} bounds are unsupported unless k=n on 3-SAT (and even for k<=n, a 2^{o(k)} FPT bound is not directly falsified unless k is restricted to Theta(n), or weakened to 2^{k/polylog k}).",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the parameterized lower bound to 2^{k / polylog k} under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "P43",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In this work, we prove PIH under the Exponential Time Hypothesis (ETH).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "PIH rules out f(k)*n^{O(1)}-time constant-factor approximation for k-variable CSPs with domain size n; per the transfer rule, this parameterized statement is not contradicted by 2^{o(N)} algorithms for k-SAT, so it is unsupported under ETH.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase the proof of PIH to a weaker successor hypothesis (e.g. 3-SAT requiring 2^{n / polylog n} or W[1] != FPT if possible).",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P44",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Namely, we show that 1.00005-approximating Treewidth is NP-hard, and solving Treewidth exactly requires 2 Ω (n) time, unless the ETH fails.",
+          "hypothesis": [
+            "ETH",
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The NP-hardness of 1.00005-approximating Treewidth relies only on P != NP (untouched), while the 2^{Omega(n)} exact lower bound under ETH is unsupported per the transfer rule (Treewidth is not in the A0 list of 2^{o(n)} algorithms and no reduction back to k-SAT is stated).",
+          "fix_type": "weaken",
+          "fix_candidate": "Keep the NP-hardness of 1.00005-approximating Treewidth and weaken the exact time lower bound to 2^{n / polylog n} via the linear reduction from 3-SAT.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We further derive, under the latter assumption, that there are some constants δ > 1 and c > 0 such that δ-approximating Treewidth requires time \\(2^{\\Omega (n/\\log ^c n)}\\) .",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This relies on ETH (refuted) and is of shape 2^{Omega(n/log^c n)} for Treewidth approximation, which is unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the running-time lower bound for delta-approximating Treewidth under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P45",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We investigate under which structural assumptions on a finite algebra A the problem 3SAT with complexity measure the number of clauses can be reduced to$\\text{POLSAT }(\\mathrm{A})$in logarithmic space and with a linear growth of the problem size. Our results imply that under the exponential time hypothesis, no two-element algebra of tame congruence theory type 3 has a sub-exponential algorithm to solve a single polynomial equation.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The reduction is from 3SAT to POLSAT(A) with linear size blowup, and POLSAT(A) is not in the A0 list of new 2^{o(n)} algorithms (nor is a reduction back to k-SAT stated), so per the transfer rule the 2^{o(n)} lower bound is unsupported.",
+          "fix_type": "weaken",
+          "fix_candidate": "Use the linear-size reduction from 3SAT to obtain a 2^{n / polylog n} lower bound under a successor 3SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P46",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "(2) assuming the GapSETH (gap strong exponential time hypothesis), we presented a reduction from SVP to uSVP with subexponential running time and constant parameters, which proved the intractability of uSVP under GapSETH;(3) all results above can be transferred into the hardness results of BDD (bounded distance decoding), hence BDD with a parameter strictly smaller than 1 is also intractable assuming GapSETH;",
+          "hypothesis": [
+            "Gap-ETH",
+            "SETH"
+          ],
+          "result_type": "crypto_assumption",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "GapSETH is a strengthening of both Gap-ETH and SETH, both of which are refuted in A0, leaving these conditional intractability results for uSVP and BDD unsupported.",
+          "fix_type": "restrict",
+          "fix_candidate": "Rely on the unconditional SVP-to-uSVP reductions in items (1) and (4) of the abstract.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P47",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "algorithm_or_tightness",
+          "class": "UNBERUEHRT",
+          "class_reason": "The paper proves unconditional win-win circuit lower bounds and an unconditional O~(n * 6^{d/6}) algorithm for Orthogonal Vectors; OVC and SETH are discussed as targets of potential refutation, not as assumptions for the paper's theorems.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P48",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "On the other hand, we prove that the known 2^O(tw log tw)*|V(G)|-time algorithm for Interval Vertex Deletion cannot be improved assuming Exponential Time Hypothesis.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This is a 2^{o(tw log tw)} parameterized lower bound under ETH for Interval Vertex Deletion; per the transfer rule, bounds of shape 2^{o(tw log tw)} are unsupported and have no known rescue.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the treewidth lower bound under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P49",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In this work, we improve the quantitative aspects of PIH and prove (under ETH) that approximating sparse parameterized CSPs within a constant factor requires $n^{k^{1-o(1)}}$ time. This immediately implies that, assuming ETH, finding a $(k/2)$-clique in an $n$-vertex graph with a $k$-clique requires $n^{k^{1-o(1)}}$ time. We also prove almost optimal time lower bounds for approximating $k$-ExactCover and Max $k$-Coverage.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "These parameterized inapproximability bounds of shape $n^{k^{1-o(1)}}$ rely on ETH (refuted); per the transfer rule they are not contradicted by the new 2^{o(N)} algorithms and are unsupported.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the exponent of n from $k^{1-o(1)}$ to $k / \\mathrm{polylog}(k)$ under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "P50",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "As the main result, we show that there are linear forms that are easy to compute over semirings with idempotent addition, but difficult to compute over rings, unless the strong exponential time hypothesis fails.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not specify the exact linear forms, quantitative bound, or whether the SETH reduction goes through Orthogonal Vectors (OVC) or CNF-SAT-H.",
+          "fix_type": "rebase",
+          "fix_candidate": "Inspect full text to check if the linear form hardness reduces from Orthogonal Vectors (OVC).",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "confidence": "high"
+    }
+  ]
+}

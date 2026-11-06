@@ -1,0 +1,17 @@
+hypothesis;status_A0;source;note
+ETH (deterministic);reported refuted;"OAI-ETH; ANT-ETH";"3-SAT in 2^{o(n)}; #k-SAT for fixed k"
+ETH (randomized);reported refuted;OAI-ETH §1.1;deterministic algorithm
+SETH (deterministic and randomized);reported refuted;"OAI-ETH §1.1; ANT-ETH Cor. 5";SETH implies ETH
+Gap-ETH (deterministic and randomized);reported refuted;OAI-ETH §1.1;deciding SAT solves the promise problem
+NSETH;reported refuted;"OAI-ETH §1.1; ANT-ETH §7";unsatisfiability decided deterministically in 2^{o(n)}
+#ETH;reported refuted;"OAI-ETH §1.1; ANT-ETH Cor. 6";exact counting
+MA-SETH;refuted earlier;Williams 2016 (cited in OAI-ETH, ANT-ETH);not part of the 2026 refutations
+3SUM hypothesis (integer and real);reported refuted;AVW abstract;3SUM in O(n^1.9992)
+APSP hypothesis (integer and real);reported refuted;AVW abstract;"APSP in O(n^2.9995); Lean statement O(n^2.99942)"
+Exact Triangle hypothesis;reported refuted;AVW abstract;
+Zero-Weight k-Clique hypotheses;reported refuted;AVW abstract;worst-case versions
+Rectangular hinted OMv conjectures (van den Brand–Nanongkai–Saranurak);reported refuted;AVW abstract;
+P != NP;not affected;"OAI-ETH; ANT-ETH ('does not bear on the P vs NP question directly')";
+Orthogonal Vectors Conjecture (OVC);not affected;ANT-ETH §1 ('does not refute the Orthogonal Vectors hypothesis');rescue basis for several SETH bounds
+CNF-SAT with unbounded clause width: no 2^{(1-δ)n}poly(n,m) (CNF-SAT-H);not affected;OAI-ETH §1.1;theorem covers fixed width only
+Set Cover Conjecture;not refuted by these sources;ANT-ETH §1.2;earlier shown incompatible with the asymptotic rank conjecture [BK24, Pra24], as cited there
