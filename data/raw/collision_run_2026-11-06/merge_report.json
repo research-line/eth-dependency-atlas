@@ -1,0 +1,256 @@
+{
+ "classifiers": {
+  "A": {
+   "name": "A (claude-sonnet (Klassifikator A, Brief v2))",
+   "missing": [],
+   "extra": [],
+   "quotes_total": 105,
+   "quotes_ok": 105,
+   "issues": [],
+   "dist": {
+    "FALSCH": 17,
+    "UNGESTUETZT-OFFEN": 49,
+    "UNBERUEHRT": 3,
+    "UNKLAR_ABSTRACT": 4
+   },
+   "fulltext_needed": 10
+  },
+  "G": {
+   "name": "G (Gemini 4 Argon (Medium))",
+   "missing": [],
+   "extra": [],
+   "quotes_total": 109,
+   "quotes_ok": 109,
+   "issues": [],
+   "dist": {
+    "FALSCH": 11,
+    "UNGESTUETZT-OFFEN": 47,
+    "UNBERUEHRT": 8,
+    "UNKLAR_ABSTRACT": 7
+   },
+   "fulltext_needed": 4
+  }
+ },
+ "paper_class": {
+  "A": {
+   "C01": "FALSCH",
+   "C02": "UNGESTUETZT-OFFEN",
+   "C03": "UNGESTUETZT-OFFEN",
+   "C04": "FALSCH",
+   "C05": "UNGESTUETZT-OFFEN",
+   "C06": "FALSCH",
+   "C07": "UNGESTUETZT-OFFEN",
+   "C08": "UNGESTUETZT-OFFEN",
+   "C09": "FALSCH",
+   "C10": "UNBERUEHRT",
+   "C11": "UNGESTUETZT-OFFEN",
+   "C12": "UNGESTUETZT-OFFEN",
+   "C13": "UNGESTUETZT-OFFEN",
+   "C14": "FALSCH",
+   "C15": "UNGESTUETZT-OFFEN",
+   "C16": "UNGESTUETZT-OFFEN",
+   "C17": "UNGESTUETZT-OFFEN",
+   "C18": "UNGESTUETZT-OFFEN",
+   "C19": "UNGESTUETZT-OFFEN",
+   "C20": "FALSCH",
+   "C21": "FALSCH",
+   "C22": "UNGESTUETZT-OFFEN",
+   "C23": "UNGESTUETZT-OFFEN",
+   "C24": "FALSCH",
+   "C25": "UNGESTUETZT-OFFEN",
+   "C26": "UNGESTUETZT-OFFEN",
+   "C27": "FALSCH",
+   "C28": "UNBERUEHRT",
+   "C29": "UNGESTUETZT-OFFEN",
+   "C30": "UNBERUEHRT",
+   "C31": "UNGESTUETZT-OFFEN",
+   "C32": "UNKLAR_ABSTRACT",
+   "C33": "FALSCH",
+   "C34": "UNGESTUETZT-OFFEN",
+   "C35": "UNGESTUETZT-OFFEN",
+   "C36": "UNGESTUETZT-OFFEN",
+   "C37": "UNGESTUETZT-OFFEN",
+   "C38": "UNGESTUETZT-OFFEN",
+   "C39": "UNGESTUETZT-OFFEN",
+   "C40": "UNGESTUETZT-OFFEN",
+   "C41": "UNGESTUETZT-OFFEN",
+   "C42": "UNGESTUETZT-OFFEN",
+   "C43": "UNGESTUETZT-OFFEN",
+   "C44": "UNGESTUETZT-OFFEN",
+   "C45": "UNKLAR_ABSTRACT",
+   "C46": "UNGESTUETZT-OFFEN",
+   "C47": "UNGESTUETZT-OFFEN",
+   "C48": "UNGESTUETZT-OFFEN",
+   "C49": "UNGESTUETZT-OFFEN",
+   "C50": "UNGESTUETZT-OFFEN",
+   "C51": "FALSCH",
+   "C52": "UNGESTUETZT-OFFEN",
+   "C53": "FALSCH",
+   "C54": "UNGESTUETZT-OFFEN",
+   "C55": "UNGESTUETZT-OFFEN",
+   "C56": "UNGESTUETZT-OFFEN",
+   "C57": "FALSCH",
+   "C58": "UNGESTUETZT-OFFEN",
+   "C59": "UNGESTUETZT-OFFEN",
+   "C60": "UNGESTUETZT-OFFEN",
+   "C61": "UNKLAR_ABSTRACT",
+   "C62": "UNKLAR_ABSTRACT",
+   "C63": "FALSCH",
+   "C64": "UNGESTUETZT-OFFEN",
+   "C65": "FALSCH",
+   "C66": "FALSCH",
+   "C67": "UNGESTUETZT-OFFEN",
+   "C68": "FALSCH",
+   "C69": "UNGESTUETZT-OFFEN",
+   "C70": "UNGESTUETZT-OFFEN",
+   "C71": "UNGESTUETZT-OFFEN",
+   "C72": "UNGESTUETZT-OFFEN",
+   "C73": "UNGESTUETZT-OFFEN"
+  },
+  "G": {
+   "C01": "FALSCH",
+   "C02": "UNGESTUETZT-OFFEN",
+   "C03": "UNGESTUETZT-OFFEN",
+   "C04": "UNBERUEHRT",
+   "C05": "UNGESTUETZT-OFFEN",
+   "C06": "FALSCH",
+   "C07": "UNGESTUETZT-OFFEN",
+   "C08": "UNGESTUETZT-OFFEN",
+   "C09": "UNBERUEHRT",
+   "C10": "UNBERUEHRT",
+   "C11": "UNGESTUETZT-OFFEN",
+   "C12": "UNGESTUETZT-OFFEN",
+   "C13": "UNGESTUETZT-OFFEN",
+   "C14": "UNGESTUETZT-OFFEN",
+   "C15": "UNGESTUETZT-OFFEN",
+   "C16": "UNGESTUETZT-OFFEN",
+   "C17": "UNGESTUETZT-OFFEN",
+   "C18": "UNGESTUETZT-OFFEN",
+   "C19": "UNGESTUETZT-OFFEN",
+   "C20": "UNKLAR_ABSTRACT",
+   "C21": "UNKLAR_ABSTRACT",
+   "C22": "UNGESTUETZT-OFFEN",
+   "C23": "UNGESTUETZT-OFFEN",
+   "C24": "UNGESTUETZT-OFFEN",
+   "C25": "UNGESTUETZT-OFFEN",
+   "C26": "UNGESTUETZT-OFFEN",
+   "C27": "UNGESTUETZT-OFFEN",
+   "C28": "UNBERUEHRT",
+   "C29": "UNGESTUETZT-OFFEN",
+   "C30": "UNBERUEHRT",
+   "C31": "UNGESTUETZT-OFFEN",
+   "C32": "UNKLAR_ABSTRACT",
+   "C33": "FALSCH",
+   "C34": "FALSCH",
+   "C35": "UNGESTUETZT-OFFEN",
+   "C36": "UNGESTUETZT-OFFEN",
+   "C37": "UNKLAR_ABSTRACT",
+   "C38": "UNGESTUETZT-OFFEN",
+   "C39": "UNBERUEHRT",
+   "C40": "UNBERUEHRT",
+   "C41": "UNGESTUETZT-OFFEN",
+   "C42": "UNGESTUETZT-OFFEN",
+   "C43": "UNGESTUETZT-OFFEN",
+   "C44": "FALSCH",
+   "C45": "UNKLAR_ABSTRACT",
+   "C46": "UNGESTUETZT-OFFEN",
+   "C47": "UNGESTUETZT-OFFEN",
+   "C48": "UNGESTUETZT-OFFEN",
+   "C49": "UNGESTUETZT-OFFEN",
+   "C50": "UNGESTUETZT-OFFEN",
+   "C51": "FALSCH",
+   "C52": "UNGESTUETZT-OFFEN",
+   "C53": "UNGESTUETZT-OFFEN",
+   "C54": "FALSCH",
+   "C55": "UNGESTUETZT-OFFEN",
+   "C56": "UNGESTUETZT-OFFEN",
+   "C57": "FALSCH",
+   "C58": "UNGESTUETZT-OFFEN",
+   "C59": "UNGESTUETZT-OFFEN",
+   "C60": "UNGESTUETZT-OFFEN",
+   "C61": "UNKLAR_ABSTRACT",
+   "C62": "UNKLAR_ABSTRACT",
+   "C63": "UNBERUEHRT",
+   "C64": "UNGESTUETZT-OFFEN",
+   "C65": "FALSCH",
+   "C66": "FALSCH",
+   "C67": "UNGESTUETZT-OFFEN",
+   "C68": "FALSCH",
+   "C69": "UNGESTUETZT-OFFEN",
+   "C70": "UNGESTUETZT-OFFEN",
+   "C71": "UNGESTUETZT-OFFEN",
+   "C72": "UNGESTUETZT-OFFEN",
+   "C73": "UNGESTUETZT-OFFEN"
+  }
+ },
+ "pairs": {
+  "A-G": {
+   "n": 73,
+   "exact": 0.795,
+   "kappa": 0.607,
+   "coarse": 0.89,
+   "disagreements": {
+    "C04": [
+     "FALSCH",
+     "UNBERUEHRT"
+    ],
+    "C09": [
+     "FALSCH",
+     "UNBERUEHRT"
+    ],
+    "C14": [
+     "FALSCH",
+     "UNGESTUETZT-OFFEN"
+    ],
+    "C20": [
+     "FALSCH",
+     "UNKLAR_ABSTRACT"
+    ],
+    "C21": [
+     "FALSCH",
+     "UNKLAR_ABSTRACT"
+    ],
+    "C24": [
+     "FALSCH",
+     "UNGESTUETZT-OFFEN"
+    ],
+    "C27": [
+     "FALSCH",
+     "UNGESTUETZT-OFFEN"
+    ],
+    "C34": [
+     "UNGESTUETZT-OFFEN",
+     "FALSCH"
+    ],
+    "C37": [
+     "UNGESTUETZT-OFFEN",
+     "UNKLAR_ABSTRACT"
+    ],
+    "C39": [
+     "UNGESTUETZT-OFFEN",
+     "UNBERUEHRT"
+    ],
+    "C40": [
+     "UNGESTUETZT-OFFEN",
+     "UNBERUEHRT"
+    ],
+    "C44": [
+     "UNGESTUETZT-OFFEN",
+     "FALSCH"
+    ],
+    "C53": [
+     "FALSCH",
+     "UNGESTUETZT-OFFEN"
+    ],
+    "C54": [
+     "UNGESTUETZT-OFFEN",
+     "FALSCH"
+    ],
+    "C63": [
+     "FALSCH",
+     "UNBERUEHRT"
+    ]
+   }
+  }
+ }
+}

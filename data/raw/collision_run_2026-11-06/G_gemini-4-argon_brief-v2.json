@@ -1,0 +1,2091 @@
+{
+  "classifier": "Gemini 4 Argon (Medium)",
+  "papers": [
+    {
+      "pilot_id": "C01",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Moreover, assuming ETH, we use three different amplification techniques of our hardness results, in order to obtain for every $${\\varepsilon \\in [0,1)}$$ subexponential asymptotic lower bounds for the complexity of $$3$$ -coloring on triangle-free graphs with diameter $$3$$ and minimum degree $${\\delta =\\varTheta (n^{\\varepsilon })}$$ .",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "FALSCH",
+          "class_reason": "By item 2 of the new algorithms, counting (and hence deciding) proper 3-colourings of an n-vertex graph runs in 2^(o(n)) time, and for ε = 0 the lower bound is 2^(o(n)) on n-vertex graphs (also 3-Coloring on bounded-degree or sparse graphs encodes into 3-CNF with O(n) variables).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Due to the above lower bounds of the complexity of $$3$$ -coloring, the running time of this algorithm is asymptotically almost tight when the minimum degree of the input graph is $$\\delta =\\varTheta (n^{\\varepsilon })$$ , where $${\\varepsilon \\in [\\frac{1}{2},1)}$$ , as its time complexity is $${2^{O\\left( \\frac{n}{\\delta } \\log \\delta \\right) } = 2^{O\\left( n^{1-\\varepsilon } \\log n\\right) }}$$ and the corresponding lower bound states that there is no $$2^{o\\left( n^{1-\\varepsilon }\\right) }$$ -time algorithm.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "For ε in [1/2, 1), the lower bound has shape 2^(o(n^(1-ε))), which is smaller than 2^(o(n)); per the transfer rule, sublinear-exponent lower bounds are not directly refuted by a 2^(o(n)) algorithm for 3-colouring and remain unsupported.",
+          "fix_type": "weaken",
+          "fix_candidate": "Replace ETH by a super-polylogarithmic 3-SAT lower bound to retain a weaker subexponential bound.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "found: Proper 3-coloring of an n-vertex graph is directly solved in 2^(o(n)) time by list item 2 (counting proper q-colourings in 2^(o(v))).",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C02",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Assuming the Exponential Time Hypothesis, none of these problems can be solved in time 2O(n1/2/logcn) or 2O(k1/4/logck). nO(1) for some integer c.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bounds are of the form 2^(O(n^(1/2)/log^c n)) and 2^(O(k^(1/4)/log^c k))·n^(O(1)), which do not transfer from the 2^(o(n)) refutation of ETH under the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the exponent under a successor hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Assuming the non-existence of a subexponential-time approximation scheme for Min Bisection on d-regular graphs, for some constant d, none of these problems can be solved in time 2o(n) or .",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "This second claim is conditioned on an approximation hypothesis for Min Bisection on d-regular graphs rather than a refuted hypothesis from A0.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C03",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "To complement our results, we prove that these problems are NP-complete even for $K_4$-free graphs and can be solved neither in subexponential time (i.e., $2^{o(|G|)}$) nor in parameterized subexponential time (i.e., $2^{o(k)}\\cdot |G|^{O(1)}$), unless Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bounds 2^(o(|G|)) and 2^(o(k))·|G|^(O(1)) rely on ETH; even if |G| denotes vertices+edges, choosing at most k deleted edges and forbidding induced diamonds on 4 vertices has Θ(v^4) potential 4-vertex subsets, so no O(|G|)-variable fixed-width k-CNF encoding is evident.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to a 2^(|G|/polylog |G|) lower bound under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices+edges",
+      "encoding_attempt": "not found: An n-vertex m-edge graph can contain up to Θ(n^4) four-vertex subsets that could form induced diamonds after edge deletions, exceeding O(|G|) clauses/variables.",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C04",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Suppose the Strong Exponential Time Hypothesis (SETH) is false, so that for some 1<c<2 and all k there is an O(cn)-time algorithm for #k-SAT. Then we prove that for all k, there is an O((c+o(1))n)-time algorithm for approximate #k-SAT.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "fine_grained_reduction",
+          "class": "UNBERUEHRT",
+          "class_reason": "This is an unconditional fine-grained reduction from approximate counting to decision (stated as an implication from the failure of SETH).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "In particular, our result implies that the Exponential Time Hypothesis (ETH) is equivalent to the seemingly-weaker statement that there is no algorithm to approximate #3-SAT to within a factor of 1+ε in time 2o(n)/ε2 (taking ε > 0 as part of the input).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "fine_grained_reduction",
+          "class": "UNBERUEHRT",
+          "class_reason": "Per the transfer rule, the equivalence theorem itself remains valid (and because #3-SAT is now solvable exactly in 2^(o(n)) time by list item 1, any implied lower bound on approximating #3-SAT would be false).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "variables",
+      "encoding_attempt": "found: #3-SAT on n variables is already a fixed-width #k-CNF problem and is solved exactly in 2^(o(n)) time by list item 1.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C05",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In this paper, we show that both Clique and DomSet admit no non-trivial FPT-approximation algorithm, i.e., there is no o(OPT)-FPT-approximation algorithm for Clique and no f(OPT)-FPT-approximation algorithm for DomSet, for any function f (e.g., this holds even if f is an exponential or the Ackermann function).",
+          "hypothesis": [
+            "Gap-ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "These FPT-inapproximability lower bounds (ruling out t(OPT)·poly(N) time) rely on Gap-ETH, which is refuted, and per the transfer rule 2^(o(n)) algorithms do not yield t(OPT)·poly(N) algorithms.",
+          "fix_type": "rebase",
+          "fix_candidate": "Attempt to rebase FPT-inapproximability to W[1] != FPT or a parameterized PCP hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Besides Clique and DomSet, we also rule out non-trivial FPT-approximation for Maximum Balanced Biclique, the problem of finding maximum subgraphs with hereditary properties (e.g., Maximum Induced Planar Subgraph), and Maximum Induced Matching in bipartite graphs.",
+          "hypothesis": [
+            "Gap-ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on Gap-ETH for FPT-inapproximability; by the transfer rule, the refutation of Gap-ETH leaves these parameterized lower bounds unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to W[1] != FPT if possible.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Additionally, we rule out ko(1)-FPT-approximation algorithm for Densest k-Subgraph although this ratio does not yet match the trivial O(k)-approximation algorithm.",
+          "hypothesis": [
+            "Gap-ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on Gap-ETH for an FPT-approximation lower bound, which is unsupported after the Gap-ETH refutation.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to a non-refuted parameterized hardness assumption.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C06",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Among our results, we show that, quite surprisingly, 3-Coloring can also be solved in time $$2^{O(n^{2/3}\\log ^{O(1)}n)}$$ on string graphs while an algorithm running in time $$2^{o(n)}$$ for 4-Coloring even on axis-parallel segments (of unbounded length) would disprove the ETH.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "FALSCH",
+          "class_reason": "By list item 2, proper q-colourings (including q = 4) of an n-vertex graph can be counted and decided in 2^(o(n)) time, directly refuting the 2^(o(n)) lower bound for 4-Coloring on n-vertex segment intersection graphs.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "For 4-Coloring of unit segments, we show a weaker lower bound, excluding a $$2^{o(n^{2/3})}$$ algorithm (under the ETH).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound has shape 2^(o(n^(2/3))), which is not refuted by a 2^(o(n)) algorithm and is therefore unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to a smaller exponent under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "found: 4-Coloring on an n-vertex graph is directly solved in 2^(o(n)) time by list item 2 (proper q-colourings of a v-vertex graph in 2^(o(v))).",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C07",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Assuming the Exponential Time Hypothesis, none of these problems can be solved in time 2 O ( n 1/2 /log c n ) or 2 O ( k 1/4 /log c k )· n O (1) , for some integer c .",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bounds are of the form 2^(O(n^(1/2)/log^c n)) and 2^(O(k^(1/4)/log^c k))·n^(O(1)), which are not directly refuted by 2^(o(n)) 3-SAT algorithms per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the exponent under a successor 3-SAT lower bound.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Assuming the non-existence of a subexponential-time approximation scheme for M IN B ISECTION on d -regular graphs, for some constant d , none of these problems can be solved in time 2 o ( n ) or 2 o √k) }· n O (1) .",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "Relies on the non-existence of a subexponential-time approximation scheme for Min Bisection on d-regular graphs, which is not among the refuted hypotheses in A0.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Apart from our main results, we also obtain lower bounds excluding the existence of subexponential algorithms for the O PTIMUM L INEAR A RRANGEMENT problem, as well as improved, yet still not tight, lower bounds for F EEDBACK A RC S ET IN T OURNAMENTS .",
+          "hypothesis": [
+            "ETH",
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not specify the exact exponent, size measure (vertices vs. edges), or which of the two assumptions in the paper underlies these additional bounds.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "not found: Optimum Linear Arrangement and completion problems on general n-vertex graphs involve edge costs and global ordering constraints over potentially Θ(n^2) edges, preventing an O(n)-variable fixed-width k-CNF encoding.",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C08",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In this paper, we show that both ${\\sf Clique}$ and ${\\sf DomSet}$ admit no nontrivial FPT-approximation algorithm, i.e., there is no $o({\\sf OPT})$-FPT-approximation algorithm for ${\\sf Clique}$ and no $f({\\sf OPT})$-FPT-approximation algorithm for ${\\sf DomSet}$ for any function $f$.",
+          "hypothesis": [
+            "Gap-ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on Gap-ETH to rule out t(OPT)·poly(N) approximation algorithms; per the transfer rule, the refutation of Gap-ETH leaves these FPT-inapproximability results unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to W[1] != FPT or another parameterized hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Besides ${\\sf Clique}$ and ${\\sf DomSet}$, we also rule out nontrivial FPT-approximation for the Maximum Biclique problem, the problem of finding maximum subgraphs with hereditary properties (e.g., Maximum Induced Planar Subgraph), and Maximum Induced Matching in bipartite graphs, and we rule out the $k^{o(1)}$-FPT-approximation algorithm for the Densest $k$-Subgraph problem.",
+          "hypothesis": [
+            "Gap-ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on Gap-ETH for parameterized inapproximability bounds of shape t(k)·poly(N), which are unsupported after the Gap-ETH refutation.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to W[1] != FPT where applicable.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C09",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Suppose the Strong Exponential Time Hypothesis (SETH) is false, so that for some 1 < c < 2 and all k there is an O ( c n )-time algorithm for k -SAT. Then we prove that for all k , there is an O (( c + o (1)) n )-time algorithm for approximate # k -SAT.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "fine_grained_reduction",
+          "class": "UNBERUEHRT",
+          "class_reason": "This is an unconditional fine-grained reduction from approximate counting to decision.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "In particular, our result implies that the Exponential Time Hypothesis (ETH) is equivalent to the seemingly weaker statement that there is no algorithm to approximate #3-SAT to within a factor of 1+ɛ in time 2 o ( n )/ ɛ 2 (taking ɛ > 0 as part of the input).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "fine_grained_reduction",
+          "class": "UNBERUEHRT",
+          "class_reason": "The equivalence statement itself is an unconditional reduction and remains true per the transfer rule (while the hardness of approximating #3-SAT is now false by list item 1).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "variables",
+      "encoding_attempt": "found: #3-SAT on n variables is already a fixed-width #k-CNF instance and is solved exactly in 2^(o(n)) time by list item 1.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C10",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "The paper proves unconditional win-win circuit lower bounds and algorithms for Orthogonal Vectors, mentioning OVC and SETH only as context and consequences of one branch.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "unclear",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C11",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We prove this algorithm is essentially the best possible in the sense that a (1/∊)O(m1–5) + nO(1) time FPTAS for any δ > 0 implies that ETH fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound on FPTAS running time in terms of 1/ε and m is not of the form 2^(o(N)) in a linear size measure that encodes into O(N)-variable k-SAT, so it is unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the exponent of m under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We prove this algorithm is nearly optimal in the sense that a 2O((1/∊)1–5) + nO(1) time PTAS for any δ > 0 implies that ETH fails, leaving a small room for improvement.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound is parameterized by 1/ε rather than a linear input size measure, so the ETH refutation does not automatically give a faster PTAS.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the exponent of 1/ε under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We prove this is essentially the best possible in the sense that even if we restrict that there are n jobs and the processing time of each job is bounded by O(n), an exact algorithm of running time 2(n1–5) for any δ > 0 implies that ETH fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound is 2^(n^(1-δ)) for every δ > 0; assigning n jobs to an arbitrary number of machines involves O(n log n) bits of assignment choices and load comparisons of size O(n^2), so no fixed-width k-CNF encoding with O(n) variables is apparent.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to a 2^(n/polylog n) lower bound if the reduction from 3-SAT is linear.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "not found: Assigning n jobs to up to n identical machines requires ω(n) Boolean variables or super-linear adder circuits across machines, so an O(n)-variable fixed-width k-CNF encoding is not obtained.",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C12",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "One corollary of our reduction is that there is no $f(k)\\cdot n^{o(k)}$ time algorithm to decide whether a graph contains a subgraph isomorphic to $K_{k!,k!}$ unless the ETH(Exponential Time Hypothesis) fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound is of the parameterized form f(k)·n^(o(k)), which by the transfer rule is unsupported when ETH fails.",
+          "fix_type": "rebase",
+          "fix_candidate": "The W[1]-hardness from k-clique still holds under W[1] != FPT.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We also provide a probabilistic construction with better parameters $t=Θ(s^2)$, which indicates that $k$-biclique has no $f(k)\\cdot n^{o(\\sqrt{k})}$-time algorithm unless 3-SAT with $m$ clauses can be solved in $2^{o(m)}$-time with high probability.",
+          "hypothesis": [
+            "rETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "3-SAT with m clauses can now be solved deterministically in 2^(o(m)) time by list item 1, refuting the hypothesis, while the f(k)·n^(o(√k)) lower bound is unsupported per the transfer rule.",
+          "fix_type": "rebase",
+          "fix_candidate": "Retain W[1]-hardness (no f(k)·n^(O(1)) algorithm) under W[1] != FPT.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C13",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In particular, we prove that deciding whether P can be covered by the union of 2 balls of given radius or by the union of 4 cubes of given side length is W[1]-hard with respect to d , and thus not fixed-parameter tractable unless FPT=W[1].",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "This claim relies on W[1] != FPT, which is explicitly listed as not refuted in A0.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "For the Euclidean case, we also show that even an n o ( d ) -time algorithm does not exist, unless there is a 2 o ( n ) -time algorithm for n -variable 3SAT, that is, the Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound has shape n^(o(d)), which by the transfer rule is unsupported after the refutation of ETH.",
+          "fix_type": "rebase",
+          "fix_candidate": "Fall back to the paper's W[1] != FPT lower bound excluding f(d)·n^(O(1)) time.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C14",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that Π-V ertex D eletion does not admit a 2 o ( n ) -time algorithm where n is the number of vertices in G .",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This claim is stated for all nontrivial hereditary properties Π; while special cases like Vertex Cover (Π = edgeless graphs) are in list item 3 and thus false for those specific Π, for general hereditary Π (e.g. acyclic or planar) checking membership or encoding into O(n)-variable k-CNF is not generally possible.",
+          "fix_type": "restrict",
+          "fix_candidate": "Restrict to hereditary properties Π that cannot be encoded in O(n)-variable k-CNF and weaken the bound under a successor hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "On the one hand, if Π contains all edgeless graphs, then there is no 2 o ( n+m ) -time algorithm for Π-V ertex D eletion .",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "For a general hereditary property Π containing all edgeless graphs, deciding Π-Vertex Deletion in 2^(o(n+m)) is not generally reducible to O(n+m)-variable fixed-width k-CNF (though for Π = edgeless graphs, i.e. Vertex Cover, it is refuted by list item 3).",
+          "fix_type": "restrict",
+          "fix_candidate": "Exclude properties Π such as edgeless graphs or fixed-subgraph-free graphs with O(n+m) forbidden structures, and weaken the bound.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "For example, we obtain that Π-V ertex D eletion cannot be solved in 2 o (√ n ) time if G is planar and Π is hereditary and contains and excludes infinitely many planar graphs.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound has shape 2^(o(√n)), which per the transfer rule is only unsupported when ETH fails.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the 2^(o(√n)) bound to 2^(√n / polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices+edges",
+      "encoding_attempt": "not found: For arbitrary hereditary graph classes Π (such as forests or planar graphs), testing whether G - S belongs to Π involves global or arbitrarily large induced subgraph constraints that do not admit a general O(n) or O(n+m) fixed-width k-CNF encoding (though specific Π like Vertex Cover are in list item 3).",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C15",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Our main result states that for any $k\\ge 2$, there is no algorithm for Rainbow $k$-Coloring running in time $2^{o(n^{3/2})}$, unless the exponential time hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound is 2^(o(n^(3/2))) in terms of vertex count n; since an n-vertex graph can have Θ(n^2) edges and global path connectivity constraints, an encoding into O(n^(3/2))-variable fixed-width k-CNF is not available.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n^(3/2)/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "not found: An n-vertex graph can have Θ(n^2) edges to color and requires global rainbow-path existence between all Θ(n^2) vertex pairs, which exceeds O(n^(3/2)) variables.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C16",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "As a corollary, the Strong Exponential Time Hypothesis (even its weak counting variant #SETH) implies that counting solutions to constant-degree polynomials (even over F_2) requires essentially 2^n time.",
+          "hypothesis": [
+            "SETH",
+            "#ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Both SETH and #ETH/#SETH are refuted, and while a degree-d polynomial over F_2 has O(n^d) monomials, its Tseitin encoding requires O(n^d) auxiliary variables rather than O(n), so 2^(o(n)) counting is not implied for degree d >= 3.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to a counting version of CNF-SAT-H if unbounded-width clauses can be reduced without variable blowup.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "variables",
+      "encoding_attempt": "not found: A single degree-d polynomial over F_2 in n variables has up to Θ(n^d) monomials, so Tseitin encoding its parity sum into 3-CNF introduces O(n^d) auxiliary variables rather than O(n).",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C17",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Our main result is a tight reduction from k-SAT to Subset Sum on dense instances, proving that Bellman's 1962 pseudo-polynomial O*(T)-time algorithm for Subset Sum on n numbers and target T cannot be improved to time T1–ε · 2o(n) for any ε > 0, unless the Strong Exponential Time Hypothesis (SETH) fails.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound relies on SETH, which is refuted; since the reduction is from k-SAT for large k (unbounded width as ε -> 0) and Subset Sum has arbitrary weights up to T, it does not reduce to fixed-width k-CNF in O(n) variables.",
+          "fix_type": "rebase",
+          "fix_candidate": "Examine whether the reduction extends to CNF-SAT-H.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "As a corollary, we prove a “Direct-OR” theorem for Subset Sum under SETH, offering a new tool for proving conditional lower bounds: It is now possible to assume that deciding whether one out of N given instances of Subset Sum is a YES instance requires time (NT)1–o(1).",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on SETH and has polynomial/pseudo-polynomial shape (NT)^(1-o(1)), which is unsupported per the transfer rule.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to CNF-SAT-H or OVC if possible.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "On graphs with m edges and edge lengths bounded by L, we show that the O(Lm) pseudo-polynomial time algorithm by Joksch from 1966 cannot be improved to Õ(L + m), in contrast to a recent improvement for Subset Sum (Bringmann, SODA 2017).",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on SETH and rules out Õ(L + m) pseudo-polynomial time; per the transfer rule, this polynomial-shape bound is unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to CNF-SAT-H or OVC if possible.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "not found: Subset Sum with target T involves arbitrary integer weights up to T, requiring O(n log T) variables for binary addition rather than O(n) variables.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C18",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Moreover, we show that under the exponential time hypothesis, there are no exact algorithms running in 2o(n) time or in [Formula: see text] time for any computable function f.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bounds rely on ETH; finding a minimum-power connected spanning subgraph on an n-vertex weighted graph involves Θ(n^2) edges, global connectivity, and arbitrary edge weights, which cannot be encoded as an O(n)-variable fixed-width k-CNF.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the 2^(o(n)) bound to 2^(n/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "not found: An n-vertex weighted graph has up to Θ(n^2) edges and requires both global spanning-tree connectivity and weighted sum comparison, preventing an O(n)-variable fixed-width k-CNF encoding.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C19",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "The space requirement of our algorithm is (essentially) the size of the output, and assuming the Exponential-Time Hypothesis (ETH), the problem cannot be solved in time 2 o(n) .",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The 2^(o(n)) lower bound for Many-Visits TSP in the number of cities n relies on ETH, and because n cities have Θ(n^2) directed edges with arbitrary travel costs and visit counts k_c, no O(n)-variable k-CNF encoding exists.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "not found: Many-Visits TSP on n cities involves Θ(n^2) pairwise travel costs, arbitrary visit multiplicities k_c, and global tour connectivity, which cannot be encoded in O(n) Boolean variables.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C20",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Further, we rule out the existence of a subexponential-time algorithm for the $\\oplus{P}$-complete cases, assuming the randomized exponential time hypothesis.",
+          "hypothesis": [
+            "rETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not specify whether 'subexponential-time' means 2^(o(|V(G)|)) or 2^(o(|V(G)|+|E(G)|)); if the size measure is |V(G)|+|E(G)|, homomorphisms to a fixed graph H encode into #k-CNF with O(|V(G)|+|E(G)|) variables (making it FALSCH), whereas if the measure is |V(G)| on dense graphs, edge constraints require O(|E(G)|) clauses.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "unclear",
+      "encoding_attempt": "not found: Because H is fixed, assigning one of |V(H)| vertices to each vertex of G uses O(|V(G)|) variables and width O(log |V(H)|) per edge of G, giving O(|V(G)|+|E(G)|) clauses (which refutes a 2^(o(v+e)) bound by list item 1, or a 2^(o(v)) bound on bounded-degree graphs), but the abstract leaves unclear whether the bound is 2^(o(v)) on dense graphs.",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C21",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Further, we rule out the existence of a subexponential-time algorithm for the ⊕P-complete cases, assuming the randomised Exponential Time Hypothesis.",
+          "hypothesis": [
+            "rETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not state whether the subexponential lower bound is measured in the number of vertices |V(G)| or in |V(G)|+|E(G)|; for |V(G)|+|E(G)| (or bounded-degree G, mentioned as a special case) it encodes into #k-CNF and is refuted by list item 1, but for |V(G)| on dense graphs it has O(v^2) clauses.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "unclear",
+      "encoding_attempt": "not found: Homomorphisms from G to fixed H can be encoded as a fixed-width #k-CNF with O(|V(G)|) variables and O(|E(G)|) clauses (refuting 2^(o(v+e)) by list item 1), but the abstract does not clarify whether the size measure is v or v+e.",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C22",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "1) For all p ∈ [1, ∞), there is no 2^{o(n)}-time algorithm for BDD_{p, α} for any constant α > α_kn, where α_kn = 2^{-c_kn} < 0.98491 and c_kn is the 𝓁₂ kissing-number constant, unless non-uniform Gap-ETH is false.",
+          "hypothesis": [
+            "Gap-ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Gap-ETH is refuted, and BDD_{p,α} on rank-n lattices with continuous/large-integer coordinates does not admit an O(n)-variable fixed-width k-CNF encoding, leaving the 2^(o(n)) lower bound unsupported.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n/polylog n) if the reduction from 3-SAT/Gap-3-SAT is linear in dimension.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "2) For all p ∈ [1, ∞), there is no 2^{o(n)}-time algorithm for BDD_{p, α} for any constant α > α^‡_p, where α^‡_p is explicit and satisfies α^‡_p = 1 for 1 ≤ p ≤ 2, α^‡_p < 1 for all p > 2, and α^‡_p → 1/2 as p → ∞, unless randomized Gap-ETH is false.",
+          "hypothesis": [
+            "Gap-ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Randomized Gap-ETH is refuted, and BDD_{p,α} in dimension n has no known O(n)-variable k-CNF encoding, so the bound is unsupported.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n/polylog n) under a successor hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "3) For all p ∈ [1, ∞) ⧵ 2 ℤ and all C > 1, there is no 2^{n/C}-time algorithm for BDD_{p, α} for any constant α > α^†_{p, C}, where α^†_{p, C} is explicit and satisfies α^†_{p, C} → 1 as C → ∞ for any fixed p ∈ [1, ∞), unless non-uniform Gap-SETH is false.",
+          "hypothesis": [
+            "Gap-ETH",
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Gap-SETH (both Gap-ETH and SETH) is refuted, and the 2^(n/C) lower bound is unsupported without an O(n)-variable fixed-width k-CNF encoding.",
+          "fix_type": "rebase",
+          "fix_candidate": "Investigate whether CNF-SAT-H supports a weaker version.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "4) For all p > p₀ ≈ 2.1397, p ∉ 2ℤ, and all C > C_p, there is no 2^{n/C}-time algorithm for GapSVP_{p, γ} for some constant γ > 1, where C_p > 1 is explicit and satisfies C_p → 1 as p → ∞, unless randomized Gap-SETH is false.",
+          "hypothesis": [
+            "Gap-ETH",
+            "rSETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Randomized Gap-SETH is refuted, and GapSVP_{p,γ} in dimension n has no O(n)-variable fixed-width k-CNF encoding, leaving the lower bound unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Investigate whether CNF-SAT-H supports a weaker version.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "not found: Lattice problems BDD and GapSVP in rank n involve integer combinations of basis vectors and l_p norm comparisons that require super-linear bit arithmetic and unbounded coefficient ranges.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C23",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Our main result is a tight reduction from k -SAT to Subset Sum on dense instances, proving that Bellman’s 1962 pseudo-polynomial O * ( T )-time algorithm for Subset Sum on n numbers and target T cannot be improved to time T 1-ε · 2 o(n) for any ε > 0, unless the Strong Exponential Time Hypothesis (SETH) fails.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on SETH, which is refuted; because Subset Sum involves arbitrary target T and the reduction is from k-SAT for unbounded k, it does not reduce to fixed-width k-CNF in O(n) variables.",
+          "fix_type": "rebase",
+          "fix_candidate": "Check if the reduction carries over from CNF-SAT-H.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "As a corollary, we prove a “Direct-OR” theorem for Subset Sum under SETH, offering a new tool for proving conditional lower bounds: It is now possible to assume that deciding whether one out of N given instances of Subset Sum is a YES instance requires time ( N T ) 1-o(1) .",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on SETH and has polynomial/pseudo-polynomial shape (NT)^(1-o(1)), which is unsupported per the transfer rule.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to CNF-SAT-H or OVC if possible.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "On graphs with m edges and edge lengths bounded by L , we show that the O ( Lm ) pseudo-polynomial time algorithm by Joksch from 1966 cannot be improved to Õ( L + m ), in contrast to a recent improvement for Subset Sum (Bringmann, SODA 2017).",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on SETH and rules out Õ(L + m) time, which is unsupported per the transfer rule.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to CNF-SAT-H or OVC if possible.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "not found: Subset Sum with target T involves arbitrary integer weights up to T, requiring O(n log T) variables for addition rather than O(n) variables.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C24",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that, in general, 1-extendability cannot be solved in 2o(n) time assuming the Exponential Time Hypothesis, where n is the number of vertices of the input graph, and that it remains NP-hard in subcubicplanar graphs and in unit disk graphs (which is a natural model for wireless networks).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The 2^(o(n)) lower bound for 1-extendability on n-vertex graphs relies on ETH; although Independent Set is solved in O(2^(εn)) for every ε > 0 by list item 3 (and counted in 2^(o(v)) by list item 2), 1-extendability is not explicitly listed in A0 and cannot be directly encoded as a single O(n)-variable fixed-width k-CNF formula because it universally quantifies over maximum independent sets across potentially dense graphs.",
+          "fix_type": "weaken",
+          "fix_candidate": "Note that n calls to Maximum Independent Set reduce 1-extendability to MIS; if MIS requires 2^(n/polylog n) under a successor hypothesis, weaken the bound accordingly.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "not found: 1-extendability requires checking for each vertex v whether α(G - N[v]) = α(G) - 1, which involves comparing optimal independent set sizes on potentially dense n-vertex graphs and cannot be directly encoded as a single O(n)-variable fixed-width k-CNF.",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C25",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Namely, we show that 1.00005-approximating Treewidth is NP-hard, and solving Treewidth exactly requires 2 Ω (n) time, unless the ETH fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The 2^(Ω(n)) lower bound for exact Treewidth relies on ETH, which is refuted; since Treewidth is a global decomposition property on potentially dense n-vertex graphs, it does not admit an O(n)-variable fixed-width k-CNF encoding.",
+          "fix_type": "weaken",
+          "fix_candidate": "Using the paper's linear reduction from 3-SAT, weaken the lower bound to 2^(Ω(n/√log n)) under a successor hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We further derive, under the latter assumption, that there are some constants δ > 1 and c > 0 such that δ-approximating Treewidth requires time \\(2^{\\Omega (n/\\log ^c n)}\\) .",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The 2^(Ω(n/log^c n)) approximation lower bound relies on ETH, which is refuted, and per the transfer rule is now unsupported.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to a smaller subexponential function under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "not found: Treewidth requires finding an elimination ordering or tree decomposition minimizing maximum bag size across an n-vertex graph, a global property that cannot be encoded in O(n) variables of a fixed-width k-CNF.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C26",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that the problem can be solved in 2 O ( λ 1 / d n 1 − 1 / d ) time, where n : = ∑ i = 1 r | P i | is the total number of points, and that the problem cannot be solved in 2 o ( n ) time when λ = Θ ( n ) , unless the Exponential Time Hypothesis (ETH) fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The 2^(o(n)) lower bound for Euclidean One-of-a-Set TSP when λ = Θ(n) relies on ETH, and TSP tour length and connectivity over n points in R^d cannot be encoded into an O(n)-variable fixed-width k-CNF.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "not found: Euclidean One-of-a-Set TSP on n points involves Θ(n^2) pairwise Euclidean distances, tour connectivity, and real-weight sum comparisons, which cannot be encoded in O(n)-variable fixed-width k-CNF.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C27",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Moreover, assuming the Exponential Time Hypothesis, none of these problems can be solved in 2 o ( n ) time for n -vertex P 14 -free 8-chordal graphs.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The 2^(o(n)) lower bound for Matching Cut, Perfect Matching Cut, and Disconnected Perfect Matching on n-vertex P_14-free 8-chordal graphs relies on ETH; on potentially dense n-vertex graphs (with up to Θ(n^2) edges), enforcing that cut edges form a matching and/or perfect matching cannot be encoded in O(n)-variable fixed-width k-CNF.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "not found: On an n-vertex graph with up to Θ(n^2) edges, checking that cada vertex has at most one incident edge crossing the cut (and for pmc/dpm that a perfect matching exists) requires high-degree or edge-indexed constraints that do not fit in O(n)-variable fixed-width k-CNF.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C28",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "algorithm_or_tightness",
+          "class": "UNBERUEHRT",
+          "class_reason": "This paper claims an unconditional FPT algorithm for #k-matching that refutes #W[1] != FPT, W[1] != FPT, #ETH, and ETH; it does not prove a result conditioned on a refuted hypothesis.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C29",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In this paper, we prove a tight ETH-based lower bound for Bin Packing, ruling out time 2o(n) To(k).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound rules out 2^(o(n))·T^(o(k)) time for k-Bin Packing under ETH; because item weights and capacity T can be arbitrarily large integers, Bin Packing cannot be encoded as an O(n)-variable fixed-width k-CNF.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the bound under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "not found: Bin Packing with capacity T involves arbitrary integer weights up to T, so encoding the bin-sum constraints into k-CNF requires Ω(n log T) variables rather than O(n).",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C30",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "algorithm_or_tightness",
+          "class": "UNBERUEHRT",
+          "class_reason": "This paper presents a Lean 4 formalization of a step-counting model aimed at refuting ETH for #3-SAT and makes no conditional lower bound claims assuming ETH.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "variables",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C31",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Finally, we provide lower and upper bounds for the time complexity of the general case: we prove that the existence of a subexponential time (in the number of vertices and edges of the input signed graph) algorithm would violate the Exponential Time Hypothesis, whereas a simple dynamic programming approach gives a running time single-exponential in the number of vertices.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound rules out a 2^(o(n+m)) algorithm for embedding a signed graph into R^1 under ETH; since R^1 metric embedding involves global real-coordinate distance inequalities and ordering of n vertices, an O(n+m)-variable fixed-width k-CNF encoding is not available.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^((n+m)/polylog(n+m)) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices+edges",
+      "encoding_attempt": "not found: Embedding an n-vertex, m-edge signed graph into R^1 so that positive neighbors are strictly closer than negative neighbors requires real-valued coordinate distances or global total orderings with distance constraints, which do not admit an O(n+m)-variable fixed-width k-CNF encoding.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C32",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We prove that General Position Subset Selection is NP-hard, APX-hard, and present several fixed-parameter tractability results for the problem as well as a subexponential running time lower bound based on the Exponential Time Hypothesis.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract states a 'subexponential running time lower bound based on the Exponential Time Hypothesis' without specifying the exact exponent or whether it is measured in the number of points n or the parameter k.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "unclear",
+      "encoding_attempt": "not found: Selecting k points in general position from n points in the plane forbids collinear triples across up to Θ(n^3) point triples, requiring up to O(n^3) 3-clauses rather than O(n).",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C33",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Moreover, we show that there is no subexponential-time algorithm for this problem on graphs of maximum degree four unless the Exponential-Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "FALSCH",
+          "class_reason": "On an n-vertex graph of maximum degree 4, each vertex belongs to at most C(4,2) = 6 triangles so there are O(n) triangles in total; introducing one Boolean variable per triangle and bounded-width clauses requiring each vertex to be covered by exactly one selected triangle yields an O(n)-variable fixed-width k-CNF formula, which is solvable in 2^(o(n)) time by list item 1.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "found: On graphs of maximum degree 4, there are at most 2n triangles; assigning one Boolean variable per triangle and adding exact-1 clauses over the at most 6 triangles incident to each vertex encodes Partition Into Triangles as a 6-CNF with O(n) variables and O(n) clauses.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C34",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "For any r larger than some constant, any r-approximation algorithm for the independent set problem must run in at least 2n1-ε/r1+εtime.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "FALSCH",
+          "class_reason": "By list item 2 (and item 3), exact Independent Set on n-vertex graphs runs in 2^(o(n)) time (and O(2^(εn)) for every ε > 0), which for any fixed constant r directly refutes the 2^(n^(1-ε)/r^(1+ε)) lower bound for r-approximating Independent Set.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "For any k larger than some constant, there is no polynomial time min{k1-ε, n1/2-ε} time min -approximation algorithm for the k-hypergraph pricing problem , where n is the number of vertices in an input graph.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This rules out a polynomial-time min{k^(1-ε), n^(1/2-ε)}-approximation algorithm for k-hypergraph pricing under ETH; by the transfer rule, a 2^(o(n)) algorithm for 3-SAT does not yield a polynomial-time approximation algorithm, so the claim is unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase polynomial-time inapproximability to NP != ZPP or a weaker super-polynomial hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "found: Exact Independent Set on n-vertex graphs is solved in 2^(o(n)) time by list item 2 (and O(2^(εn)) for all ε > 0 by list item 3), which also solves r-approximation.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C35",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that, assuming the ETH, the best algorithm to compute the weighted chromatic number of $n$-node trees has time-complexity $n^{\\Theta(\\log n)}$.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound is quasi-polynomial of shape n^(Ω(log n)), which by the transfer rule is not refuted by a 2^(o(n)) algorithm for 3-SAT and is therefore unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to the weaker hypothesis that 3-SAT is not in quasi-polynomial time 2^(polylog n).",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C36",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that, assuming ETH, the best algorithm to compute the weighted chromatic number of n-node trees has time-complexity n O(log(n)).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound has quasi-polynomial shape n^(Ω(log n)), which by the transfer rule is unsupported after the refutation of ETH.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to the hypothesis that NP (or 3-SAT) does not have quasi-polynomial time algorithms.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C37",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We complement our results by showing that small alterations in the target graph classes yields much harder problems: Editing towards trivially perfect graphs and cographs is not possible in subexponential time unless the exponential time hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The thesis abstract does not specify whether 'subexponential time' for editing towards trivially perfect graphs and cographs means 2^(o(n)), 2^(o(n+m)), or parameterized subexponential time 2^(o(k))·n^(O(1)), which is the focus of the thesis.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "unclear",
+      "encoding_attempt": "not found: Editing at most k edges on an n-vertex graph to forbid induced P_4 and C_4 involves Θ(n^2) potential edge variables and Θ(n^4) four-vertex subsets, preventing an O(n)-variable fixed-width k-CNF encoding.",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C38",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "(1) For any $$\\epsilon <1$$ , there is no $$(1+\\epsilon )$$ -approximation with running time $$\\exp \\left( o(\\lfloor 1/\\epsilon \\rfloor ^{d/3})\\right) $$ unless the Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound is in terms of the parameters 1/ε and d rather than input size, so by the transfer rule it is unsupported after the ETH refutation.",
+          "fix_type": "rebase",
+          "fix_candidate": "Fall back to claim (2) which gives a slightly weaker bound under the non-refuted hypothesis that NP does not have subexponential-time algorithms (or weaken under a successor 3-SAT hypothesis).",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "(2) No $$(1+\\epsilon )$$ -approximation with running time $$\\exp \\left( \\lfloor 1/\\epsilon \\rfloor ^{o(d)}\\right) $$ exists, unless NP has subexponential time algorithms.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNBERUEHRT",
+          "class_reason": "Conditioned on 'unless NP has subexponential time algorithms' (which includesCNF-SAT-H / general NP problems and is not refuted in A0).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C39",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "In fact, the algorithm that we obtain is nearly optimal (under the exponential time hypothesis) since an algorithm that runs in time $(nm)^{o(r)}$ would yield a subexponential algorithm for $3$-SAT [Proceedings of STOC, 2012, pp. 145--162].",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "algorithm_or_tightness",
+          "class": "UNBERUEHRT",
+          "class_reason": "The paper gives an unconditional $(nm)^{O(r^2)}$ algorithm and cites the $(nm)^{o(r)}$ ETH lower bound of Arora et al. (STOC 2012) as prior context for near-optimality.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C40",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "In fact, the algorithm that we obtain is nearly-optimal (under the Exponential Time Hypothesis) since an algorithm that runs in time (nm)o(r) would yield a subexponential algorithm for 3-SAT [1].",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "algorithm_or_tightness",
+          "class": "UNBERUEHRT",
+          "class_reason": "The paper's own contribution is an unconditional algorithm; the ETH lower bound is cited from prior work [1] (Arora et al., STOC 2012).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C41",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that unless P=NP, it is not possible to approximate in polynomial time the minimum number of clauses and the minimum number of literals of pure Horn CNF representations to within a factor of $2^{log^{1-o(1)} n}$.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNBERUEHRT",
+          "class_reason": "Relies on P != NP, which is not refuted.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Furthermore, we show that even allowing sub-exponential time computation, it is still not possible to obtain constant factor approximations for such problems unless the Exponential Time Hypothesis is false.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The subexponential-time inapproximability of Horn CNF minimization on n variables with O(n^(1+ε)) clauses relies on ETH; finding an equivalent Horn CNF with at most k clauses checks equivalence over all 2^n assignments (a Σ_2^P/coNP condition), which cannot be encoded as an O(n)-variable fixed-width k-CNF.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the running time bound to 2^(n/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "variables",
+      "encoding_attempt": "not found: Minimizing a pure Horn 3-CNF with O(n^(1+ε)) clauses requires choosing a small set of Horn clauses and verifying logical equivalence with the input formula across all 2^n assignments, which cannot be encoded in O(n)-variable fixed-width k-CNF.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C42",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We prove that whenever H is 3-connected and has at least two non-edges, then both H-free Edge Deletion and H-free Edge Completion are very hard to approximate: they do not admit poly(OPT)-approximation in polynomial time, unless P=NP, or even in time subexponential in OPT, unless the Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH",
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The polynomial-time inapproximability under P != NP is unaffected, while the lower bound ruling out time subexponential in OPT (2^(o(OPT))·poly(n)) relies on ETH and is unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Retain the P != NP polynomial-time hardness and weaken the parameterized running time bound to 2^(OPT/polylog(OPT)) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C43",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "unclear",
+      "claims": [
+        {
+          "quote": "The running times of our algorithms are optimal up to the $$\\log {k}$$ factor in the exponent, assuming the exponential time hypothesis.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "algorithm_or_tightness",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The matching 2^(o(√k))·n^(O(1)) lower bound relies on ETH and has parameterized subexponential shape 2^(o(√k)), which is unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the tightness lower bound to 2^(√k/polylog k)·n^(O(1)) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C44",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "It also implies that a (significant) improvement over our result will refute the gap-ETH conjecture (Dinur in Electron Colloq Comput Complex (ECCC) 23:128, 2016; Manurangsi and Raghavendra in A birthday repetition theorem and complexity of approximating dense CSPs, 2016).",
+          "hypothesis": [
+            "Gap-ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "FALSCH",
+          "class_reason": "The paper studies exponential-time r-approximation for Maximum Independent Set and Chromatic Number (beating O*(2^(n/r))) and states that a significant improvement would refute Gap-ETH; by list items 2 and 3, exact Independent Set and Chromatic Number on n-vertex graphs now run in 2^(o(n)) time, directly achieving such an improvement and refuting the conditional lower bound.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "found: Exact Maximum Independent Set and Chromatic Number (via proper q-colourings) on n-vertex graphs run in 2^(o(n)) time by list items 2 and 3.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C45",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We provide a number of upper- and lower-bound results (the latter based on various complexity-theoretic assumptions such as the Exponential Time Hypothesis) for both satisficing and optimal planning.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not specify which planning classes, which size measures, or which exact exponential/subexponential bounds depend on ETH versus other complexity assumptions.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "unclear",
+      "encoding_attempt": "not found: Planning instances can have plans of exponential length in the number of state variables, so without knowing the specific restricted class and size measure from the full text, an O(N)-variable k-CNF encoding cannot be established.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C46",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We introduce two related combinatorial problems, which we call String Crafting and Orthogonal Vector crafting, and show that these cannot be solved in time $2^{o(|s|/\\log{|s|})}$, unless the Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound has shape 2^(o(|s|/log |s|)), which is smaller than 2^(o(|s|)) and is therefore unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(|s|/polylog |s|) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "These results are used to obtain simplified hardness results for several graph embedding problems, on more restricted graph classes than previously known: assuming the Exponential Time Hypothesis, there do not exist algorithms that run in $2^{o(n/\\log n)}$ time for Subgraph Isomorphism on graphs of pathwidth 1, Induced Subgraph Isomorphism on graphs of pathwidth 1, Graph Minor on graphs of pathwidth 1, Induced Graph Minor on graphs of pathwidth 1, Intervalizing 5-Colored Graphs on trees, and finding a tree or path decomposition with width at most $c$ with a minimum number of bags, for any fixed $c\\geq 16$.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bounds have shape 2^(o(n/log n)), which is not directly refuted by a 2^(n/√log n) 3-SAT algorithm and remains unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C47",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We prove that whenever H is 3-connected and has at least two nonedges, then both H - free E dge D eletion and H - free E dge C ompletion are very hard to approximate: they do not admit poly(OPT)-approximation in polynomial time, unless P=NP, or even in time subexponential in OPT, unless the exponential time hypothesis fails.",
+          "hypothesis": [
+            "ETH",
+            "other-not-refuted"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The polynomial-time inapproximability under P != NP remains intact, while the 2^(o(OPT))·poly(n) lower bound relies on ETH and is unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Retain the P != NP result and weaken the subexponential-in-OPT bound under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C48",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "More precisely, we show that there are no NCP, MDP, or NCPP algorithms running in time q(1-ε)nfor any constant ε > 0 for codes with qncodewords.",
+          "hypothesis": [
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on SETH (and non-uniform SETH for NCPP), which is refuted; for a code of dimension n and block length m = ω(n), parity checks and Hamming weight constraints over m coordinates require Ω(m) auxiliary variables, so no O(n)-variable fixed-width k-CNF encoding is available.",
+          "fix_type": "rebase",
+          "fix_candidate": "Check whether the reduction works from CNF-SAT-H.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We also show that there are no sub-exponential time algorithms for y-approximate versions of these problems for some constant -y > 1, under different versions of the exponential-time hypothesis.",
+          "hypothesis": [
+            "ETH",
+            "Gap-ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on versions of ETH/Gap-ETH, which are refuted, and approximating codeword distance over codes of dimension n and arbitrary length m does not encode into O(n)-variable fixed-width k-CNF.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the subexponential bound to 2^(n/polylog n) under a successor hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "not found: Linear codes with q^n codewords have block length m that can be super-linear in n, so computing generator-matrix products and Hamming weight over m coordinates requires Ω(m) variables rather than O(n).",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C49",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "(1) The Randomized Exponential-Time Hypothesis (rETH) implies that ℬ𝒫𝒫 can be simulated on “average-case” in deterministic (nearly-)polynomial-time (i.e., in time 2 Õ(log( n )) = n loglog( n ) O(1) ).",
+          "hypothesis": [
+            "rETH"
+          ],
+          "result_type": "other",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This average-case derandomization of BPP is conditioned on rETH, which is now refuted, leaving the conditional conclusion unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to a non-refuted hardness assumption such as randomized CNF-SAT-H or circuitSAT hardness.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "(2) The Non-Deterministic Exponential-Time Hypothesis (NETH) implies that derandomization of ℬ𝒫𝒫 is completely equivalent to circuit lower bounds against ℰ, and in particular that pseudorandom generators are necessary for derandomization.",
+          "hypothesis": [
+            "NSETH",
+            "other-not-refuted"
+          ],
+          "result_type": "other",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract uses 'Non-Deterministic Exponential-Time Hypothesis (NETH)' and a 'very weak version of NETH'; while NSETH is refuted in A0, NP != coNP is not refuted, and the abstract does not specify whether NETH here is for 3-UNSAT (refuted via ETH/NSETH) or general circuits/CNF.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to the circuit or general CNF version of coNP != NP.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "In particular, if CircuitSAT for circuits over n bits of size poly(n) can be solved by probabilistic algorithms in time 2 n /polylog(n) , then ℬ𝒫ℰ does not have circuits of quasilinear size.",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "This is an unconditional implication from an algorithmic upper bound for CircuitSAT to a circuit lower bound.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "n/a",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C50",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "As a corollary, achieving any super-constant approximation ratio on Uniform Decision Tree is not NP-hard, assuming the Exponential Time Hypothesis.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "other",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The paper gives an unconditional subexponential-time approximation algorithm for Uniform Decision Tree; the corollary that the problem is not NP-hard relies on ETH (since under ETH, NP-hard problems via linear reductions do not have subexponential algorithms), which is now unsupported as an implication from ETH, though it can be rebased if the algorithm beats the new 3-SAT bound or compared against CNF-SAT-H.",
+          "fix_type": "rebase",
+          "fix_candidate": "Compare the subexponential running time against CNF-SAT-H or the remaining 2^(n/polylog n) hardness of 3-SAT.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C51",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that Linear Monadic NP includes many natural complete problems such as the satisfiability of linear-size circuits, dominating set, independent dominating set, and perfect code. Therefore, for any of these problems, its subexponential-time solvability is equivalent to the failure of ETH.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "fine_grained_reduction",
+          "class": "FALSCH",
+          "class_reason": "Per the transfer rule, the paper explicitly proves that subexponential-time solvability of every problem in Linear Monadic NP (including satisfiability of linear-size circuits, dominating set, independent dominating set, and perfect code) is equivalent to the failure of ETH, and linear-size circuits also Tseitin-encode into 3-CNF with O(N) variables; therefore all these problems now have 2^(o(N))-time algorithms and any implied subexponential lower bound is directly false (while the serf-equivalence theorem itself holds).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "found: The paper proves serf-equivalence to k-CNF-SAT, and satisfiability of a linear-size circuit of size N encodes via Tseitin into a 3-CNF with O(N) variables and O(N) clauses (and Dominating Set is also in list item 3).",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C52",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "To obtain our lower bounds, we use the Gap Exponential Time Hypothesis (Gap-ETH) as well as a new hypothesis regarding the hardness of approximating the well known Densest κ-Subgraph problem in subexponential time (these hypotheses are used separately in proving different lower bounds).",
+          "hypothesis": [
+            "Gap-ETH",
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bounds on running time in terms of 1/ε (such as exp(1/ε^2)) derived from Gap-ETH are unsupported per the transfer rule, while those derived separately from the Densest k-Subgraph hypothesis rely on a non-refuted assumption.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rely on the paper's alternative Densest k-Subgraph hypothesis or weaken the Gap-ETH bound.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C53",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In this paper, we show that, for any given constant $$c>1$$ c > 1 , Matching Cut is $${\\mathsf {NP}}$$ NP -complete in the class of graphs with minimum degree c and this restriction of Matching Cut has no subexponential-time algorithm in the number of vertices unless the Exponential-Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The 2^(o(n)) lower bound for Matching Cut on n-vertex graphs with minimum degree c relies on ETH; because the maximum degree is unbounded (up to n-1), an n-vertex graph can have Θ(n^2) edges and high-degree vertices, preventing an O(n)-variable fixed-width k-CNF encoding.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "not found: In an n-vertex graph with only a minimum degree bound c (and unbounded maximum degree), there can be Θ(n^2) edges, so enforcing that every vertex has at most one incident cut edge requires super-linear auxiliary variables or unbounded-width clauses.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C54",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Indeed, we show that, for all those problems, there is a constant ratio of approximation that cannot be attained even in time 2 n 1−ɛ , unless the Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "hardness_of_approx",
+          "class": "FALSCH",
+          "class_reason": "The problems are Maximum Clique on n-vertex intersection graphs (ball graphs, unit 4-dimensional ball graphs, filled ellipses, filled triangles); by list item 3 (and item 2 via complement Independent Set), Maximum Clique on any n-vertex graph can be solved exactly in O(2^(εn)) time for every ε > 0 (and 2^(o(n)) time), directly refuting the 2^(n^(1-ε)) approximation lower bound.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "found: Maximum Clique on any n-vertex graph is solved exactly in O(2^(εn)) time for every ε > 0 by list item 3 (and in 2^(o(n)) via Independent Set on the complement graph by list item 2).",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C55",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "The lower bound framework is based on a constructive embedding of graphs into $d$-dimensional grids, and it allows us to derive matching $2^{\\Omega(n^{1-1/d})}$ lower bounds under the exponential time hypothesis even in the much more restricted class of $d$-dimensional induced grid graphs.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "For fixed d >= 2, the lower bound has shape 2^(Ω(n^(1-1/d))), which is sublinear in the exponent and by the transfer rule is only unsupported after the refutation of ETH.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n^(1-1/d)/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C56",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that the version of $\\mathsf{MCSP}$ where the input is a partial function (represented by a string in $\\{0,1,\\star\\}^*$) is not in $\\mathsf{P}$ under the Exponential Time Hypothesis (ETH).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The claim that Partial-MCSP is not in P relies on ETH, which is refuted; per the transfer rule, refuting ETH does not place Partial-MCSP in P, so the claim is unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to a weaker exponential or super-quasi-polynomial hardness hypothesis for 3-SAT (since 3-SAT in 2^(O(n/√log n)) still suffices if the reduction only needs super-polynomial hardness).",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We show that unless there are subexponential-sized circuits computing $\\mathsf{SAT}$, the collection of lower bound statements used to prove the correctness of our reductions cannot be $(\\mathsf{P/poly})$-recognizable.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "Conditioned on general SAT not having subexponential-sized circuits (non-uniform CNF-SAT-H), which is not refuted in A0.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C57",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Under the exponential-time hypothesis (ETH), we rule out the existence of subexponential algorithms for finite-domain NP-complete CSPΓ problems.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "For a fixed finite constraint language Γ over finite domain D, every constraint has bounded arity and encodes into fixed-width k-CNF with O(n) variables (one per domain value per variable) and O(m) clauses; however, the abstract does not state whether 'subexponential' is 2^(o(n)) on arbitrary (possibly dense, m = ω(n)) instances or 2^(o(n+m)), and whether Γ is finite or infinite.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We also prove that the time complexity of CSP({ S D }) strictly decreases when |D| increases (unless the ETH is false) and provide stronger complexity results in the special case when |D|=3.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "FALSCH",
+          "class_reason": "As stated in the companion paper C68, the time complexity here is measured in the base c of O(c^n) where n is the number of variables; since the ternary/finite-arity relation S_D over finite domain D encodes into fixed-width k-CNF with |D|·n variables (encoding each variable's domain value in binary or one-hot and each S_D constraint as bounded-width clauses), list item 1 solves CSP({S_D}) in 2^(o(n))·poly(n,m) time (i.e. O(c^n) for every c > 1) for every finite D, so the infimum base c is 1 for all |D| and does not strictly decrease.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "variables",
+      "encoding_attempt": "found: For a fixed finite domain D and finite-arity relation S_D (or finite constraint language Γ), encoding each of the n CSP variables with ⌈log_2 |D|⌉ Boolean variables turns each constraint of arity r into at most |D|^r clauses of width r·⌈log_2 |D|⌉ = O(1), giving an O(n)-variable fixed-width k-CNF solved in 2^(o(n))·poly(n,m) time by list item 1.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C58",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "1) The Randomized Exponential-Time Hypothesis (rETH) implies that BPP can be simulated on “average-case” in deterministic (nearly-)polynomial-time (i.e., in time 2~O(log(n))=nloglog(n)O(1)).",
+          "hypothesis": [
+            "rETH"
+          ],
+          "result_type": "other",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "This average-case derandomization result relies on rETH, which is refuted in A0, leaving the conditional conclusion unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to randomized CNF-SAT-H or CircuitSAT hardness.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "2) The Non-Deterministic Exponential-Time Hypothesis (NETH) implies that derandomization of BPP is completely equivalent to circuit lower bounds against E, and in particular that pseudorandom generators are necessary for derandomization.",
+          "hypothesis": [
+            "NSETH",
+            "other-not-refuted"
+          ],
+          "result_type": "other",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not specify whether NETH / its 'very weak version' refers to 3-SAT (refuted via ETH/NSETH) or general CNF/CircuitSAT (not refuted).",
+          "fix_type": "rebase",
+          "fix_candidate": "Use the general CNF or CircuitSAT non-deterministic hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "In particular, if CireuitSAT for circuits over n bits of size poly(n) can be solved by probabilistic algorithms in time 2n/polylog(n), then BPε does not have circuits of quasilinear size.",
+          "hypothesis": [
+            "none"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "Unconditional implication from a CircuitSAT upper bound to a circuit lower bound.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "n/a",
+      "confidence": "medium"
+    },
+    {
+      "pilot_id": "C59",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that the version of MCSP where the input is a partial function (represented by a string in {0,1, ?}*) is not in P under the Exponential Time Hypothesis (ETH).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on ETH to rule out a polynomial-time algorithm for Partial-MCSP; per the transfer rule, refuting ETH does not yield a polynomial-time algorithm, so the bound is unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Rebase to a weaker super-polynomial or 2^(n/polylog n) hardness hypothesis for 3-SAT.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We show that unless there are subexponential-sized circuits computing SAT, the lower bound statements used to prove the correctness of our reductions cannot be (P/poly)-recognizable.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "other",
+          "class": "UNBERUEHRT",
+          "class_reason": "Conditioned on general SAT not having subexponential-sized circuits, which is not refuted.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C60",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "This result explains, in a uniform way, many existing hardness results from the literature, and shows that it is impossible to obtain subexponential time algorithms unless the exponential-time hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound rules out 2^(o(n)) algorithms for infinite-domain CSPs based on partition schemes containing an acyclic order under ETH; because acyclicity of a binary order over n variables is a global constraint (requiring topological ordering of n elements), it cannot be encoded in O(n)-variable fixed-width k-CNF.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(n/polylog n) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "variables",
+      "encoding_attempt": "not found: Infinite-domain CSPs over partition schemes with an acyclic order require finding an acyclic orientation/ordering on n variables, a global constraint that requires ω(n) variables to encode into fixed-width k-CNF.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C61",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "In particular our construction of subexponential circuits of depth 2 for AND helps us to classify (modulo Exponential Time Hypothesis) modular circuits with respect to the complexity of their satisfiability.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract does not state the exact classification of modular circuits or the specific running-time lower bounds proved under ETH.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "unclear",
+      "encoding_attempt": "not found: Modular gates compute sums modulo m over unbounded fan-in, which requires circuit size (not just input bit count n) to encode via Tseitin, and the abstract does not specify whether the ETH lower bounds are in n or circuit size.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C62",
+      "evidence_level": "fulltext_needed",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Indeed, with the help of these languages we relate all of the above problems to the exponential time hypothesis (ETH) in several different ways.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "other",
+          "class": "UNKLAR_ABSTRACT",
+          "class_reason": "The abstract states that surjective SAT, max ones, propositional abduction, and Boolean VCSP are related to ETH 'in several different ways', without stating the exact claims or whether they are equivalences or one-way lower bounds.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "unclear",
+      "encoding_attempt": "not found: Propositional abduction and surjective SAT have global or Σ_2^P properties, and the abstract does not state the exact conditional claims or size measures.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C63",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We then relate SAT({R})-2 to the exponential-time hypothesis (ETH) and show that ETH holds if and only if SAT({R})-2 is not sub-exponential.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "fine_grained_reduction",
+          "class": "UNBERUEHRT",
+          "class_reason": "Per the transfer rule, an equivalence statement ('ETH holds if and only if SAT({R})-2 is not sub-exponential') is an unconditional bidirectional reduction and remains formally valid (and implies that SAT({R})-2 now has a subexponential algorithm, also because finite-relation SAT({R}) encodes into fixed-width k-CNF with O(n) variables).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "variables",
+      "encoding_attempt": "found: SAT({R})-2 on n variables for a fixed finite Boolean relation R of arity k and variable degree at most 2 has O(n) constraints, each of which expands into at most 2^k clauses of width k, giving an O(n)-variable k-CNF solved in 2^(o(n)) time by list item 1.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C64",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "The somewhat unusual exponent 2tw in the running time is essentially optimal: we show that for any ε > 0, there is no algorithm with running time f (tw)n(2-ε)tw unless the Exponential-Time Hypothesis (ETH) fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound has parameterized shape f(tw)·n^((2-ε)tw), which by the transfer rule is unsupported after the refutation of ETH.",
+          "fix_type": "rebase",
+          "fix_candidate": "Investigate whether W[1] != FPT or CNF-SAT-H yields a treewidth-parameterized lower bound.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C65",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Moreover, in the $$\\textsf{NP}$$ NP -completeness cases, cluster-vd cannot be solved in sub-exponential time in the vertex number of the H-free input graphs unless the Exponential-Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "FALSCH",
+          "class_reason": "For Cluster Vertex Deletion on an n-vertex graph, introducing one Boolean variable per vertex (whether deleted), one 3-clause for each of the at most O(n^3) induced P_3's, and an O(n)-gate Tseitin cardinality circuit for 'at most k deleted vertices' yields a 3-CNF with O(n) variables and O(n^3) clauses, which list item 1 solves in 2^(O(n·loglog n/√log n))·poly(n,m) = 2^(o(n)) time, refuting the 2^(o(n)) lower bound.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "vertices",
+      "encoding_attempt": "found: For Cluster Vertex Deletion on n vertices, one Boolean variable per vertex (whether deleted) plus a 3-clause for each of the O(n^3) induced P_3's and an O(n)-variable Tseitin adder circuit for 'at most k deleted vertices' gives a 3-CNF with O(n) variables and O(n^3) clauses, which list item 1 solves in 2^(o(n)) time (whereas Connected Cluster Vertex Deletion additionally requires a global connectivity constraint).",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C66",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Our results imply that under the exponential time hypothesis, no two-element algebra of tame congruence theory type 3 has a sub-exponential algorithm to solve a single polynomial equation.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "FALSCH",
+          "class_reason": "The problem is solving a single polynomial equation over a fixed two-element algebra A with linear size measure (the paper reduces m-clause 3-SAT with linear growth of problem size N); a term/polynomial equation of size N over a two-element (Boolean) algebra with fixed finite basic operations can be Tseitin-encoded with one Boolean variable per subterm node into a fixed-width k-CNF with O(N) variables and O(N) clauses, which is solved in 2^(o(N)) time by list item 1.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "found: A polynomial equation of size N over a fixed two-element algebra has basic operations of bounded arity, so Tseitin encoding with one Boolean variable per syntax-tree node yields a fixed-width k-CNF with O(N) variables and O(N) clauses.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C67",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "(2) assuming the GapSETH (gap strong exponential time hypothesis), we presented a reduction from SVP to uSVP with subexponential running time and constant parameters, which proved the intractability of uSVP under GapSETH;",
+          "hypothesis": [
+            "Gap-ETH",
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on Gap-SETH, which is refuted, and lattice problem uSVP in rank n does not admit an O(n)-variable fixed-width k-CNF encoding, leaving the intractability bound unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Base the hardness of uSVP on SVP directly (via the paper's reduction in item 1) or on CNF-SAT-H if applicable.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "(3) all results above can be transferred into the hardness results of BDD (bounded distance decoding), hence BDD with a parameter strictly smaller than 1 is also intractable assuming GapSETH;",
+          "hypothesis": [
+            "Gap-ETH",
+            "SETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Relies on Gap-SETH, which is refuted, leaving the hardness of BDD unsupported.",
+          "fix_type": "rebase",
+          "fix_candidate": "Base BDD hardness directly on SVP hardness.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "input size",
+      "encoding_attempt": "not found: Lattice problems uSVP and BDD involve integer linear combinations of basis vectors and norm comparisons that cannot be encoded in O(n)-variable fixed-width k-CNF.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C68",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Under this conjecture and the ETH, we first rule out the existence of subexponential algorithms for finite-domain NP-complete CSP(Gamma) problems.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "FALSCH",
+          "class_reason": "The paper defines subexponential time in the abstract as 'O(c^n) time for arbitrary c > 1, where n denotes the number of variables'; for any finite-domain CSP(Γ) with fixed finite constraint language Γ, encoding each of the n variables in binary uses n·⌈log_2 |D|⌉ Boolean variables and bounded-width clauses for each constraint, which list item 1 solves in 2^(o(n))·poly(n,m) time (hence O(c^n) for every c > 1).",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "We also prove that the complexity of CSP({SD}) is decreasing when |D| increases, unless the ETH is false.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "FALSCH",
+          "class_reason": "Because CSP({S_D}) on n variables over finite domain D encodes into fixed-width k-CNF with O(n) Boolean variables and polynomial clauses, list item 1 solves it in 2^(o(n))·poly(n,m) time (i.e. O(c^n) for all c > 1) for every finite D, refuting the claim that the exponential base c > 1 strictly decreases with |D|.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "variables",
+      "encoding_attempt": "found: Encoding each of the n variables of CSP(Γ) over finite domain D with ⌈log_2 |D|⌉ Boolean variables converts every constraint of fixed arity r into at most |D|^r clauses of width r·⌈log_2 |D|⌉, which is solved in 2^(o(n))·poly(n,m) time by list item 1.",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C69",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "Consequently, there is no $2^{2^{o(k)}}{\\rm poly}(n)$ time algorithm for the ECC problem, unless the Exponential Time Hypothesis fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound has doubly-exponential parameterized shape 2^(2^(o(k)))·poly(n), which by the transfer rule is unsupported after the refutation of ETH.",
+          "fix_type": "weaken",
+          "fix_candidate": "Using the paper's reduction with k = O(log n) and |V(G)| = O(n+m), weaken the bound under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        },
+        {
+          "quote": "Moreover, our reduction also implies that, unless P $ = $ NP, the ECC problem does not admit a subexponential kernel, i.e., a kernel of size $2^{o(k)}$.",
+          "hypothesis": [
+            "other-not-refuted"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNBERUEHRT",
+          "class_reason": "This kernelization lower bound relies on P != NP, which is not refuted.",
+          "fix_type": "none",
+          "fix_candidate": "",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C70",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "- For F={2K_2}, F={C_4}, F={P_4}, and F={2K_2,P_4}, F-Completion cannot be solved in time 2^o(k).n^O(1) unless the Exponential Time Hypothesis (ETH) fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound is of the parameterized form 2^(o(k))·n^(O(1)), which by the transfer rule is unsupported when ETH fails.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(k/polylog k)·n^(O(1)) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C71",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "no",
+      "claims": [
+        {
+          "quote": "The exponent of $O(\\sqrt{k})$ in this bound is asymptotically optimal assuming the Exponential Time Hypothesis and the previously best known algorithm runs in $2^{O(\\sqrt{k}\\log k)} + n^{O(1)}$ time.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "algorithm_or_tightness",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The paper gives an unconditional algorithm and notes that the O(√k) exponent is asymptotically optimal under ETH; that 2^(o(√k)) lower bound is parameterized and is unsupported per the transfer rule.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken the optimality lower bound to 2^(√k/polylog k) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C72",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "We show that when the number of “votes” in the input to p-KAGG is oddthe V above guarantee version can still be solved in time O*(2O(√ k log k)), while if it is even then the problem cannot have a subexponential time algorithm unless the exponential time hypothesis fails (equivalently, unless FPT = M[1]).",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "Here 'subexponential time algorithm' refers to parameterized subexponential time O*(2^(o(k))) in the above-guarantee parameter k (contrasted with O*(2^(O(√k log k)))) under ETH (equivalently FPT != M[1]); per the transfer rule, parameterized 2^(o(k)) lower bounds are unsupported.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to O*(2^(k/polylog k)) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    },
+    {
+      "pilot_id": "C73",
+      "evidence_level": "abstract",
+      "has_own_conditional_result": "yes",
+      "claims": [
+        {
+          "quote": "—For F ={2 K 2 }, F = { C 4 }, F ={ P o 4 }, and F ={2 K 2 , P 4 }, F -C ompletion cannot be solved in time 2 o(k) n O (1) unless the Exponential Time Hypothesis (ETH) fails.",
+          "hypothesis": [
+            "ETH"
+          ],
+          "result_type": "lower_bound",
+          "class": "UNGESTUETZT-OFFEN",
+          "class_reason": "The lower bound has parameterized form 2^(o(k))·n^(O(1)), which by the transfer rule is unsupported after the refutation of ETH.",
+          "fix_type": "weaken",
+          "fix_candidate": "Weaken to 2^(k/polylog k)·n^(O(1)) under a successor 3-SAT hypothesis.",
+          "rescue_hypothesis": ""
+        }
+      ],
+      "size_measure": "parameter only",
+      "encoding_attempt": "n/a",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,1996 @@
+{
+ "classifier": "claude-sonnet (Klassifikator A, Brief v2)",
+ "papers": [
+  {
+   "pilot_id": "C01",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "assuming the Exponential Time Hypothesis (ETH), $$3$$ -coloring cannot be solved in time $$2^{o(n)}$$ on graphs with $$n$$ vertices and diameter at most $$4$$ .",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "3-Färbbarkeit auf n-Knoten-Graphen (Durchmesser 4 ist Spezialfall) liegt in 2^(o(n)): Neuer Algorithmus 2 (Zählen eigentlicher q-Färbungen in 2^(o(v)), q=3).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    },
+    {
+     "quote": "Moreover, assuming ETH, we use three different amplification techniques of our hardness results, in order to obtain for every $${\\varepsilon \\in [0,1)}$$ subexponential asymptotic lower bounds for the complexity of $$3$$ -coloring on triangle-free graphs with diameter $$3$$ and minimum degree",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke 2^(o(n^(1-eps))) ist von anderer Form als 2^(o(n)); der Algorithmus 2^(o(v)) widerlegt sie nicht (Transferregel).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found: Variable je (Knoten, Farbe) bzw. 2 Bit je Knoten, Kantenbedingungen der Breite <=4, also 3-CNF/4-CNF mit O(n) Variablen (Algorithmus 2 direkt anwendbar).",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C02",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Assuming the Exponential Time Hypothesis, none of these problems can be solved in time 2O(n1/2/logcn) or 2O(k1/4/logck). nO(1) for some integer c.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranken 2^(O(n^(1/2)/log^c n)) bzw. 2^(O(k^(1/4)/log^c k)) sind sublineare/parametrisierte Formen; keine direkte Widerlegung (Transferregel).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "Assuming the non-existence of a subexponential-time approximation scheme for Min Bisection on d-regular graphs, for some constant d",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Stützt sich auf eine Min-Bisection-Hypothese, die nicht in der Liste widerlegter Hypothesen steht.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Vervollständigung per Kantenvariablen (Theta(n^2)) bzw. Schranken in n^(1/2), k^(1/4).",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C03",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "neither in subexponential time (i.e., $2^{o(|G|)}$)",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Maß |G| nicht definiert: Zählt |G| die Kanten (n+m), gäbe es eine Kodierung (Variable je Kante, Breite-6-Bedingung je 4-Menge, Kardinalität per Addierer) und FALSCH; zählt |G| Knoten dichter Graphen, nicht.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNKLAR_ABSTRACT"
+    },
+    {
+     "quote": "nor in parameterized subexponential time (i.e., $2^{o(k)}\\cdot |G|^{O(1)}$)",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Parametrisierte Schranke 2^(o(k))*poly; keine direkte Widerlegung (Transferregel).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "unclear",
+   "encoding_attempt": "found if |G| counts edges: variable per edge, width-6 constraint per 4-vertex set (final induced graph not a diamond), adder for <=k; not found if |G| = vertices of dense graphs.",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C04",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Suppose the Strong Exponential Time Hypothesis (SETH) is false, so that for some 1<c<2 and all k there is an O(cn)-time algorithm for #k-SAT. Then we prove that for all k, there is an O((c+o(1))n)-time algorithm for approximate #k-SAT.",
+     "hypothesis": [
+      "SETH"
+     ],
+     "result_type": "fine_grained_reduction",
+     "class_reason": "Implikation 'SETH falsch => Näherungszählen schnell' bleibt gültig und wird mit der Widerlegung anwendbar; keine untere Schranke.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    },
+    {
+     "quote": "In particular, our result implies that the Exponential Time Hypothesis (ETH) is equivalent to the seemingly-weaker statement that there is no algorithm to approximate #3-SAT to within a factor of 1+ε in time 2o(n)/ε2 (taking ε > 0 as part of the input).",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Die Arbeit gibt eine Äquivalenz 'kein 2^(o(n))-Näherungsalgorithmus für #3-SAT <=> ETH'; #3-SAT (und damit Näherung) liegt nach Algorithmus 1 in 2^(o(n)). Transferregel: Äquivalenz.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "found: #3-SAT direkt (n Variablen, Breite 3).",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C05",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "we show that both Clique and DomSet admit no non-trivial FPT-approximation algorithm, i.e., there is no o(OPT)-FPT-approximation algorithm for Clique and no f(OPT)-FPT-approximation algorithm for DomSet, for any function f",
+     "hypothesis": [
+      "Gap-ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Ergebnis folgt aus Gap-ETH (widerlegt); t(OPT)*poly(N)-FPT-Approximation ist parametrisierte Form, durch die neuen 2^(o(n))-Algorithmen nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Aussage über t(OPT)*poly(N), nicht über 2^(o(N)).",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C06",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "an algorithm running in time $$2^{o(n)}$$ for 4-Coloring even on axis-parallel segments (of unbounded length) would disprove the ETH.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "4-Färbbarkeit der Schnittgraphen von n Strecken liegt in 2^(o(n)): Algorithmus 2 (Zählen q-Färbungen, q=4) auf dem Schnittgraphen.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    },
+    {
+     "quote": "For 4-Coloring of unit segments, we show a weaker lower bound, excluding a $$2^{o(n^{2/3})}$$ algorithm (under the ETH).",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke 2^(o(n^(2/3))) ist anderer Form; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "The subexponential running time also carries over to Min Feedback Vertex Set, but not to Min Dominating Set and Min Independent Dominating Set.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Für Min Dominating Set gilt kein 'nicht subexponentiell' mehr: Algorithmus 3 (Dominating Set in 2^(eps n) für jedes eps). Independent Dominating Set nicht abgedeckt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found: 4 Farben je Knoten (2 Bit), Kantenbedingungen Breite 4 (Algorithmus 2); Dominating Set: Algorithmus 3.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C07",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Assuming the Exponential Time Hypothesis, none of these problems can be solved in time 2 O ( n 1/2 /log c n ) or 2 O ( k 1/4 /log c k )· n O (1) , for some integer c",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranken 2^(O(n^(1/2)/log^c n)) und 2^(O(k^(1/4)/log^c k)) sublinear/parametrisiert; keine direkte Widerlegung.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "Assuming the non-existence of a subexponential-time approximation scheme for M IN B ISECTION on d -regular graphs, for some constant d",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Stützt sich auf eine Min-Bisection-Hypothese, nicht in der Liste widerlegter Hypothesen.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Kantenergänzung mit Theta(n^2) Variablen; Schranken in n^(1/2) und k^(1/4).",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C08",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "we show that both ${\\sf Clique}$ and ${\\sf DomSet}$ admit no nontrivial FPT-approximation algorithm",
+     "hypothesis": [
+      "Gap-ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Folgt aus Gap-ETH (widerlegt); parametrisierte Approximationsform, nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: t(OPT)*poly(N)-Form.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C09",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Suppose the Strong Exponential Time Hypothesis (SETH) is false, so that for some 1 < c < 2 and all k there is an O ( c n )-time algorithm for k -SAT. Then we prove that for all k , there is an O (( c + o (1)) n )-time algorithm for approximate # k -SAT.",
+     "hypothesis": [
+      "SETH"
+     ],
+     "result_type": "fine_grained_reduction",
+     "class_reason": "Implikation 'SETH falsch => Näherungszählen schnell' bleibt gültig; keine untere Schranke.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    },
+    {
+     "quote": "In particular, our result implies that the Exponential Time Hypothesis (ETH) is equivalent to the seemingly weaker statement that there is no algorithm to approximate #3-SAT to within a factor of 1+ɛ in time 2 o ( n )/ ɛ 2 (taking ɛ > 0 as part of the input).",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Äquivalenz 'kein 2^(o(n))-Näherungsalgorithmus für #3-SAT <=> ETH'; #3-SAT in 2^(o(n)) nach Algorithmus 1.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "found: #3-SAT direkt (n Variablen, Breite 3).",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C10",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "no",
+   "claims": [
+    {
+     "quote": "suggest a potential approach to refuting the Orthogonal Vectors Conjecture in the$O(\\log n)$-dimensional case, which would be sufficient for refuting the Strong Exponential Time Hypothesis (SETH).",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "other",
+     "class_reason": "Win-win-Schranken sind unbedingt bzw. stützen sich auf OVC (nicht widerlegt); SETH erscheint nur als Folgerung aus einer OVC-Widerlegung.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "n/a",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C11",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "an exact algorithm of running time 2(n1–5) for any δ > 0 implies that ETH fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke 2^(O(n^(1-delta))) bei n Jobs, Zeiten <=O(n): von anderer Form als 2^(o(n)) (Abstract verstümmelt); keine direkte Widerlegung.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "We prove this algorithm is nearly optimal in the sense that a 2O((1/∊)1–5) + nO(1) time PTAS for any δ > 0 implies that ETH fails",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "PTAS-Schranke 2^(O((1/eps)^(1-delta))) parametrisiert in 1/eps; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "unclear",
+   "encoding_attempt": "not found: Zuweisung Job->Maschine braucht n log m Variablen, Summenbedingungen mit Gewichten.",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C12",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "One corollary of our reduction is that there is no $f(k)\\cdot n^{o(k)}$ time algorithm to decide whether a graph contains a subgraph isomorphic to $K_{k!,k!}$ unless the ETH(Exponential Time Hypothesis) fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "f(k)*n^(o(k))-Schranke, parametrisiert; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "which indicates that $k$-biclique has no $f(k)\\cdot n^{o(\\sqrt{k})}$-time algorithm unless 3-SAT with $m$ clauses can be solved in $2^{o(m)}$-time with high probability.",
+     "hypothesis": [
+      "rETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "f(k)*n^(o(sqrt k)) unter rETH, parametrisiert; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: n^(o(k))-Form.",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C13",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "For the Euclidean case, we also show that even an n o ( d ) -time algorithm does not exist, unless there is a 2 o ( n ) -time algorithm for n -variable 3SAT, that is, the Exponential Time Hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "n^(o(d))-Schranke, Parameter Dimension d; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: n^(o(d))-Form.",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C14",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "does not admit a 2 o ( n ) -time algorithm where n is the number of vertices in G .",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Allquantifizierte Aussage über alle nichttrivialen erblichen Pi hat Gegenbeispiel Vertex Cover (Pi = kantenlos): Algorithmus 3 (2^(eps n)) bzw. Variable je Knoten, Breite-2-Klauseln.",
+     "fix_type": "restrict",
+     "fix_candidate": "Beschränken auf Pi, die nicht durch endlich viele verbotene induzierte Teilgraphen beschreibbar sind (Kandidat).",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    },
+    {
+     "quote": "contains all edgeless graphs, then there is no 2 o ( n+m ) -time algorithm",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Pi = kantenlose Graphen ist Vertex Cover; 2^(eps n) <= 2^(eps (n+m)) widerlegt auch die n+m-Schranke (Algorithmus 3).",
+     "fix_type": "restrict",
+     "fix_candidate": "Auf Pi mit nicht endlich charakterisierbarem Verbotssystem einschränken (Kandidat).",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found (for finite forbidden-subgraph Pi, e.g. Vertex Cover/Cluster): variable per vertex, clause per forbidden induced subgraph, adder for <=k.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C15",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "there is no algorithm for Rainbow $k$-Coloring running in time $2^{o(n^{3/2})}$, unless the exponential time hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke 2^(o(n^(3/2))); Regenbogenpfad-Bedingungen sind global, keine lineare Kodierung erkennbar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Kantenfarben Theta(n^2) Variablen; Existenz regenbogenfarbener Pfade global.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C16",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "As a corollary, the Strong Exponential Time Hypothesis (even its weak counting variant #SETH) implies that counting solutions to constant-degree polynomials (even over F_2) requires essentially 2^n time.",
+     "hypothesis": [
+      "SETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Untere Schranke 2^n für Zählen von Polynomlösungen folgt aus #SETH (widerlegt); Rückrichtung (Polynomzählen -> #k-CNF mit O(n) Variablen) nicht erkennbar (Monomanzahl n^d).",
+     "fix_type": "weaken",
+     "fix_candidate": "Reduktion #k-CNF -> Polynomzählen bleibt gültig: Zählen von Polynomen ist mindestens so schwer wie #k-CNF (jetzt 2^(n loglog n/sqrt(log n)) bekannt).",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "not found: Grad-d-Polynom hat bis n^d Monome, Tseitin ergibt keine O(n) Hilfsvariablen.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C17",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Our main result is a tight reduction from k-SAT to Subset Sum on dense instances, proving that Bellman's 1962 pseudo-polynomial O*(T)-time algorithm for Subset Sum on n numbers and target T cannot be improved to time T1–ε · 2o(n) for any ε > 0, unless the Strong Exponential Time Hypothesis (SETH) fails.",
+     "hypothesis": [
+      "SETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke T^(1-eps)*2^(o(n)) hängt am Zielwert T; keine lineare Kodierung (Addierer über T-Bits), nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "As an application of this corollary, we prove a tight SETH-based lower bound for the classical Bicriteria s, t-PATH problem",
+     "hypothesis": [
+      "SETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Pseudopolynomiale Schranke O~(L+m); nicht von der Form 2^(o(N)).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "not found: Subset-Sum-Gewichte mit T Bits, Addierer Theta(n log T) Hilfsvariablen.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C18",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Moreover, we show that under the exponential time hypothesis, there are no exact algorithms running in 2o(n) time or in [Formula: see text] time for any computable function f.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Zusammenhängender aufspannender Teilgraph minimaler Kosten: Zusammenhang ist global, keine O(n)-Kodierung erkennbar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Konnektivität erfordert super-lineare Hilfsvariablen; Kantenvariablen Theta(n^2).",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C19",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "assuming the Exponential-Time Hypothesis (ETH), the problem cannot be solved in time 2 o(n)",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Rundreise (Hamiltonizität) braucht Ordnung/Zusammenhang: n log n Variablen; Algorithmus 1 liefert dafür kein 2^(o(n)).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Tourordnung/Zusammenhang, beliebige Gewichte.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C20",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Further, we rule out the existence of a subexponential-time algorithm for the $\\oplus{P}$-complete cases, assuming the randomized exponential time hypothesis.",
+     "hypothesis": [
+      "rETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Parität der Homomorphismen G->H (H fest) = Parität von #CSP mit |V(G)|*ceil(log|H|) Variablen und beschränkter Klauselbreite; Algorithmus 1 zählt exakt in 2^(o(n)), Parität folgt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found: ceil(log|H|) Bits je Knoten von G, Kantenverträglichkeit als Klauseln der Breite 2ceil(log|H|); exakte #k-CNF-Zählung, dann mod 2.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C21",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Further, we rule out the existence of a subexponential-time algorithm for the ⊕P-complete cases, assuming the randomised Exponential Time Hypothesis.",
+     "hypothesis": [
+      "rETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Wie C20: Homomorphismen-Parität über feste H als #k-CNF mit O(|V(G)|) Variablen, exakt in 2^(o(n)) (Algorithmus 1).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found: ceil(log|H|) Bits je Knoten von G, Kantenverträglichkeit als Klauseln der Breite 2ceil(log|H|); exakte #k-CNF-Zählung, dann mod 2.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C22",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "there is no 2^{o(n)}-time algorithm for BDD_{p, α} for any constant α > α_kn, where α_kn = 2^{-c_kn} < 0.98491 and c_kn is the 𝓁₂ kissing-number constant, unless non-uniform Gap-ETH is false.",
+     "hypothesis": [
+      "Gap-ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Gitterproblem (Dimension n), keine Kodierung als k-CNF; Schranke folgt nur aus Gap-ETH (widerlegt).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "there is no 2^{n/C}-time algorithm for BDD_{p, α} for any constant α > α^†_{p, C}, where α^†_{p, C} is explicit and satisfies α^†_{p, C} → 1 as C → ∞ for any fixed p ∈ [1, ∞), unless non-uniform Gap-SETH is false.",
+     "hypothesis": [
+      "Gap-ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Gap-SETH impliziert Gap-ETH und ist damit ebenfalls widerlegt; Gitterproblem nicht kodierbar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "not found: reelle Gittervektoren, keine endliche Bitkodierung mit O(n) Variablen.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C23",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Our main result is a tight reduction from k -SAT to Subset Sum on dense instances, proving that Bellman’s 1962 pseudo-polynomial O * ( T )-time algorithm for Subset Sum on n numbers and target T cannot be improved to time T 1-ε · 2 o(n) for any ε > 0, unless the Strong Exponential Time Hypothesis (SETH) fails.",
+     "hypothesis": [
+      "SETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke T^(1-eps)*2^(o(n)) hängt am Zielwert T; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "we prove a tight SETH-based lower bound for the classical Bicriteria s,t -Path problem",
+     "hypothesis": [
+      "SETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Pseudopolynomiale Schranke O~(L+m); nicht von der Form 2^(o(N)).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "not found: Gewichte mit T Bits, Addierer Theta(n log T).",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C24",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "1-extendability cannot be solved in 2o(n) time assuming the Exponential Time Hypothesis",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "1-Erweiterbarkeit: alpha(G) und alpha(G-N[v]) für jedes v mit n+1 Aufrufen des neuen Independent-Set-Algorithmus (Algorithmus 3) in 2^(eps n)*poly = 2^(o(n)).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found: n+1 Aufrufe von Independent Set (2^(eps n)); v 1-erweiterbar gdw alpha(G-N[v])+1=alpha(G).",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C25",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "solving Treewidth exactly requires 2 Ω (n) time, unless the ETH fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Treewidth ist nicht in der Liste und braucht Eliminationsordnung (n log n Variablen); Algorithmen 1-3 liefern kein 2^(o(n)).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "We further derive, under the latter assumption, that there are some constants δ > 1 and c > 0 such that δ-approximating Treewidth requires time",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Schranke 2^(Omega(n/log^c n)) für Approximation; nicht widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Ordnung/Baumzerlegung braucht n log n Bits; Treewidth nicht in neuer Algorithmenliste.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C26",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "the problem cannot be solved in 2 o ( n ) time when λ = Θ ( n ) , unless the Exponential Time Hypothesis (ETH) fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Geometrische TSP-Tour: Ordnung/Zusammenhang und reelle Distanzen, keine O(n)-Kodierung.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "not found: Tourordnung, euklidische Längensummen.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C27",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Moreover, assuming the Exponential Time Hypothesis, none of these problems can be solved in 2 o ( n ) time for n -vertex P 14 -free 8-chordal graphs.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Matching Cut (Teil der Aussage) liegt in 2^(o(n)): Variable x_v je Knoten, je Knoten v und Nachbarpaar (u,w) eine 3-Variablen-Bedingung 'höchstens ein Nachbar auf der anderen Seite', poly(n) Klauseln Breite 3; Nichtleere Seiten durch Raten von a in A, b in B.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    },
+    {
+     "quote": "Moreover, assuming the Exponential Time Hypothesis, none of these problems can be solved in 2 o ( n ) time for n -vertex P 14 -free 8-chordal graphs.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Für Perfect Matching Cut und Disconnected Perfect Matching bleibt offen: 'mindestens ein Nachbar drüben' hat unbeschränkte Breite bzw. Theta(m) Hilfsvariablen.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found for Matching Cut (n variables, width-3 pairwise at-most-one constraints); not found for perfect matching cut / dpm (at-least-one clauses of unbounded width).",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C28",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "no",
+   "claims": [
+    {
+     "quote": "This result implies that the hypotheses $\\#W[1] \\neq \\text{FPT}$, $W[1] \\neq \\text{FPT}$, the Counting Exponential Time Hypothesis, and the Exponential Time Hypothesis all do not hold.",
+     "hypothesis": [
+      "none"
+     ],
+     "result_type": "algorithm_or_tightness",
+     "class_reason": "Unbedingter Algorithmusanspruch, keine untere Schranke aus widerlegter Hypothese. Hinweis: behauptet W[1]=FPT, das laut A0 als bestehend gilt; Anspruch steht in Spannung zu A0.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "n/a",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C29",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "we prove a tight ETH-based lower bound for Bin Packing, ruling out time 2o(n) To(k).",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke 2^(o(n))*T^(o(k)) mit Parameter k und Zielwert T; keine lineare k-CNF-Kodierung, nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Gewichtssummen mit T Bits, k Behälter als Parameter.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C30",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "no",
+   "claims": [
+    {
+     "quote": "the deterministic runtime is bounded by: T(n, m) <= (n + m)^O(1) * 2^(n / (log n)^(1/2 + o(1)))",
+     "hypothesis": [
+      "none"
+     ],
+     "result_type": "algorithm_or_tightness",
+     "class_reason": "Behauptet eigenen Algorithmus (kein bedingtes Ergebnis); Abstract selbst sagt, dass es ETH nicht allein widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "n/a",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C31",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "we prove that the existence of a subexponential time (in the number of vertices and edges of the input signed graph) algorithm would violate the Exponential Time Hypothesis",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Einbettung in R^1 = Knotenordnung (n log n Bits); Maß n+m, bei dünnen Graphen keine lineare Kodierung.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices+edges",
+   "encoding_attempt": "not found: Permutation braucht n log n Variablen bzw. n^2 Ordnungsvariablen.",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C32",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "as well as a subexponential running time lower bound based on the Exponential Time Hypothesis.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Form der Schranke (2^(o(n)) oder 2^(o(sqrt n))) im Abstract nicht genannt. Gilt 2^(o(n)) in der Punktzahl, ist sie widerlegt (Kodierung gefunden).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNKLAR_ABSTRACT"
+    }
+   ],
+   "size_measure": "unclear",
+   "encoding_attempt": "found: Variable je Punkt, Klausel (not x_i or not x_j or not x_k) je kollineares Tripel (Breite 3, poly(n) Klauseln), Kardinalität >=k per Addierer (O(n) Hilfsvariablen).",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C33",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Moreover, we show that there is no subexponential-time algorithm for this problem on graphs of maximum degree four unless the Exponential-Time Hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Partition Into Triangles auf Grad<=4: Variable je Dreieck (O(n) viele), 'genau eines je Knoten' hat Breite <=6; Algorithmus 1 (m=O(n)) liefert 2^(o(n)).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found: Variable je Dreieck, genau-eins-Bedingung je Knoten (Breite <=6, in <=6 Dreiecken).",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C34",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "For any r larger than some constant, any r-approximation algorithm for the independent set problem must run in at least 2n1-ε/r1+εtime.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Schranke 2^(n^(1-eps)/r^(1+eps)) liegt unter 2^(eps n); Algorithmus 3 widerlegt sie nicht.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "For any k larger than some constant, there is no polynomial time min{k1-ε, n1/2-ε} time min -approximation algorithm for the k-hypergraph pricing problem , where n is the number of vertices in an input graph.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Polynomialzeit-Approximationsschranke, übertragen über PCP-Reduktionen; keine direkte Widerlegung.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Approximationsschranke mit sublinearem Exponenten.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C35",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "We show that, assuming the ETH, the best algorithm to compute the weighted chromatic number of $n$-node trees has time-complexity $n^{\\Theta(\\log n)}$",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Quasipolynomielle Schranke n^(Omega(log n)); aus 2^(o(n)) für 3-SAT nicht widerlegbar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Quasipolynomialform.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C36",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "We show that, assuming ETH, the best algorithm to compute the weighted chromatic number of n-node trees has time-complexity n O(log(n)).",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Quasipolynomielle Schranke; aus 2^(o(n)) nicht widerlegbar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Quasipolynomialform.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C37",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Editing towards trivially perfect graphs and cographs is not possible in subexponential time unless the exponential time hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Subexponentiell vermutlich im Parameter k (Kantenänderungen); keine lineare Kodierung, parametrisierte Form.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Kantenänderungen Theta(n^2) Variablen, Schranke in k.",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C38",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "For any $$\\epsilon <1$$ , there is no $$(1+\\epsilon )$$ -approximation with running time $$\\exp \\left( o(\\lfloor 1/\\epsilon \\rfloor ^{d/3})\\right) $$ unless the Exponential Time Hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Doppelt-exponentielle Form exp(o(floor(1/eps)^(d/3))) mit Parameter d; keine direkte Widerlegung.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "No $$(1+\\epsilon )$$ -approximation with running time $$\\exp \\left( \\lfloor 1/\\epsilon \\rfloor ^{o(d)}\\right) $$ exists, unless NP has subexponential time algorithms.",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Stützt sich auf 'NP hat keine subexponentiellen Algorithmen', nicht in der Liste widerlegter Hypothesen.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Parameter d, 1/eps.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C39",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "the algorithm that we obtain is nearly optimal (under the exponential time hypothesis) since an algorithm that runs in time $(nm)^{o(r)}$ would yield a subexponential algorithm for $3$-SAT",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke (nm)^(o(r)) im Parameter r; 'subexponentieller 3-SAT-Algorithmus' existiert nun, aber (nm)^(o(r)) folgt nicht.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: n^(o(r))-Form.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C40",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "the algorithm that we obtain is nearly-optimal (under the Exponential Time Hypothesis) since an algorithm that runs in time (nm)o(r) would yield a subexponential algorithm for 3-SAT",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke (nm)^(o(r)) im Parameter r; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: n^(o(r))-Form.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C41",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "We show that unless P=NP, it is not possible to approximate in polynomial time the minimum number of clauses and the minimum number of literals of pure Horn CNF representations to within a factor of $2^{log^{1-o(1)} n}$.",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Stützt sich auf P != NP (nicht widerlegt).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    },
+    {
+     "quote": "Furthermore, we show that even allowing sub-exponential time computation, it is still not possible to obtain constant factor approximations for such problems unless the Exponential Time Hypothesis is false.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Approximationsschranke über allgemeine Reduktionen; Transferregel: nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "not found: Approximationsschranke für Horn-Darstellungsminimierung.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C42",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "they do not admit poly(OPT)-approximation in polynomial time, unless P=NP",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Stützt sich auf P != NP.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    },
+    {
+     "quote": "or even in time subexponential in OPT, unless the Exponential Time Hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Schranke subexponentiell in OPT (Parameter); nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Schranke in OPT.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C43",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "The running times of our algorithms are optimal up to the $$\\log {k}$$ factor in the exponent, assuming the exponential time hypothesis.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Optimalität 2^(Omega(sqrt k)) im Parameter k; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Parameter-k-Schranke.",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C44",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "It also implies that a (significant) improvement over our result will refute the gap-ETH conjecture",
+     "hypothesis": [
+      "Gap-ETH"
+     ],
+     "result_type": "algorithm_or_tightness",
+     "class_reason": "Tightness-Hinweis 'Verbesserung widerlegt Gap-ETH' verliert Beweiskraft, da Gap-ETH widerlegt ist; Algorithmus selbst bleibt gültig.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Aussage über Approximationsalgorithmen mit Verhältnis r.",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C45",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "We show that many classes of planning instances exhibit a dichotomy: either they can be solved in polynomial time or they cannot be solved in subexponential time.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Abstract nennt weder Instanzklassen noch Größenmaß; Entscheidung braucht Volltext.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNKLAR_ABSTRACT"
+    }
+   ],
+   "size_measure": "unclear",
+   "encoding_attempt": "not found: Planungsinstanzklassen nicht spezifiziert.",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C46",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "show that these cannot be solved in time $2^{o(|s|/\\log{|s|})}$, unless the Exponential Time Hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke 2^(o(n/log n)); Abbildungen/Einbettungen brauchen n log n Bits; Algorithmus 1 liefert 2^(o(N)) für N = n log n nicht.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "not found: Einbettung braucht n log n Variablen, Schranke n/log n.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C47",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "they do not admit poly(OPT)-approximation in polynomial time, unless P=NP",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Stützt sich auf P != NP.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    },
+    {
+     "quote": "or even in time subexponential in OPT, unless the exponential time hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Schranke subexponentiell in OPT (Parameter); nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Schranke in OPT.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C48",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "we show that there are no NCP, MDP, or NCPP algorithms running in time q(1-ε)nfor any constant ε > 0 for codes with qncodewords.",
+     "hypothesis": [
+      "SETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke q^((1-eps)n) für Codes; Paritätsbedingungen mit großem Fan-in, nicht in O(n) Variablen kodierbar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "We also show that there are no sub-exponential time algorithms for y-approximate versions of these problems for some constant -y > 1, under different versions of the exponential-time hypothesis.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Approximationsvarianten über Reduktionen; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "not found: Parität über viele Variablen je Koordinate, Tseitin ergibt Theta(nk) Hilfsvariablen.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C49",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "The Randomized Exponential-Time Hypothesis (rETH) implies that ℬ𝒫𝒫 can be simulated on “average-case” in deterministic (nearly-)polynomial-time",
+     "hypothesis": [
+      "rETH"
+     ],
+     "result_type": "other",
+     "class_reason": "Folgerung 'rETH => Derandomisierung' stützt sich auf widerlegtes rETH.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "The Non-Deterministic Exponential-Time Hypothesis (NETH) implies that derandomization of ℬ𝒫𝒫 is completely equivalent to circuit lower bounds against",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "other",
+     "class_reason": "NETH steht nicht in A0; ob die benutzte Form durch die Widerlegung von ETH/NSETH betroffen ist, lässt sich nur im Volltext klären.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNKLAR_ABSTRACT"
+    },
+    {
+     "quote": "if CircuitSAT for circuits over n bits of size poly(n) can be solved by probabilistic algorithms in time 2 n /polylog(n) , then ℬ𝒫ℰ does not have circuits of quasilinear size.",
+     "hypothesis": [
+      "none"
+     ],
+     "result_type": "other",
+     "class_reason": "Unbedingte Implikation.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "n/a",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C50",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "As a corollary, achieving any super-constant approximation ratio on Uniform Decision Tree is not NP-hard, assuming the Exponential Time Hypothesis.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "other",
+     "class_reason": "Folgerung stützt sich auf ETH (widerlegt); Subexp-Algorithmus selbst bleibt gültig.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "n/a",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C51",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Therefore, for any of these problems, its subexponential-time solvability is equivalent to the failure of ETH.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Die Arbeit behauptet eine Äquivalenz 'subexponentiell lösbar <=> ETH falsch' für Dominating Set (Algorithmus 3), Independent Dominating Set, lineare Schaltkreis-SAT u. a.; Transferregel (Äquivalenz): Schranke 'nicht subexponentiell' ist widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "unclear",
+   "encoding_attempt": "found: Linear Monadic NP = k-CNF mit O(n) Variablen (Äquivalenz zu k-CNF-SAT unter serf-Reduktion); Dominating Set direkt Algorithmus 3.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C52",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "To obtain our lower bounds, we use the Gap Exponential Time Hypothesis (Gap-ETH) as well as a new hypothesis regarding the hardness of approximating the well known Densest κ-Subgraph problem in subexponential time (these hypotheses are used separately in proving different lower bounds).",
+     "hypothesis": [
+      "Gap-ETH",
+      "other-not-refuted"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Teil der Schranken stützt sich auf Gap-ETH (widerlegt); Teile mit der Densest-k-Subgraph-Hypothese bleiben. Welche Schranken wo, nur im Volltext.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "unclear",
+   "encoding_attempt": "not found: Lernproblem mit reellen Gewichten.",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C53",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "this restriction of Matching Cut has no subexponential-time algorithm in the number of vertices unless the Exponential-Time Hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Matching Cut liegt in 2^(o(n)): Variable je Knoten, 3-Variablen-Bedingung 'höchstens ein Nachbar auf der anderen Seite' je Nachbarpaar, Algorithmus 1 mit poly(n) Klauseln.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found: n Variablen, je Knoten und Nachbarpaar eine Breite-3-Bedingung, nichtleere Seiten durch Raten von zwei Knoten.",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C54",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "we show that, for all those problems, there is a constant ratio of approximation that cannot be attained even in time 2 n 1−ɛ , unless the Exponential Time Hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "hardness_of_approx",
+     "class_reason": "Schranke 2^(n^(1-eps)) liegt unter den neuen 2^(eps n)-Algorithmen; nicht widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Schranke 2^(n^(1-eps)).",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C55",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "it allows us to derive matching $2^{\\Omega(n^{1-1/d})}$ lower bounds under the exponential time hypothesis even in the much more restricted class of $d$-dimensional induced grid graphs.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke 2^(Omega(n^(1-1/d))) für feste Dimension d; sublinearer Exponent, nicht widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "not found: Schranke n^(1-1/d).",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C56",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "We show that the version of $\\mathsf{MCSP}$ where the input is a partial function (represented by a string in $\\{0,1,\\star\\}^*$) is not in $\\mathsf{P}$ under the Exponential Time Hypothesis (ETH).",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "'Nicht in P' folgt aus ETH (widerlegt); P != NP allein reicht nicht für diese Aussage.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "We show that unless there are subexponential-sized circuits computing $\\mathsf{SAT}$, the collection of lower bound statements used to prove the correctness of our reductions cannot be $(\\mathsf{P/poly})$-recognizable.",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "other",
+     "class_reason": "Stützt sich auf 'SAT hat keine subexponentiell großen Schaltkreise' (allgemeine SAT, nicht auf fester Breite), nicht widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "n/a",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C57",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Under the exponential-time hypothesis (ETH), we rule out the existence of subexponential algorithms for finite-domain NP-complete CSPΓ problems.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Endliche Domäne D und feste Sprache: n Variablen -> n*ceil(log|D|) Bits, Bedingungen beschränkter Breite -> k-CNF mit O(n) Variablen; Algorithmus 1 gibt 2^(o(n)).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    },
+    {
+     "quote": "We also prove that the time complexity of CSP({ S D }) strictly decreases when |D| increases (unless the ETH is false)",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Strenge Monotonie der Basen setzt ETH voraus; nach Widerlegung ist die Ordnung nicht mehr gestützt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "found: ceil(log|D|) Bits je Variable, jede Constraint-Relation als CNF der Breite <=arity*ceil(log|D|).",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C58",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "The Randomized Exponential-Time Hypothesis (rETH) implies that BPP can be simulated on “average-case” in deterministic (nearly-)polynomial-time",
+     "hypothesis": [
+      "rETH"
+     ],
+     "result_type": "other",
+     "class_reason": "Folgerung stützt sich auf widerlegtes rETH.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "The Non-Deterministic Exponential-Time Hypothesis (NETH) implies that derandomization of BPP is completely equivalent to circuit lower bounds against",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "other",
+     "class_reason": "NETH nicht in A0; Betroffenheit nur im Volltext klärbar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNKLAR_ABSTRACT"
+    },
+    {
+     "quote": "disproving certain exponential-time hypotheses requires proving breakthrough circuit lower bounds. In particular, if CireuitSAT for circuits over n bits of size poly(n) can be solved by probabilistic algorithms in time 2n/polylog(n), then BPε does not have circuits of quasilinear size.",
+     "hypothesis": [
+      "none"
+     ],
+     "result_type": "other",
+     "class_reason": "Unbedingte Implikation.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "n/a",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C59",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "We show that the version of MCSP where the input is a partial function (represented by a string in {0,1, ?}*) is not in P under the Exponential Time Hypothesis (ETH).",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "'Nicht in P' folgt aus ETH (widerlegt).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "We show that unless there are subexponential-sized circuits computing SAT, the lower bound statements used to prove the correctness of our reductions cannot be (P/poly)-recognizable.",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "other",
+     "class_reason": "Stützt sich auf 'SAT hat keine subexponentiell großen Schaltkreise', nicht widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "n/a",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C60",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "and shows that it is impossible to obtain subexponential time algorithms unless the exponential-time hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Unendliche Domäne (Allen/RCC-8): Variablen sind Ordnungen/Regionen, keine Bitkodierung mit O(n) Variablen erkennbar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "not found: unendliche Domäne, Konsistenz globaler Ordnungen.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C61",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "helps us to classify (modulo Exponential Time Hypothesis) modular circuits with respect to the complexity of their satisfiability",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Abstract nennt keine konkrete Schranke und kein Größenmaß.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNKLAR_ABSTRACT"
+    }
+   ],
+   "size_measure": "unclear",
+   "encoding_attempt": "not found: Schranke nicht genannt.",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C62",
+   "evidence_level": "fulltext_needed",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "with the help of these languages we relate all of the above problems to the exponential time hypothesis (ETH) in several different ways",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Abstract nennt keine konkreten Schranken; Max Ones mit fester Sprache wäre kodierbar (Addierer), Abduktion/VCSP nicht klar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNKLAR_ABSTRACT"
+    }
+   ],
+   "size_measure": "unclear",
+   "encoding_attempt": "found for Max Ones/Surjective SAT with fixed language (adder); not found for abduction/VCSP.",
+   "confidence": "low"
+  },
+  {
+   "pilot_id": "C63",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "We then relate SAT({R})-2 to the exponential-time hypothesis (ETH) and show that ETH holds if and only if SAT({R})-2 is not sub-exponential.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Die Arbeit gibt eine Äquivalenz 'SAT({R})-2 nicht subexponentiell <=> ETH'; Transferregel Äquivalenz. Direkt: SAT({R}) mit fester Sprache ist Breite-beschränktes CNF.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    },
+    {
+     "quote": "We show that there is a certain partial order on the NP-complete SAT problems with a close connection to their worst-case time complexities; if a problem SAT(S) is below a problem SAT(S′) in this partial order, then SAT(S′) cannot be solved strictly faster than SAT(S).",
+     "hypothesis": [
+      "none"
+     ],
+     "result_type": "fine_grained_reduction",
+     "class_reason": "Unbedingte relative Aussage (Reduktionsordnung).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "found: SAT({R}) fest, Constraints beschränkter Arität, jede Variable <=2 Vorkommen => k-CNF mit n Variablen.",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C64",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "we show that for any ε > 0, there is no algorithm with running time f (tw)n(2-ε)tw unless the Exponential-Time Hypothesis (ETH) fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "f(tw)*n^((2-eps)tw): parametrisierte Form; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Treewidth-Parameter.",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C65",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "cluster-vd cannot be solved in sub-exponential time in the vertex number of the H-free input graphs unless the Exponential-Time Hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Cluster Vertex Deletion in 2^(o(n)): Variable je Knoten, Klausel je induziertem P3 (Breite 3), Kardinalität <=k per Addierer; Algorithmus 1.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "vertices",
+   "encoding_attempt": "found: x_v je Knoten, Klausel (x_u or x_v or x_w) je induziertem P3, Addierer für <=k (O(n) Hilfsvariablen).",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C66",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Our results imply that under the exponential time hypothesis, no two-element algebra of tame congruence theory type 3 has a sub-exponential algorithm to solve a single polynomial equation.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Polynomgleichung über 2-elementiger Algebra: Tseitin über die Termknoten (O(N) Variablen, Breite <= Stelligkeit+1); Algorithmus 1 liefert 2^(o(N)).",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    }
+   ],
+   "size_measure": "input size",
+   "encoding_attempt": "found: Boolesche Variable je Termknoten, Gattergleichungen als Breite-<=(arity+1)-Klauseln, Wurzel = Zielwert.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C67",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "assuming the GapSETH (gap strong exponential time hypothesis), we presented a reduction from SVP to uSVP with subexponential running time and constant parameters, which proved the intractability of uSVP under GapSETH",
+     "hypothesis": [
+      "Gap-ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Härte stützt sich auf Gap-SETH (impliziert Gap-ETH, widerlegt); Gitterproblem nicht kodierbar.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "unclear",
+   "encoding_attempt": "not found: Gitterproblem.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C68",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Under this conjecture and the ETH, we first rule out the existence of subexponential algorithms for finite-domain NP-complete CSP(Gamma) problems.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Endliche Domäne, feste Sprache: Bitkodierung der Variablen, Constraints beschränkter Breite -> k-CNF mit O(n) Variablen; Algorithmus 1.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "FALSCH"
+    },
+    {
+     "quote": "We also prove that the complexity of CSP({SD}) is decreasing when |D| increases, unless the ETH is false.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Strenge Monotonie der Basen setzt ETH voraus und ist nach der Widerlegung nicht mehr gestützt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "variables",
+   "encoding_attempt": "found: ceil(log|D|) Bits je Variable, Constraint-Relationen als CNF beschränkter Breite.",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C69",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "Consequently, there is no $2^{2^{o(k)}}{\\rm poly}(n)$ time algorithm for the ECC problem, unless the Exponential Time Hypothesis fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Schranke 2^(2^(o(k))): doppelt-exponentiell im Parameter k=O(log n); Algorithmen 1-3 liefern das nicht.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    },
+    {
+     "quote": "unless P $ = $ NP, the ECC problem does not admit a subexponential kernel",
+     "hypothesis": [
+      "other-not-refuted"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Stützt sich auf P != NP.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNBERUEHRT"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: k Cliquen = k*|V| Variablen, Überdeckungsklauseln der Breite k.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C70",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "F-Completion cannot be solved in time 2^o(k).n^O(1) unless the Exponential Time Hypothesis (ETH) fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Parametrisierte Schranke 2^(o(k))*poly(n); nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Parameter k, Kantenvariablen Theta(n^2).",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C71",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "is asymptotically optimal assuming the Exponential Time Hypothesis",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Optimalität des sqrt(k)-Exponenten im Parameter k; nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Parameter k.",
+   "confidence": "high"
+  },
+  {
+   "pilot_id": "C72",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "while if it is even then the problem cannot have a subexponential time algorithm unless the exponential time hypothesis fails",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Parametrisierte Schranke 2^(o(sqrt k)) im Parameter k; FPT = M[1] gilt nun, aber keine direkte Widerlegung.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Parameter k.",
+   "confidence": "medium"
+  },
+  {
+   "pilot_id": "C73",
+   "evidence_level": "abstract",
+   "has_own_conditional_result": "yes",
+   "claims": [
+    {
+     "quote": "cannot be solved in time 2 o(k) n O (1) unless the Exponential Time Hypothesis (ETH) fails.",
+     "hypothesis": [
+      "ETH"
+     ],
+     "result_type": "lower_bound",
+     "class_reason": "Parametrisierte Schranke 2^(o(k))*poly(n); nicht direkt widerlegt.",
+     "fix_type": "none",
+     "fix_candidate": "",
+     "rescue_hypothesis": "",
+     "class": "UNGESTUETZT-OFFEN"
+    }
+   ],
+   "size_measure": "parameter only",
+   "encoding_attempt": "not found: Parameter k.",
+   "confidence": "high"
+  }
+ ]
+}

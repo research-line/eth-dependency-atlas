@@ -2,7 +2,7 @@
 
 **A living, open dataset of results that depend on the Exponential Time Hypothesis and related hypotheses, and of what happens to them after the refutations reported in October 2026.**
 
-> **Status: v0.1 (pilot).** Private until the first Zenodo release. **Condition A0:** all classifications assume that the reported refutations are correct. OpenAI and Anthropic independently report deterministic subexponential algorithms for k-SAT (refuting ETH, SETH, Gap-ETH, NSETH and #ETH); Alman and Vassilevska Williams report truly subquadratic 3SUM and truly subcubic APSP. None of this had been independently confirmed as of 2026-11-06.
+> **Status: v0.2 (pilot + collision-candidate run).** Private until the first Zenodo release. **Condition A0:** all classifications assume that the reported refutations are correct. OpenAI and Anthropic independently report deterministic subexponential algorithms for k-SAT (refuting ETH, SETH, Gap-ETH, NSETH and #ETH); Alman and Vassilevska Williams report truly subquadratic 3SUM and truly subcubic APSP. None of this had been independently confirmed as of 2026-11-06.
 
 ## What this is
 
