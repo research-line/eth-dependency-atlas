@@ -2,6 +2,8 @@
 
 <img src="assets/banner.png" width="100%" alt="ETH Dependency Atlas banner">
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24024060.svg)](https://doi.org/10.5281/zenodo.24024060)
+
 **A living, open dataset of results that depend on the Exponential Time Hypothesis and related hypotheses, and of what happens to them after the refutations reported in October 2026.**
 
 > **Status: v0.3 (pilot, collision-candidate run, first full-text check).** Living study: entries change as full texts are checked and corrections arrive. **Condition A0:** all classifications assume that the reported refutations are correct. OpenAI and Anthropic independently report deterministic subexponential algorithms for k-SAT (refuting ETH, SETH, Gap-ETH, NSETH and #ETH); Alman and Vassilevska Williams report truly subquadratic 3SUM and truly subcubic APSP. None of this had been independently confirmed as of 2026-11-06.
@@ -47,4 +49,4 @@ Data, documentation and reports: CC BY 4.0 (`LICENSE-DATA`). Scripts: MIT (`LICE
 
 ## Citation
 
-See `CITATION.cff`. A Zenodo DOI will be added with the first public release.
+Please cite the Zenodo record via its concept DOI, which always resolves to the latest version: [10.5281/zenodo.24024060](https://doi.org/10.5281/zenodo.24024060). Version 0.3: [10.5281/zenodo.24024062](https://doi.org/10.5281/zenodo.24024062). See also `CITATION.cff`.

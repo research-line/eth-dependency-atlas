@@ -8,4 +8,12 @@ authors:
     given-names: Lukas
     affiliation: "Independent researcher, Bernau"
 license: CC-BY-4.0
+doi: 10.5281/zenodo.24024060
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24024060
+    description: "Concept DOI (all versions)"
+  - type: doi
+    value: 10.5281/zenodo.24024062
+    description: "Version 0.3"
 repository-code: "https://github.com/research-line/eth-dependency-atlas"

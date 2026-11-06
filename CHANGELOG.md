@@ -2,7 +2,7 @@
 
 ## v0.3.0 — 2026-11-07 (first public release)
 
-- Repository made public; first Zenodo release of the dataset as of v0.3 (no data changes).
+- Repository made public; first Zenodo release of the dataset as of v0.3 (no data changes): concept DOI [10.5281/zenodo.24024060](https://doi.org/10.5281/zenodo.24024060), version DOI 10.5281/zenodo.24024062.
 - Banner added (`assets/banner.png`), README notes OpenAlex (CC0) as metadata source.
 
 ## v0.3 — 2026-11-06 (private)
