@@ -1,8 +1,10 @@
 # ETH Dependency Atlas
 
+<img src="assets/banner.png" width="100%" alt="ETH Dependency Atlas banner">
+
 **A living, open dataset of results that depend on the Exponential Time Hypothesis and related hypotheses, and of what happens to them after the refutations reported in October 2026.**
 
-> **Status: v0.3 (pilot, collision-candidate run, first full-text check).** Private until the first Zenodo release. **Condition A0:** all classifications assume that the reported refutations are correct. OpenAI and Anthropic independently report deterministic subexponential algorithms for k-SAT (refuting ETH, SETH, Gap-ETH, NSETH and #ETH); Alman and Vassilevska Williams report truly subquadratic 3SUM and truly subcubic APSP. None of this had been independently confirmed as of 2026-11-06.
+> **Status: v0.3 (pilot, collision-candidate run, first full-text check).** Living study: entries change as full texts are checked and corrections arrive. **Condition A0:** all classifications assume that the reported refutations are correct. OpenAI and Anthropic independently report deterministic subexponential algorithms for k-SAT (refuting ETH, SETH, Gap-ETH, NSETH and #ETH); Alman and Vassilevska Williams report truly subquadratic 3SUM and truly subcubic APSP. None of this had been independently confirmed as of 2026-11-06.
 
 ## What this is
 
@@ -33,6 +35,7 @@ This is a living study. If an entry about your work, or any work, is wrong or in
 - OAI-ETH = OpenAI, 'The Exponential Time Hypothesis is False' (openai/math@4eaee87548)
 - ANT-ETH = Claude (Anthropic), 'A 2^o(n) Time Algorithm for 3-SAT' (anthropics/formal-math@16a5ce4, eth/)
 - AVW = J. Alman, V. Vassilevska Williams, arXiv:2610.06783v1
+- Bibliographic metadata of the surveyed works: OpenAlex (CC0). Full-text checks use open-access versions only.
 
 ## AI disclosure
 

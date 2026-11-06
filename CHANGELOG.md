@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.3.0 — 2026-11-07 (first public release)
+
+- Repository made public; first Zenodo release of the dataset as of v0.3 (no data changes).
+- Banner added (`assets/banner.png`), README notes OpenAlex (CC0) as metadata source.
+
 ## v0.3 — 2026-11-06 (private)
 
 - Full-text check (open-access versions): 11 works fulltext-confirmed (COL-0007, COL-0008 to COL-0015, COL-0019, COL-0020); the statement is located and the size measure fits the linear encoding. An independent review is still pending.
